@@ -1,0 +1,2 @@
+This repository contains the data, code, results, and figures associated with the project "The origin and early spread of SARS-CoV-2 in Europe".
+Only scrubbed versions of the xml files are made publicly available because the genome sequence data is subject to a user agreement. If you want to access these data, you need to register on GISAID.org.

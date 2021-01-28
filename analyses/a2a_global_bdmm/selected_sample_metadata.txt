@@ -1,0 +1,104 @@
+accession_id	full_seq_name	strain	location	collection_date	region	age	country	division	country_exposure	division_exposure	clade	deme
+EPI_ISL_412964	Brazil/SPBR-01/2020|EPI_ISL_412964|2020-02-25	Brazil/SPBR-01/2020	Brazil	2020-02-25	South America	61	Brazil	Sao Paulo	Italy	Lombardy	A2a	SouthCentralAmerica
+EPI_ISL_412972	Mexico/CDMX-InDRE_01/2020|EPI_ISL_412972|2020-02-27	Mexico/CDMX-InDRE_01/2020	Mexico	2020-02-27	North America	35	Mexico	Mexico City	Italy	Lombardy	A2a	NorthAmerica
+EPI_ISL_413550	Nigeria/Lagos01/2020|EPI_ISL_413550|2020-02-27	Nigeria/Lagos01/2020	Nigeria	2020-02-27	Africa	?	Nigeria	Lagos	Italy	Italy	A2a	Africa
+EPI_ISL_413592	Taiwan/NTU03/2020|EPI_ISL_413592|2020-03-02	Taiwan/NTU03/2020	Taiwan	2020-03-02	Asia	66	Taiwan	Taiwan	Taiwan	Taiwan	A2a	AsiaOceania
+EPI_ISL_414014	Brazil/SPBR-03/2020|EPI_ISL_414014|2020-03-02	Brazil/SPBR-03/2020	Brazil	2020-03-02	South America	46	Brazil	Sao Paulo	Brazil	Sao Paulo	A2a	SouthCentralAmerica
+EPI_ISL_414015	Brazil/SPBR-06/2020|EPI_ISL_414015|2020-02-29	Brazil/SPBR-06/2020	Brazil	2020-02-29	South America	69	Brazil	Sao Paulo	Brazil	Sao Paulo	A2a	SouthCentralAmerica
+EPI_ISL_414016	Brazil/SPBR-05/2020|EPI_ISL_414016|2020-02-29	Brazil/SPBR-05/2020	Brazil	2020-02-29	South America	37	Brazil	Sao Paulo	Brazil	Sao Paulo	A2a	SouthCentralAmerica
+EPI_ISL_414017	Brazil/SPBR-04/2020|EPI_ISL_414017|2020-03-04	Brazil/SPBR-04/2020	Brazil	2020-03-04	South America	13	Brazil	Sao Paulo	Italy	Italy	A2a	SouthCentralAmerica
+EPI_ISL_414045	Brazil/RJ-314/2020|EPI_ISL_414045|2020-03-04	Brazil/RJ-314/2020	Brazil	2020-03-04	South America	52	Brazil	Rio de Janeiro	Brazil	Rio de Janeiro	A2a	SouthCentralAmerica
+EPI_ISL_414580	Chile/Santiago-2/2020|EPI_ISL_414580|2020-03-05	Chile/Santiago-2/2020	Chile	2020-03-05	South America	40	Chile	Santiago	Chile	Santiago	A2a	SouthCentralAmerica
+EPI_ISL_414594	USA/WA-UW25/2020|EPI_ISL_414594|2020-03-05	USA/WA-UW25/2020	USA	2020-03-05	North America	?	USA	Washington	USA	Washington	A2a	NorthAmerica
+EPI_ISL_414616	USA/WA-UW29/2020|EPI_ISL_414616|2020-03-08	USA/WA-UW29/2020	USA	2020-03-08	North America	?	USA	Washington	USA	Washington	A2a	NorthAmerica
+EPI_ISL_415105	Brazil/BA-312/2020|EPI_ISL_415105|2020-03-04	Brazil/BA-312/2020	Brazil	2020-03-04	South America	34	Brazil	Bahia	Brazil	Bahia	A2a	SouthCentralAmerica
+EPI_ISL_415152	Panama/328677/2020|EPI_ISL_415152|2020-03-06	Panama/328677/2020	Panama	2020-03-06	Central America	40	Panama	Panama City	Spain	Comunitat Valenciana	A2a	SouthCentralAmerica
+EPI_ISL_416028	Brazil/SPBR-07/2020|EPI_ISL_416028|2020-03-03	Brazil/SPBR-07/2020	Brazil	2020-03-03	South America	22	Brazil	Sao Paulo	Italy	Italy	A2a	SouthCentralAmerica
+EPI_ISL_416029	Brazil/SPBR-08/2020|EPI_ISL_416029|2020-03-04	Brazil/SPBR-08/2020	Brazil	2020-03-04	South America	13	Brazil	Sao Paulo	Brazil	Sao Paulo	A2a	SouthCentralAmerica
+EPI_ISL_416031	Brazil/SPBR-09/2020|EPI_ISL_416031|2020-03-04	Brazil/SPBR-09/2020	Brazil	2020-03-04	South America	37	Brazil	Sao Paulo	Brazil	Sao Paulo	A2a	SouthCentralAmerica
+EPI_ISL_416034	Brazil/SPBR-12/2020|EPI_ISL_416034|2020-03-04	Brazil/SPBR-12/2020	Brazil	2020-03-04	South America	35	Brazil	Sao Paulo	USA	USA	A2a	SouthCentralAmerica
+EPI_ISL_416035	Brazil/SPBR-13/2020|EPI_ISL_416035|2020-03-05	Brazil/SPBR-13/2020	Brazil	2020-03-05	South America	34	Brazil	Sao Paulo	Brazil	Sao Paulo	A2a	SouthCentralAmerica
+EPI_ISL_416036	Brazil/SPBR-14/2020|EPI_ISL_416036|2020-03-05	Brazil/SPBR-14/2020	Brazil	2020-03-05	South America	22	Brazil	Sao Paulo	Italy	Italy	A2a	SouthCentralAmerica
+EPI_ISL_416428	Vietnam/39607/2020|EPI_ISL_416428|2020-03-07	Vietnam/39607/2020	Vietnam	2020-03-07	Asia	50	Vietnam	Quangning	Vietnam	Quangning	A2a	AsiaOceania
+EPI_ISL_416430	Vietnam/CM295/2020|EPI_ISL_416430|2020-03-06	Vietnam/CM295/2020	Vietnam	2020-03-06	Asia	27	Vietnam	Red River Delta	Vietnam	Red River Delta	A2a	AsiaOceania
+EPI_ISL_416431	Vietnam/CM296/2020|EPI_ISL_416431|2020-03-06	Vietnam/CM296/2020	Vietnam	2020-03-06	Asia	64	Vietnam	Red River Delta	Vietnam	Red River Delta	A2a	AsiaOceania
+EPI_ISL_416479	Georgia/Tb-273/2020|EPI_ISL_416479|2020-03-05	Georgia/Tb-273/2020	Georgia	2020-03-05	Asia	?	Georgia	Tbilisi	Georgia	Tbilisi	A2a	AsiaOceania
+EPI_ISL_416519	NewZealand/20VR0189/2020|EPI_ISL_416519|2020-03-02	NewZealand/20VR0189/2020	New Zealand	2020-03-02	Oceania	?	New Zealand	Auckland	New Zealand	Auckland	A2a	AsiaOceania
+EPI_ISL_416520	NewZealand/20VR019/2020|EPI_ISL_416520|2020-03-04	NewZealand/20VR019/2020	New Zealand	2020-03-04	Oceania	?	New Zealand	Auckland	New Zealand	Auckland	A2a	AsiaOceania
+EPI_ISL_417186	SouthAfrica/R03006-20/2020|EPI_ISL_417186|2020-03-07	SouthAfrica/R03006-20/2020	South Africa	2020-03-07	Africa	38	South Africa	KwaZulu-Natal	South Africa	KwaZulu-Natal	A2a	Africa
+EPI_ISL_417328	USA/CA-CDPH-UC24/2020|EPI_ISL_417328|2020-03-07	USA/CA-CDPH-UC24/2020	USA	2020-03-07	North America	?	USA	California	USA	California	A2a	NorthAmerica
+EPI_ISL_417390	Australia/NSW27/2020|EPI_ISL_417390|2020-03-08	Australia/NSW27/2020	Australia	2020-03-08	Oceania	72	Australia	New South Wales	Australia	New South Wales	A2a	AsiaOceania
+EPI_ISL_418206	Senegal/003/2020|EPI_ISL_418206|2020-02-28	Senegal/003/2020	Senegal	2020-02-28	Africa	33	Senegal	Dakar	Senegal	Dakar	A2a	Africa
+EPI_ISL_418207	Senegal/016/2020|EPI_ISL_418207|2020-03-02	Senegal/016/2020	Senegal	2020-03-02	Africa	80	Senegal	Dakar	Senegal	Dakar	A2a	Africa
+EPI_ISL_418208	Senegal/020/2020|EPI_ISL_418208|2020-03-04	Senegal/020/2020	Senegal	2020-03-04	Africa	68	Senegal	Dakar	Senegal	Dakar	A2a	Africa
+EPI_ISL_418209	Senegal/026/2020|EPI_ISL_418209|2020-03-03	Senegal/026/2020	Senegal	2020-03-03	Africa	33	Senegal	Dakar	Senegal	Dakar	A2a	Africa
+EPI_ISL_418241	Algeria/G0638_2264/2020|EPI_ISL_418241|2020-03-02	Algeria/G0638_2264/2020	Algeria	2020-03-02	Africa	28	Algeria	Boufarik	Algeria	Boufarik	A2a	Africa
+EPI_ISL_418242	Algeria/G0640_2265/2020|EPI_ISL_418242|2020-03-08	Algeria/G0640_2265/2020	Algeria	2020-03-08	Africa	87	Algeria	Blida	Algeria	Blida	A2a	Africa
+EPI_ISL_418262	Colombia/Bogota78390/2020|EPI_ISL_418262|2020-03-06	Colombia/Bogota78390/2020	Colombia	2020-03-06	South America	?	Colombia	Bogota	Colombia	Bogota	A2a	SouthCentralAmerica
+EPI_ISL_418345	Canada/ON_PHL8751/2020|EPI_ISL_418345|2020-02-29	Canada/ON_PHL8751/2020	Canada	2020-02-29	North America	70	Canada	Ontario	Canada	Ontario	A2a	NorthAmerica
+EPI_ISL_418346	Canada/ON_PHL0743/2020|EPI_ISL_418346|2020-03-07	Canada/ON_PHL0743/2020	Canada	2020-03-07	North America	65	Canada	Ontario	Canada	Ontario	A2a	NorthAmerica
+EPI_ISL_418348	Canada/ON_PHL3680/2020|EPI_ISL_418348|2020-03-08	Canada/ON_PHL3680/2020	Canada	2020-03-08	North America	55	Canada	Ontario	Canada	Ontario	A2a	NorthAmerica
+EPI_ISL_418349	Canada/ON_PHL3650/2020|EPI_ISL_418349|2020-03-07	Canada/ON_PHL3650/2020	Canada	2020-03-07	North America	67	Canada	Ontario	Canada	Ontario	A2a	NorthAmerica
+EPI_ISL_418355	Canada/ON_PHLU8150/2020|EPI_ISL_418355|2020-03-08	Canada/ON_PHLU8150/2020	Canada	2020-03-08	North America	58	Canada	Ontario	Canada	Ontario	A2a	NorthAmerica
+EPI_ISL_418366	Canada/ON_PHL3350/2020|EPI_ISL_418366|2020-03-05	Canada/ON_PHL3350/2020	Canada	2020-03-05	North America	51	Canada	Ontario	Canada	Ontario	A2a	NorthAmerica
+EPI_ISL_418371	Canada/ON_PHL2653/2020|EPI_ISL_418371|2020-03-07	Canada/ON_PHL2653/2020	Canada	2020-03-07	North America	34	Canada	Ontario	Canada	Ontario	A2a	NorthAmerica
+EPI_ISL_416469	Belgium/SN-03031/2020|EPI_ISL_416469|2020-03-03	Belgium/SN-03031/2020	Belgium	2020-03-03	Europe	45	Belgium	Kessel-Lo	Belgium	Kessel-Lo	A2a	Europe
+EPI_ISL_414477	CzechRepublic/951/2020|EPI_ISL_414477|2020-03-01	CzechRepublic/951/2020	Czech Republic	2020-03-01	Europe	44	Czech Republic	Usti nad Labem	Italy	Italy	A2a	Europe
+EPI_ISL_416140	Denmark/SSI-05/2020|EPI_ISL_416140|2020-03-02	Denmark/SSI-05/2020	Denmark	2020-03-02	Europe	42	Denmark	Copenhagen	Denmark	Copenhagen	A2a	Europe
+EPI_ISL_413604	Finland/FIN03032020C/2020|EPI_ISL_413604|2020-03-03	Finland/FIN03032020C/2020	Finland	2020-03-03	Europe	59	Finland	Helsinki	Italy	Italy	A2a	Europe
+EPI_ISL_416758	France/Lyon_0693/2020|EPI_ISL_416758|2020-03-08	France/Lyon_0693/2020	France	2020-03-08	Europe	79	France	Auvergne-Rhône-Alpes	France	Auvergne-Rhône-Alpes	A2a	Europe
+EPI_ISL_414624	France/N1620/2020|EPI_ISL_414624|2020-02-26	France/N1620/2020	France	2020-02-26	Europe	?	France	Normandie	France	Normandie	A2a	Europe
+EPI_ISL_414633	France/IDF1980/2020|EPI_ISL_414633|2020-03-04	France/IDF1980/2020	France	2020-03-04	Europe	86	France	Ile de France	France	Ile de France	A2a	Europe
+EPI_ISL_418220	France/HF1645/2020|EPI_ISL_418220|2020-02-28	France/HF1645/2020	France	2020-02-28	Europe	54	France	Hauts de France	France	Hauts de France	A2a	Europe
+EPI_ISL_416506	France/B2337/2020|EPI_ISL_416506|2020-03-03	France/B2337/2020	France	2020-03-03	Europe	59	France	Bretagne	France	Bretagne	A2a	Europe
+EPI_ISL_416512	France/B2349/2020|EPI_ISL_416512|2020-03-07	France/B2349/2020	France	2020-03-07	Europe	67	France	Bretagne	France	Bretagne	A2a	Europe
+EPI_ISL_414627	France/HF1795/2020|EPI_ISL_414627|2020-03-02	France/HF1795/2020	France	2020-03-02	Europe	78	France	Hauts de France	France	Hauts de France	A2a	Europe
+EPI_ISL_416747	France/Lyon_487/2020|EPI_ISL_416747|2020-03-04	France/Lyon_487/2020	France	2020-03-04	Europe	43	France	Auvergne-Rhône-Alpes	France	Auvergne-Rhône-Alpes	A2a	Europe
+EPI_ISL_416750	France/Lyon_683/2020|EPI_ISL_416750|2020-03-06	France/Lyon_683/2020	France	2020-03-06	Europe	47	France	Auvergne-Rhône-Alpes	France	Auvergne-Rhône-Alpes	A2a	Europe
+EPI_ISL_416751	France/Clermont-Ferrand_651/2020|EPI_ISL_416751|2020-03-05	France/Clermont-Ferrand_651/2020	France	2020-03-05	Europe	16	France	Auvergne-Rhône-Alpes	France	Auvergne-Rhône-Alpes	A2a	Europe
+EPI_ISL_416494	France/N2223/2020|EPI_ISL_416494|2020-03-04	France/N2223/2020	France	2020-03-04	Europe	62	France	Normandie	France	Normandie	A2a	Europe
+EPI_ISL_416509	France/B2344/2020|EPI_ISL_416509|2020-03-06	France/B2344/2020	France	2020-03-06	Europe	32	France	Bretagne	France	Bretagne	A2a	Europe
+EPI_ISL_417339	France/Lyon_06820/2020|EPI_ISL_417339|2020-03-08	France/Lyon_06820/2020	France	2020-03-08	Europe	86	France	Auvergne-Rhône-Alpes	France	Auvergne-Rhône-Alpes	A2a	Europe
+EPI_ISL_414631	France/GE1973/2020|EPI_ISL_414631|2020-03-04	France/GE1973/2020	France	2020-03-04	Europe	88	France	Grand Est	France	Grand Est	A2a	Europe
+EPI_ISL_417334	France/Lyon_06056/2020|EPI_ISL_417334|2020-03-04	France/Lyon_06056/2020	France	2020-03-04	Europe	50	France	Auvergne-Rhône-Alpes	France	Auvergne-Rhône-Alpes	A2a	Europe
+EPI_ISL_414635	France/HF1988/2020|EPI_ISL_414635|2020-03-04	France/HF1988/2020	France	2020-03-04	Europe	70	France	Hauts de France	France	Hauts de France	A2a	Europe
+EPI_ISL_416748	France/Lyon_508/2020|EPI_ISL_416748|2020-03-04	France/Lyon_508/2020	France	2020-03-04	Europe	50	France	Auvergne-Rhône-Alpes	France	Auvergne-Rhône-Alpes	A2a	Europe
+EPI_ISL_415653	France/HF2151/2020|EPI_ISL_415653|2020-03-08	France/HF2151/2020	France	2020-03-08	Europe	53	France	Hauts de France	France	Hauts de France	A2a	Europe
+EPI_ISL_416757	France/Bourg-en-Bresse_06678/2020|EPI_ISL_416757|2020-03-07	France/Bourg-en-Bresse_06678/2020	France	2020-03-07	Europe	41	France	Auvergne-Rhône-Alpes	France	Auvergne-Rhône-Alpes	A2a	Europe
+EPI_ISL_416746	France/Valence_425/2020|EPI_ISL_416746|2020-03-03	France/Valence_425/2020	France	2020-03-03	Europe	61	France	Auvergne-Rhône-Alpes	France	Auvergne-Rhône-Alpes	A2a	Europe
+EPI_ISL_412912	Germany/Baden-Wuerttemberg-1/2020|EPI_ISL_412912|2020-02-25	Germany/Baden-Wuerttemberg-1/2020	Germany	2020-02-25	Europe	?	Germany	Baden-Wuerttemberg	Italy	Lombardy	A2a	Europe
+EPI_ISL_417710	Iceland/18/2020|EPI_ISL_417710|2020-03-02	Iceland/18/2020	Iceland	2020-03-02	Europe	52	Iceland	Reykjavik	Austria	Austria	A2a	Europe
+EPI_ISL_414584	Ireland/Dublin-19072/2020|EPI_ISL_414584|2020-03-02	Ireland/Dublin-19072/2020	Ireland	2020-03-02	Europe	49	Ireland	Dublin	Ireland	Dublin	A2a	Europe
+EPI_ISL_413489	Italy/UniSR1/2020|EPI_ISL_413489|2020-03-03	Italy/UniSR1/2020	Italy	2020-03-03	Europe	38	Italy	Lombardy	Italy	Lombardy	A2a	Europe
+EPI_ISL_417423	Italy/FVG-ICGEB_S9/2020|EPI_ISL_417423|2020-03-01	Italy/FVG-ICGEB_S9/2020	Italy	2020-03-01	Europe	59	Italy	Friuli Venezia Giulia	Italy	Friuli Venezia Giulia	A2a	Europe
+EPI_ISL_417445	Italy/UniMI01/2020|EPI_ISL_417445|2020-02-24	Italy/UniMI01/2020	Italy	2020-02-24	Europe	71	Italy	Lombardy	Italy	Lombardy	A2a	Europe
+EPI_ISL_417421	Italy/FVG-ICGEB_S8/2020|EPI_ISL_417421|2020-03-01	Italy/FVG-ICGEB_S8/2020	Italy	2020-03-01	Europe	45	Italy	Friuli Venezia Giulia	Italy	Friuli Venezia Giulia	A2a	Europe
+EPI_ISL_417922	Italy/INMI4/2020|EPI_ISL_417922|2020-02-28	Italy/INMI4/2020	Italy	2020-02-28	Europe	41	Italy	Rome	Italy	Rome	A2a	Europe
+EPI_ISL_417447	Italy/UniMI03/2020|EPI_ISL_417447|2020-02-24	Italy/UniMI03/2020	Italy	2020-02-24	Europe	80	Italy	Lombardy	Italy	Lombardy	A2a	Europe
+EPI_ISL_417419	Italy/FVG-ICGEB_S5/2020|EPI_ISL_417419|2020-03-01	Italy/FVG-ICGEB_S5/2020	Italy	2020-03-01	Europe	73	Italy	Friuli Venezia Giulia	Italy	Friuli Venezia Giulia	A2a	Europe
+EPI_ISL_417418	Italy/FVG-ICGEB_S1/2020|EPI_ISL_417418|2020-03-01	Italy/FVG-ICGEB_S1/2020	Italy	2020-03-01	Europe	59	Italy	Friuli Venezia Giulia	Italy	Friuli Venezia Giulia	A2a	Europe
+EPI_ISL_417491	Italy/UnivPM1/2020|EPI_ISL_417491|2020-03-03	Italy/UnivPM1/2020	Italy	2020-03-03	Europe	?	Italy	Marche	Italy	Marche	A2a	Europe
+EPI_ISL_417921	Italy/INMI3/2020|EPI_ISL_417921|2020-03-01	Italy/INMI3/2020	Italy	2020-03-01	Europe	32	Italy	Rome	Italy	Rome	A2a	Europe
+EPI_ISL_412973	Italy/CDG1/2020|EPI_ISL_412973|2020-02-20	Italy/CDG1/2020	Italy	2020-02-20	Europe	38	Italy	Lombardy	Italy	Lombardy	A2a	Europe
+EPI_ISL_417923	Italy/INMI5/2020|EPI_ISL_417923|2020-03-04	Italy/INMI5/2020	Italy	2020-03-04	Europe	53	Italy	Rome	Italy	Rome	A2a	Europe
+EPI_ISL_413593	Luxembourg/Lux1/2020|EPI_ISL_413593|2020-02-29	Luxembourg/Lux1/2020	Luxembourg	2020-02-29	Europe	?	Luxembourg	Luxembourg	Luxembourg	Luxembourg	A2a	Europe
+EPI_ISL_413591	Netherlands/Zeewolde_1365080/2020|EPI_ISL_413591|2020-03-02	Netherlands/Zeewolde_1365080/2020	Netherlands	2020-03-02	Europe	?	Netherlands	Flevoland	Netherlands	Flevoland	A2a	Europe
+EPI_ISL_414449	Netherlands/NoordBrabant_2/2020|EPI_ISL_414449|2020-03-03	Netherlands/NoordBrabant_2/2020	Netherlands	2020-03-03	Europe	?	Netherlands	North Brabant	Netherlands	North Brabant	A2a	Europe
+EPI_ISL_414466	Netherlands/ZuidHolland_6/2020|EPI_ISL_414466|2020-03-04	Netherlands/ZuidHolland_6/2020	Netherlands	2020-03-04	Europe	?	Netherlands	South Holland	Netherlands	South Holland	A2a	Europe
+EPI_ISL_413566	Netherlands/Blaricum_1364780/2020|EPI_ISL_413566|2020-03-02	Netherlands/Blaricum_1364780/2020	Netherlands	2020-03-02	Europe	?	Netherlands	North Brabant	Netherlands	North Brabant	A2a	Europe
+EPI_ISL_417485	Norway/1526/2020|EPI_ISL_417485|2020-03-02	Norway/1526/2020	Norway	2020-03-02	Europe	?	Norway	Oslo	Norway	Oslo	A2a	Europe
+EPI_ISL_418011	Portugal/PT0026/2020|EPI_ISL_418011|2020-03-04	Portugal/PT0026/2020	Portugal	2020-03-04	Europe	49	Portugal	Portugal	Portugal	Portugal	A2a	Europe
+EPI_ISL_417879	Slovakia/SK-BMC5/2020|EPI_ISL_417879|2020-03-06	Slovakia/SK-BMC5/2020	Slovakia	2020-03-06	Europe	26	Slovakia	Kosice	France	Ile de France	A2a	Europe
+EPI_ISL_418251	Spain/Madrid201105/2020|EPI_ISL_418251|2020-02-25	Spain/Madrid201105/2020	Spain	2020-02-25	Europe	24	Spain	Madrid	Spain	Madrid	A2a	Europe
+EPI_ISL_417007	Spain/Galicia201663/2020|EPI_ISL_417007|2020-03-07	Spain/Galicia201663/2020	Spain	2020-03-07	Europe	36	Spain	Galicia	Spain	Galicia	A2a	Europe
+EPI_ISL_416486	Spain/Valencia7/2020|EPI_ISL_416486|2020-03-02	Spain/Valencia7/2020	Spain	2020-03-02	Europe	23	Spain	Comunitat Valenciana	Spain	Comunitat Valenciana	A2a	Europe
+EPI_ISL_418247	Spain/CastillayLeon201061/2020|EPI_ISL_418247|2020-02-26	Spain/CastillayLeon201061/2020	Spain	2020-02-26	Europe	18	Spain	Castilla y Leon	Spain	Castilla y Leon	A2a	Europe
+EPI_ISL_414495	Spain/Valencia1/2020|EPI_ISL_414495|2020-03-08	Spain/Valencia1/2020	Spain	2020-03-08	Europe	56	Spain	Comunitat Valenciana	Spain	Comunitat Valenciana	A2a	Europe
+EPI_ISL_417010	Spain/Madrid201442/2020|EPI_ISL_417010|2020-03-04	Spain/Madrid201442/2020	Spain	2020-03-04	Europe	58	Spain	Madrid	Spain	Madrid	A2a	Europe
+EPI_ISL_415458	Switzerland/GE8102/2020|EPI_ISL_415458|2020-03-01	Switzerland/GE8102/2020	Switzerland	2020-03-01	Europe	30	Switzerland	Geneva	Switzerland	Geneva	A2a	Europe
+EPI_ISL_414019	Switzerland/GE3121/2020|EPI_ISL_414019|2020-02-27	Switzerland/GE3121/2020	Switzerland	2020-02-27	Europe	55	Switzerland	Geneva	Switzerland	Geneva	A2a	Europe
+EPI_ISL_418435	Switzerland/42177434/2020|EPI_ISL_418435|2020-03-05	Switzerland/42177434/2020	Switzerland	2020-03-05	Europe	37	Switzerland	Basel	Switzerland	Basel	A2a	Europe
+EPI_ISL_415131	England/20099107406/2020|EPI_ISL_415131|2020-02-29	England/20099107406/2020	United Kingdom	2020-02-29	Europe	21	United Kingdom	England	United Kingdom	England	A2a	Europe
+EPI_ISL_417230	England/20104008702/2020|EPI_ISL_417230|2020-03-02	England/20104008702/2020	United Kingdom	2020-03-02	Europe	53	United Kingdom	England	United Kingdom	England	A2a	Europe
+EPI_ISL_415147	England/20102000506/2020|EPI_ISL_415147|2020-03-01	England/20102000506/2020	United Kingdom	2020-03-01	Europe	22	United Kingdom	England	United Kingdom	England	A2a	Europe
+EPI_ISL_417302	England/20110000706/2020|EPI_ISL_417302|2020-03-05	England/20110000706/2020	United Kingdom	2020-03-05	Europe	58	United Kingdom	England	United Kingdom	England	A2a	Europe

@@ -1,0 +1,6 @@
+from	France	Germany	Italy	OtherEuropean
+Hubei	"3: [0, 6]"	"4: [1, 6]"	"2: [0, 6]"	"4: [0, 8]"
+France	NA	"0: [0, 1]"	"0: [0, 3]"	"2: [0, 4]"
+Germany	"0: [0, 2]"	NA	"1: [0, 3]"	"1: [0, 4]"
+Italy	"6: [1, 9]"	"1: [0, 4]"	NA	"18: [6, 34]"
+OtherEuropean	"2: [0, 6]"	"1: [0, 4]"	"1: [0, 4]"	NA

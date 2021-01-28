@@ -1,0 +1,18 @@
+country	n_selected_seqs	n_deaths	n_cases	n_seqs	padded_n_deaths
+Belgium	1	0	200	40	1
+Czech Republic	1	0	31	1	1
+Denmark	1	0	35	9	1
+Finland	1	0	23	8	1
+France	20	19	1126	58	20
+Germany	1	0	1040	2	1
+Iceland	1	0	50	53	1
+Ireland	1	0	19	8	1
+Italy	12	366	7375	12	367
+Luxembourg	1	0	3	1	1
+Netherlands	4	3	265	64	4
+Norway	1	0	176	1	1
+Portugal	1	0	30	19	1
+Slovakia	1	0	3	3	1
+Spain	6	17	673	6	18
+Switzerland	3	2	337	48	3
+United Kingdom	4	3	273	101	4

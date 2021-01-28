@@ -1,0 +1,506 @@
+# The analyses described to address comments by PNAS reviewers & Louis du Plessis
+
+# Other ideas not yet implemented:
+	# skyline migration rate estimates with smoothing prior, as in CH Re analysis? 
+
+# with_hubei_migration_breakpoint ----------------------------------------
+# Use same alignment, model as in original submission but with a migration rate breakpoint on the date of the Hubei lockdown Jan. 23
+# No additional prior information used to constrain _how_ the migration rate should change on Jan. 23
+# In order to use Tim's new SmartBlockScaler operator, I also had to change some of the initialization values slightly (values that are exactly the same are scaled together)
+
+WORKDIR=/Users/nadeaus/Documents/2019-ncov-data/analyses/2020-10-21_european_origins_bdmm_pnas_revision/with_hubei_migration_breakpoint
+ANALYSIS=with_hubei_migration_breakpoint
+
+# Test the XML locally:
+cd ~/Downloads
+BEAST="/Users/nadeaus/programs/BEAST2.6.2/bin/beast"
+$BEAST $WORKDIR/$ANALYSIS.xml
+
+# Submit real job on Euler: run 2 chains in parallel for min(12h, 10000000 samples):
+scp $WORKDIR/$ANALYSIS.xml nadeaus@euler.ethz.ch:/cluster/scratch/nadeaus/
+ssh nadeaus@euler.ethz.ch
+ANALYSIS=with_hubei_migration_breakpoint
+BEAST="/cluster/home/nadeaus/programs/beast/bin/beast"
+module load java/1.8
+
+mkdir -p $SCRATCH/$ANALYSIS/chain_1
+mkdir -p $SCRATCH/$ANALYSIS/chain_2
+
+mv $SCRATCH/$ANALYSIS.xml $SCRATCH/$ANALYSIS/chain_1/
+cp $SCRATCH/$ANALYSIS/chain_1/$ANALYSIS.xml $SCRATCH/$ANALYSIS/chain_2/
+
+cd $SCRATCH/$ANALYSIS/chain_1
+bsub \
+-B -N \
+-n 4 -R "rusage[mem=4096]" -W 12:00 \
+-o $SCRATCH/$ANALYSIS/chain_1/${ANALYSIS}_chain_1.out \
+$BEAST $SCRATCH/$ANALYSIS/chain_1/$ANALYSIS.xml
+
+cd $SCRATCH/$ANALYSIS/chain_2
+bsub \
+-B -N \
+-n 4 -R "rusage[mem=4096]" -W 12:00 \
+-o $SCRATCH/$ANALYSIS/chain_2/${ANALYSIS}_chain_2.out \
+$BEAST $SCRATCH/$ANALYSIS/chain_2/$ANALYSIS.xml
+
+# Submitted 21:00 on 2020-10-21
+
+mkdir $WORKDIR/raw_results
+scp nadeaus@euler.ethz.ch:/cluster/scratch/nadeaus/$ANALYSIS/chain_1/orig_submission.log $WORKDIR/raw_results/chain_1.log
+scp nadeaus@euler.ethz.ch:/cluster/scratch/nadeaus/$ANALYSIS/chain_2/orig_submission.log $WORKDIR/raw_results/chain_2.log
+scp nadeaus@euler.ethz.ch:/cluster/scratch/nadeaus/$ANALYSIS/chain_1/orig_submission.trees $WORKDIR/raw_results/chain_1.trees
+scp nadeaus@euler.ethz.ch:/cluster/scratch/nadeaus/$ANALYSIS/chain_2/orig_submission.trees $WORKDIR/raw_results/chain_2.trees
+
+# In tracer, the more recent time interval (.i1) acutally has _higher_ migration rates out of Hubei than the older one (.i0)
+# Rather than going down the "what particulars of the model or data could yield result X" thought train, I'm just going to impose a stronger prior
+
+# with_hubei_migration_decrease ------------------------------------------
+# Use same alignment, model as in original submission but with a migration rate decrease on the date of the Hubei lockdown Jan. 23
+# The migration rate is allowed to decrease on Jan. 23
+# Using same initialization values with_hubei_migration_breakpoint
+
+WORKDIR=/Users/nadeaus/Documents/2019-ncov-data/analyses/2020-10-21_european_origins_bdmm_pnas_revision/with_hubei_migration_decrease
+ANALYSIS=with_hubei_migration_decrease
+
+# Submit real job on Euler: run 2 chains in parallel for min(12h, 10000000 samples):
+scp $WORKDIR/$ANALYSIS.xml nadeaus@euler.ethz.ch:/cluster/scratch/nadeaus/
+ssh nadeaus@euler.ethz.ch
+ANALYSIS=with_hubei_migration_decrease
+BEAST="/cluster/home/nadeaus/programs/beast/bin/beast"
+module load java/1.8
+
+mkdir -p $SCRATCH/$ANALYSIS/chain_1
+mkdir -p $SCRATCH/$ANALYSIS/chain_2
+
+mv $SCRATCH/$ANALYSIS.xml $SCRATCH/$ANALYSIS/chain_1/
+cp $SCRATCH/$ANALYSIS/chain_1/$ANALYSIS.xml $SCRATCH/$ANALYSIS/chain_2/
+
+cd $SCRATCH/$ANALYSIS/chain_1
+bsub \
+-B -N \
+-n 4 -R "rusage[mem=4096]" -W 12:00 \
+-o $SCRATCH/$ANALYSIS/chain_1/${ANALYSIS}_chain_1.out \
+$BEAST $SCRATCH/$ANALYSIS/chain_1/$ANALYSIS.xml
+
+cd $SCRATCH/$ANALYSIS/chain_2
+bsub \
+-B -N \
+-n 4 -R "rusage[mem=4096]" -W 12:00 \
+-o $SCRATCH/$ANALYSIS/chain_2/${ANALYSIS}_chain_2.out \
+$BEAST $SCRATCH/$ANALYSIS/chain_2/$ANALYSIS.xml
+
+# Submitted 17:45:00 on 2020-10-29
+
+# Re-start chains to run longer
+ssh nadeaus@euler.ethz.ch
+ANALYSIS=with_hubei_migration_decrease
+BEAST="/cluster/home/nadeaus/programs/beast/bin/beast"
+module load java/1.8
+
+cd $SCRATCH/$ANALYSIS/chain_1
+bsub \
+-B -N \
+-n 4 -R "rusage[mem=4096]" -W 12:00 \
+-o $SCRATCH/$ANALYSIS/chain_1/${ANALYSIS}_chain_1.out \
+$BEAST -resume $SCRATCH/$ANALYSIS/chain_1/$ANALYSIS.xml
+
+cd $SCRATCH/$ANALYSIS/chain_2
+bsub \
+-B -N \
+-n 4 -R "rusage[mem=4096]" -W 12:00 \
+-o $SCRATCH/$ANALYSIS/chain_2/${ANALYSIS}_chain_2.out \
+$BEAST -resume $SCRATCH/$ANALYSIS/chain_2/$ANALYSIS.xml
+
+# Chain 2 ran longer just fine, but chain 1 errored after running a few more samples with:
+Caused by: java.lang.Error: randomChoiceUnnormalized falls through -- negative components in input distribution?
+
+# I re-started a second time at 17:17 on 2020-11-10
+
+# I then started two additional chains to reach the 4 we had in the orignal submission 
+ssh nadeaus@euler.ethz.ch
+ANALYSIS=with_hubei_migration_decrease
+BEAST="/cluster/home/nadeaus/programs/beast/bin/beast"
+module load java/1.8
+
+mkdir -p $SCRATCH/$ANALYSIS/chain_3
+mkdir -p $SCRATCH/$ANALYSIS/chain_4
+cp $SCRATCH/$ANALYSIS/chain_1/$ANALYSIS.xml $SCRATCH/$ANALYSIS/chain_3/
+cp $SCRATCH/$ANALYSIS/chain_1/$ANALYSIS.xml $SCRATCH/$ANALYSIS/chain_4/
+
+cd $SCRATCH/$ANALYSIS/chain_3
+bsub \
+-B -N \
+-n 4 -R "rusage[mem=4096]" -W 12:00 \
+-o $SCRATCH/$ANALYSIS/chain_3/${ANALYSIS}_chain_3.out \
+$BEAST $SCRATCH/$ANALYSIS/chain_3/$ANALYSIS.xml
+
+cd $SCRATCH/$ANALYSIS/chain_4
+bsub \
+-B -N \
+-n 4 -R "rusage[mem=4096]" -W 12:00 \
+-o $SCRATCH/$ANALYSIS/chain_4/${ANALYSIS}_chain_4.out \
+$BEAST $SCRATCH/$ANALYSIS/chain_4/$ANALYSIS.xml
+
+# Resuming last 2 chains for a few more hours
+
+ssh nadeaus@euler.ethz.ch
+ANALYSIS=with_hubei_migration_decrease
+BEAST="/cluster/home/nadeaus/programs/beast/bin/beast"
+module load java/1.8
+cd $SCRATCH/$ANALYSIS/chain_3
+bsub \
+-B -N \
+-n 4 -R "rusage[mem=4096]" -W 4:00 \
+-o $SCRATCH/$ANALYSIS/chain_3/${ANALYSIS}_chain_3.out \
+$BEAST -resume $SCRATCH/$ANALYSIS/chain_3/$ANALYSIS.xml
+
+cd $SCRATCH/$ANALYSIS/chain_4
+bsub \
+-B -N \
+-n 4 -R "rusage[mem=4096]" -W 4:00 \
+-o $SCRATCH/$ANALYSIS/chain_4/${ANALYSIS}_chain_4.out \
+$BEAST -resume $SCRATCH/$ANALYSIS/chain_4/$ANALYSIS.xml
+
+# Combine logs
+ssh nadeaus@euler.ethz.ch
+ANALYSIS=with_hubei_migration_decrease
+BEAST="/cluster/home/nadeaus/programs/beast/bin/beast"
+module load java/1.8
+
+LOGCOMBINER="/cluster/home/nadeaus/programs/beast/bin/logcombiner"
+bsub -o $SCRATCH/$ANALYSIS/logcombiner_logs.out \
+$LOGCOMBINER \
+-log $SCRATCH/$ANALYSIS/chain_1/*[^0-9].log \
+-log $SCRATCH/$ANALYSIS/chain_2/*[^0-9].log \
+-log $SCRATCH/$ANALYSIS/chain_3/*[^0-9].log \
+-log $SCRATCH/$ANALYSIS/chain_4/*[^0-9].log \
+-o $SCRATCH/$ANALYSIS/combined_chains.log \
+-b 10 
+
+bsub -o $SCRATCH/$ANALYSIS/logcombiner_trees.out \
+$LOGCOMBINER \
+-log $SCRATCH/$ANALYSIS/chain_1/*typed.node.trees \
+-log $SCRATCH/$ANALYSIS/chain_2/*typed.node.trees \
+-log $SCRATCH/$ANALYSIS/chain_3/*typed.node.trees \
+-log $SCRATCH/$ANALYSIS/chain_4/*typed.node.trees \
+-o $SCRATCH/$ANALYSIS/combined_chains.typed.node.trees \
+-b 10 \
+-resample 4000
+
+# Fetch results 
+WORKDIR=/Users/nadeaus/Documents/2019-ncov-data/analyses/2020-10-21_european_origins_bdmm_pnas_revision/with_hubei_migration_decrease
+ANALYSIS=with_hubei_migration_decrease
+mkdir -p $WORKDIR/raw_results
+mkdir -p $WORKDIR/processed_results
+scp nadeaus@euler.ethz.ch:/cluster/scratch/nadeaus/$ANALYSIS/chain_1/*[^0-9].log $WORKDIR/raw_results/chain_1.log
+scp nadeaus@euler.ethz.ch:/cluster/scratch/nadeaus/$ANALYSIS/chain_2/*[^0-9].log $WORKDIR/raw_results/chain_2.log
+scp nadeaus@euler.ethz.ch:/cluster/scratch/nadeaus/$ANALYSIS/chain_3/*[^0-9].log $WORKDIR/raw_results/chain_3.log
+scp nadeaus@euler.ethz.ch:/cluster/scratch/nadeaus/$ANALYSIS/chain_4/*[^0-9].log $WORKDIR/raw_results/chain_4.log
+scp nadeaus@euler.ethz.ch:/cluster/scratch/nadeaus/$ANALYSIS/chain_1/*typed.node.trees $WORKDIR/raw_results/chain_1.trees
+scp nadeaus@euler.ethz.ch:/cluster/scratch/nadeaus/$ANALYSIS/chain_2/*typed.node.trees $WORKDIR/raw_results/chain_2.trees
+scp nadeaus@euler.ethz.ch:/cluster/scratch/nadeaus/$ANALYSIS/chain_3/*typed.node.trees $WORKDIR/raw_results/chain_3.trees
+scp nadeaus@euler.ethz.ch:/cluster/scratch/nadeaus/$ANALYSIS/chain_4/*typed.node.trees $WORKDIR/raw_results/chain_4.trees
+
+scp nadeaus@euler.ethz.ch:/cluster/scratch/nadeaus/$ANALYSIS/combined_chains.log $WORKDIR/processed_results/combined_chains.log
+scp nadeaus@euler.ethz.ch:/cluster/scratch/nadeaus/$ANALYSIS/combined_chains.typed.node.trees $WORKDIR/processed_results/combined_chains.typed.node.trees
+
+TREEANNOTATOR="/Users/nadeaus/programs/BEAST2.6.2/bin/treeannotator"
+$TREEANNOTATOR \
+$WORKDIR/processed_results/combined_chains.typed.node.trees \
+$WORKDIR/processed_results/combined_chains_mcc.typed.node.tree
+
+
+# with_new_seqs_spain_deme_migration_rate_decrease ------------------------------------------
+# Update the alignment including sequences that may have been submitted after my last data pull for original submission same alignment
+# Include Spain as an additional deme
+# Since there are now many more seqs, can't take all from each European deme of interest or deaths + 1 from OtherEuropean: 
+#	take 30 from each European deme of interest
+#	take proporationally from deaths with 20-day delay out of 30 for OtherEuropean
+# The migration rate is allowed to decrease on Jan. 23
+# I also condition on survival
+# In the XML setup:
+	# Have initial values vary for each entry in migration rate matrix, but identical across epochs
+	# Change migration rate prior to have spec="bdmmprime.util.priors.SmartZeroExcludingPrior"
+	# Change migration rate and sampling proportion operators to have spec="bdmmprime.util.operators.SmartScaleOperator"
+	# Add operator on migration rate scale factor f: <operator id="fEpiScaler" spec="bdmmprime.util.operators.SmartScaleOperator" parameter="@f" scaleFactor="0.75" weight="3.0"/>
+	# Add uniform(0, 1) prior on migration rate scale factor f
+	# Add uniform(0, x_d) sampling proportion priors for each deme, where x_d is the number of sequences included / the total number of confirmed cases at the end of the sampling period
+	# Add function that multiplies migration rates after migration rate breakpoint by migration rate scale factor f
+	# Log the migration rate scale factor f: <log idref="f"/>
+	# Change migration rate parameter name to not include special characters ":" or "."
+	# Add parameter migration rate scale factor f: <parameter id="f" spec="parameter.RealParameter" name="stateNode">0.5</parameter>
+
+WORKDIR=/Users/nadeaus/Documents/2019-ncov-data/analyses/2020-10-21_european_origins_bdmm_pnas_revision/with_new_seqs_spain_deme_migration_rate_decrease
+ANALYSIS=with_new_seqs_spain_deme_migration_rate_decrease
+
+# Submit real job on Euler: run 2 chains in parallel for min(24h, 10000000 samples):
+scp $WORKDIR/xml/$ANALYSIS.xml nadeaus@euler.ethz.ch:/cluster/scratch/nadeaus/
+ssh nadeaus@euler.ethz.ch
+ANALYSIS=with_new_seqs_spain_deme_migration_rate_decrease
+BEAST="/cluster/home/nadeaus/programs/beast/bin/beast"
+module load java/1.8
+
+mkdir -p $SCRATCH/$ANALYSIS/chain_1
+mkdir -p $SCRATCH/$ANALYSIS/chain_2
+
+mv $SCRATCH/$ANALYSIS.xml $SCRATCH/$ANALYSIS/chain_1/
+cp $SCRATCH/$ANALYSIS/chain_1/$ANALYSIS.xml $SCRATCH/$ANALYSIS/chain_2/
+
+cd $SCRATCH/$ANALYSIS/chain_1
+bsub \
+-B -N \
+-n 4 -R "rusage[mem=4096]" -W 24:00 \
+-o $SCRATCH/$ANALYSIS/chain_1/${ANALYSIS}_chain_1.out \
+$BEAST $SCRATCH/$ANALYSIS/chain_1/$ANALYSIS.xml
+
+cd $SCRATCH/$ANALYSIS/chain_2
+bsub \
+-B -N \
+-n 4 -R "rusage[mem=4096]" -W 24:00 \
+-o $SCRATCH/$ANALYSIS/chain_2/${ANALYSIS}_chain_2.out \
+$BEAST $SCRATCH/$ANALYSIS/chain_2/$ANALYSIS.xml
+
+# Submitted 12:50 on 2020-11-10
+
+# I realized that I kept the Hubei sampling proportion at 0.15 as per previous analysis, but now I've decided to bound sampling proportion based on cases at the end of the sampling interval
+# Correcting to upper bound of 10 / 375 cases in Hubei as on 23. Jan (WHO situation report) = 0.027
+
+WORKDIR=/Users/nadeaus/Documents/2019-ncov-data/analyses/2020-10-21_european_origins_bdmm_pnas_revision/with_new_seqs_spain_deme_migration_rate_decrease_fixed_hubei_samp_bound
+ANALYSIS=with_new_seqs_spain_deme_migration_rate_decrease_fixed_hubei_samp_bound
+scp $WORKDIR/xml/$ANALYSIS.xml nadeaus@euler.ethz.ch:/cluster/scratch/nadeaus/
+ssh nadeaus@euler.ethz.ch
+ANALYSIS=with_new_seqs_spain_deme_migration_rate_decrease_fixed_hubei_samp_bound
+BEAST="/cluster/home/nadeaus/programs/beast/bin/beast"
+module load java/1.8
+
+mkdir -p $SCRATCH/$ANALYSIS/chain_1
+mkdir -p $SCRATCH/$ANALYSIS/chain_2
+
+mv $SCRATCH/$ANALYSIS.xml $SCRATCH/$ANALYSIS/chain_1/
+cp $SCRATCH/$ANALYSIS/chain_1/$ANALYSIS.xml $SCRATCH/$ANALYSIS/chain_2/
+
+cd $SCRATCH/$ANALYSIS/chain_1
+bsub \
+-B -N \
+-n 4 -R "rusage[mem=4096]" -W 24:00 \
+-o $SCRATCH/$ANALYSIS/chain_1/${ANALYSIS}_chain_1.out \
+$BEAST $SCRATCH/$ANALYSIS/chain_1/$ANALYSIS.xml
+
+cd $SCRATCH/$ANALYSIS/chain_2
+bsub \
+-B -N \
+-n 4 -R "rusage[mem=4096]" -W 24:00 \
+-o $SCRATCH/$ANALYSIS/chain_2/${ANALYSIS}_chain_2.out \
+$BEAST $SCRATCH/$ANALYSIS/chain_2/$ANALYSIS.xml
+
+# Submitted 17:25 on 2020-11-10
+
+# Combine logs
+ssh nadeaus@euler.ethz.ch
+ANALYSIS=with_new_seqs_spain_deme_migration_rate_decrease_fixed_hubei_samp_bound
+BEAST="/cluster/home/nadeaus/programs/beast/bin/beast"
+module load java/1.8
+
+LOGCOMBINER="/cluster/home/nadeaus/programs/beast/bin/logcombiner"
+bsub -o $SCRATCH/$ANALYSIS/logcombiner_logs.out \
+$LOGCOMBINER \
+-log $SCRATCH/$ANALYSIS/chain_1/*[^0-9].log \
+-log $SCRATCH/$ANALYSIS/chain_2/*[^0-9].log \
+-o $SCRATCH/$ANALYSIS/combined_chains.log \
+-b 10 
+
+bsub -o $SCRATCH/$ANALYSIS/logcombiner_trees.out \
+$LOGCOMBINER \
+-log $SCRATCH/$ANALYSIS/chain_1/*typed.node.trees \
+-log $SCRATCH/$ANALYSIS/chain_2/*typed.node.trees \
+-o $SCRATCH/$ANALYSIS/combined_chains.typed.node.trees \
+-b 10 \
+-resample 2000
+
+# Fetch results 
+WORKDIR=/Users/nadeaus/Documents/2019-ncov-data/analyses/2020-10-21_european_origins_bdmm_pnas_revision/with_new_seqs_spain_deme_migration_rate_decrease_fixed_hubei_samp_bound
+ANALYSIS=with_new_seqs_spain_deme_migration_rate_decrease_fixed_hubei_samp_bound
+mkdir -p $WORKDIR/raw_results
+mkdir -p $WORKDIR/processed_results
+scp nadeaus@euler.ethz.ch:/cluster/scratch/nadeaus/$ANALYSIS/chain_1/*[^0-9].log $WORKDIR/raw_results/chain_1.log
+scp nadeaus@euler.ethz.ch:/cluster/scratch/nadeaus/$ANALYSIS/chain_2/*[^0-9].log $WORKDIR/raw_results/chain_2.log
+
+scp nadeaus@euler.ethz.ch:/cluster/scratch/nadeaus/$ANALYSIS/combined_chains.log $WORKDIR/processed_results/combined_chains.log
+scp nadeaus@euler.ethz.ch:/cluster/scratch/nadeaus/$ANALYSIS/combined_chains.typed.node.trees $WORKDIR/processed_results/combined_chains.typed.node.trees
+
+TREEANNOTATOR="/Users/nadeaus/programs/BEAST2.6.2/bin/treeannotator"
+$TREEANNOTATOR \
+$WORKDIR/processed_results/combined_chains.typed.node.trees \
+$WORKDIR/processed_results/combined_chains_mcc.typed.node.tree
+
+# with_new_seqs_spain_no_france_deme_migration_rate_decrease ------------------------------------------
+# Update the alignment including sequences that may have been submitted after my last data pull for original submission same alignment
+# Include Spain as a deme of interest, remove France (because Spain had more confirmed cases by 2020-03-08 than France)
+# Since there are now many more seqs, can't take all from each European deme of interest or deaths + 1 from OtherEuropean: 
+#	take 30 from each European deme of interest
+#	take proporationally from deaths with 20-day delay out of 30 for OtherEuropean
+# The migration rate is allowed to decrease on Jan. 23
+# I also condition on survival
+# In the XML setup:
+	# DONE: Have initial values vary for each entry in migration rate matrix, but identical across epochs
+	# DONE: Change migration rate prior to have spec="bdmmprime.util.priors.SmartZeroExcludingPrior"
+	# DONE: Change migration rate and sampling proportion operators to have spec="bdmmprime.util.operators.SmartScaleOperator"
+	# DONE: Add operator on migration rate scale factor f: <operator id="fEpiScaler" spec="bdmmprime.util.operators.SmartScaleOperator" parameter="@f" scaleFactor="0.75" weight="3.0"/>
+	# DONE: Add uniform(0, 1) prior on migration rate scale factor f
+	# DONE: Update the sampling proportion bounds considering which countries are in the OtherEuropean deme
+	# DONE: Add uniform(0, x_d) sampling proportion priors for each deme, where x_d is the number of sequences included / the total number of confirmed cases at the end of the sampling period
+	# DONE: Add function that multiplies migration rates after migration rate breakpoint by migration rate scale factor f
+	# DONE: Log the migration rate scale factor f: <log idref="f"/>
+	# DONE: Change migration rate parameter name to not include special characters ":" or "."
+	# DONE: Add parameter migration rate scale factor f: <parameter id="f" spec="parameter.RealParameter" name="stateNode">0.5</parameter>
+
+WORKDIR=/Users/nadeaus/Documents/2019-ncov-data/analyses/2020-10-21_european_origins_bdmm_pnas_revision/with_new_seqs_spain_no_france_deme_migration_rate_decrease
+ANALYSIS=with_new_seqs_spain_no_france_deme_migration_rate_decrease
+
+# Test the XML locally:
+cd ~/Downloads
+BEAST="/Users/nadeaus/programs/BEAST2.6.2/bin/beast"
+$BEAST $WORKDIR/xml/$ANALYSIS.xml
+
+# Submit real job on Euler: run 2 chains in parallel for min(12h, 10000000 samples):
+scp $WORKDIR/xml/$ANALYSIS.xml nadeaus@euler.ethz.ch:/cluster/scratch/nadeaus/
+ssh nadeaus@euler.ethz.ch
+ANALYSIS=with_new_seqs_spain_no_france_deme_migration_rate_decrease
+BEAST="/cluster/home/nadeaus/programs/beast/bin/beast"
+module load java/1.8
+
+mkdir -p $SCRATCH/$ANALYSIS/chain_1
+mkdir -p $SCRATCH/$ANALYSIS/chain_2
+
+mv $SCRATCH/$ANALYSIS.xml $SCRATCH/$ANALYSIS/chain_1/
+cp $SCRATCH/$ANALYSIS/chain_1/$ANALYSIS.xml $SCRATCH/$ANALYSIS/chain_2/
+
+cd $SCRATCH/$ANALYSIS/chain_1
+bsub \
+-B -N \
+-n 4 -R "rusage[mem=4096]" -W 12:00 \
+-o $SCRATCH/$ANALYSIS/chain_1/${ANALYSIS}_chain_1.out \
+$BEAST $SCRATCH/$ANALYSIS/chain_1/$ANALYSIS.xml
+
+cd $SCRATCH/$ANALYSIS/chain_2
+bsub \
+-B -N \
+-n 4 -R "rusage[mem=4096]" -W 12:00 \
+-o $SCRATCH/$ANALYSIS/chain_2/${ANALYSIS}_chain_2.out \
+$BEAST $SCRATCH/$ANALYSIS/chain_2/$ANALYSIS.xml
+
+# Submitted 17:40 on 2020-11-10
+
+# Re-start chains to run longer
+ssh nadeaus@euler.ethz.ch
+ANALYSIS=with_hubei_migration_decrease
+BEAST="/cluster/home/nadeaus/programs/beast/bin/beast"
+module load java/1.8
+
+cd $SCRATCH/$ANALYSIS/chain_1
+bsub \
+-B -N \
+-n 4 -R "rusage[mem=4096]" -W 12:00 \
+-o $SCRATCH/$ANALYSIS/chain_1/${ANALYSIS}_chain_1.out \
+$BEAST -resume $SCRATCH/$ANALYSIS/chain_1/$ANALYSIS.xml
+
+cd $SCRATCH/$ANALYSIS/chain_2
+bsub \
+-B -N \
+-n 4 -R "rusage[mem=4096]" -W 12:00 \
+-o $SCRATCH/$ANALYSIS/chain_2/${ANALYSIS}_chain_2.out \
+$BEAST -resume $SCRATCH/$ANALYSIS/chain_2/$ANALYSIS.xml
+
+# Submitted 2020-11-11 at 8:05
+
+# with_hubei_migration_decrease_low_migration_prior ------------------------------------------
+WORKDIR=/Users/nadeaus/Documents/2019-ncov-data/analyses/2020-10-21_european_origins_bdmm_pnas_revision/with_hubei_migration_decrease_low_migration_prior
+ANALYSIS=with_hubei_migration_decrease_low_migration_prior
+
+scp $WORKDIR/xml/$ANALYSIS.xml nadeaus@euler.ethz.ch:/cluster/scratch/nadeaus/
+ssh nadeaus@euler.ethz.ch
+ANALYSIS=with_hubei_migration_decrease_low_migration_prior
+BEAST="/cluster/home/nadeaus/programs/beast/bin/beast"
+module load java/1.8
+
+mkdir -p $SCRATCH/$ANALYSIS/chain_1
+mkdir -p $SCRATCH/$ANALYSIS/chain_2
+
+mv $SCRATCH/$ANALYSIS.xml $SCRATCH/$ANALYSIS/chain_1/
+cp $SCRATCH/$ANALYSIS/chain_1/$ANALYSIS.xml $SCRATCH/$ANALYSIS/chain_2/
+
+cd $SCRATCH/$ANALYSIS/chain_1
+bsub \
+-B -N \
+-n 4 -R "rusage[mem=4096]" -W 12:00 \
+-o $SCRATCH/$ANALYSIS/chain_1/${ANALYSIS}_chain_1.out \
+$BEAST $SCRATCH/$ANALYSIS/chain_1/$ANALYSIS.xml
+
+cd $SCRATCH/$ANALYSIS/chain_2
+bsub \
+-B -N \
+-n 4 -R "rusage[mem=4096]" -W 12:00 \
+-o $SCRATCH/$ANALYSIS/chain_2/${ANALYSIS}_chain_2.out \
+$BEAST $SCRATCH/$ANALYSIS/chain_2/$ANALYSIS.xml
+
+# Submitted 22:24 on 2020-11-10
+
+# Run longer
+ssh nadeaus@euler.ethz.ch
+ANALYSIS=with_hubei_migration_decrease_low_migration_prior
+BEAST="/cluster/home/nadeaus/programs/beast/bin/beast"
+module load java/1.8
+
+cd $SCRATCH/$ANALYSIS/chain_1
+bsub \
+-B -N \
+-n 4 -R "rusage[mem=4096]" -W 6:00 \
+-o $SCRATCH/$ANALYSIS/chain_1/${ANALYSIS}_chain_1.out \
+$BEAST -resume $SCRATCH/$ANALYSIS/chain_1/$ANALYSIS.xml
+
+cd $SCRATCH/$ANALYSIS/chain_2
+bsub \
+-B -N \
+-n 4 -R "rusage[mem=4096]" -W 6:00 \
+-o $SCRATCH/$ANALYSIS/chain_2/${ANALYSIS}_chain_2.out \
+$BEAST -resume $SCRATCH/$ANALYSIS/chain_2/$ANALYSIS.xml
+
+# Combine logs
+ssh nadeaus@euler.ethz.ch
+ANALYSIS=with_hubei_migration_decrease_low_migration_prior
+BEAST="/cluster/home/nadeaus/programs/beast/bin/beast"
+module load java/1.8
+
+LOGCOMBINER="/cluster/home/nadeaus/programs/beast/bin/logcombiner"
+bsub -o $SCRATCH/$ANALYSIS/logcombiner_logs.out \
+$LOGCOMBINER \
+-log $SCRATCH/$ANALYSIS/chain_1/*[^0-9].log \
+-log $SCRATCH/$ANALYSIS/chain_2/*[^0-9].log \
+-o $SCRATCH/$ANALYSIS/combined_chains.log \
+-b 10 
+
+bsub -o $SCRATCH/$ANALYSIS/logcombiner_trees.out \
+$LOGCOMBINER \
+-log $SCRATCH/$ANALYSIS/chain_1/*typed.node.trees \
+-log $SCRATCH/$ANALYSIS/chain_2/*typed.node.trees \
+-o $SCRATCH/$ANALYSIS/combined_chains.typed.node.trees \
+-b 10 \
+-resample 2000
+
+# Fetch results 
+WORKDIR=/Users/nadeaus/Documents/2019-ncov-data/analyses/2020-10-21_european_origins_bdmm_pnas_revision/with_hubei_migration_decrease_low_migration_prior
+ANALYSIS=with_hubei_migration_decrease_low_migration_prior
+mkdir -p $WORKDIR/raw_results
+mkdir -p $WORKDIR/processed_results
+scp nadeaus@euler.ethz.ch:/cluster/scratch/nadeaus/$ANALYSIS/chain_1/*[^0-9].log $WORKDIR/raw_results/chain_1.log
+scp nadeaus@euler.ethz.ch:/cluster/scratch/nadeaus/$ANALYSIS/chain_2/*[^0-9].log $WORKDIR/raw_results/chain_2.log
+
+scp nadeaus@euler.ethz.ch:/cluster/scratch/nadeaus/$ANALYSIS/combined_chains.log $WORKDIR/processed_results/combined_chains.log
+scp nadeaus@euler.ethz.ch:/cluster/scratch/nadeaus/$ANALYSIS/combined_chains.typed.node.trees $WORKDIR/processed_results/combined_chains.typed.node.trees
+
+TREEANNOTATOR="/Users/nadeaus/programs/BEAST2.6.2/bin/treeannotator"
+$TREEANNOTATOR \
+$WORKDIR/processed_results/combined_chains.typed.node.trees \
+$WORKDIR/processed_results/combined_chains_mcc.typed.node.tree
+
+

@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><beast beautitemplate='Standard' beautistatus='noAutoSetClockRate' namespace="beast.core:beast.evolution.alignment:beast.evolution.tree.coalescent:beast.core.util:beast.evolution.nuc:beast.evolution.operators:beast.evolution.sitemodel:beast.evolution.substitutionmodel:beast.evolution.likelihood" required="" version="2.6">
+
+
+    <data
+id="orig_submission"
+spec="Alignment"
+name="alignment">
+                        
+<!-- Sequence data scrubbed from file. It's available for download from GISAID.org subject to a user agreement. -->
+    
+<map name="Uniform" >beast.math.distributions.Uniform</map>
+<map name="Exponential" >beast.math.distributions.Exponential</map>
+<map name="LogNormal" >beast.math.distributions.LogNormalDistributionModel</map>
+<map name="Normal" >beast.math.distributions.Normal</map>
+<map name="Beta" >beast.math.distributions.Beta</map>
+<map name="Gamma" >beast.math.distributions.Gamma</map>
+<map name="LaplaceDistribution" >beast.math.distributions.LaplaceDistribution</map>
+<map name="prior" >beast.math.distributions.Prior</map>
+<map name="InverseGamma" >beast.math.distributions.InverseGamma</map>
+<map name="OneOnX" >beast.math.distributions.OneOnX</map>
+
+
+<run id="mcmc" spec="MCMC" chainLength="10000000">
+    <state id="state" spec="State" storeEvery="5000">
+        <tree id="Tree.t:orig_submission" spec="beast.evolution.tree.Tree" name="stateNode">
+            <trait id="dateTrait.t:orig_submission" spec="beast.evolution.tree.TraitSet" dateFormat="yyyy-M-dd" traitname="date" value="EPI_ISL_414446|OtherEuropean|2020-03-03=2020-03-03,EPI_ISL_406800|Hubei|2020-01-01=2020-01-01,EPI_ISL_417684|OtherEuropean|2020-03-06=2020-03-06,EPI_ISL_417007|OtherEuropean|2020-03-07=2020-03-07,EPI_ISL_416511|France|2020-03-07=2020-03-07,EPI_ISL_416512|France|2020-03-07=2020-03-07,EPI_ISL_416513|France|2020-03-07=2020-03-07,EPI_ISL_416509|France|2020-03-06=2020-03-06,EPI_ISL_416510|France|2020-03-06=2020-03-06,EPI_ISL_416506|France|2020-03-03=2020-03-03,EPI_ISL_416508|France|2020-03-06=2020-03-06,EPI_ISL_416507|France|2020-03-05=2020-03-05,EPI_ISL_413489|Italy|2020-03-03=2020-03-03,EPI_ISL_413488|Germany|2020-02-28=2020-02-28,EPI_ISL_417421|Italy|2020-03-01=2020-03-01,EPI_ISL_417418|Italy|2020-03-01=2020-03-01,EPI_ISL_417419|Italy|2020-03-01=2020-03-01,EPI_ISL_417491|Italy|2020-03-03=2020-03-03,EPI_ISL_417423|Italy|2020-03-01=2020-03-01,EPI_ISL_408431|France|2020-01-29=2020-01-29,EPI_ISL_414524|OtherEuropean|2020-03-01=2020-03-01,EPI_ISL_414507|Germany|2020-03-03=2020-03-03,EPI_ISL_414505|Germany|2020-02-27=2020-02-27,EPI_ISL_414504|Germany|2020-02-26=2020-02-26,EPI_ISL_414509|Germany|2020-02-28=2020-02-28,EPI_ISL_414506|Germany|2020-02-27=2020-02-27,EPI_ISL_414508|Germany|2020-02-27=2020-02-27,EPI_ISL_408430|France|2020-01-29=2020-01-29,EPI_ISL_414521|Germany|2020-03-02=2020-03-02,EPI_ISL_414520|Germany|2020-03-02=2020-03-02,EPI_ISL_414574|Germany|2020-02-28=2020-02-28,EPI_ISL_414564|OtherEuropean|2020-03-08=2020-03-08,EPI_ISL_414598|OtherEuropean|2020-03-05=2020-03-05,EPI_ISL_414470|OtherEuropean|2020-03-06=2020-03-06,EPI_ISL_414461|OtherEuropean|2020-03-04=2020-03-04,EPI_ISL_406862|Germany|2020-01-28=2020-01-28,EPI_ISL_414477|OtherEuropean|2020-03-01=2020-03-01,EPI_ISL_415704|OtherEuropean|2020-03-04=2020-03-04,EPI_ISL_414495|OtherEuropean|2020-03-08=2020-03-08,EPI_ISL_414497|Germany|2020-02-25=2020-02-25,EPI_ISL_414499|Germany|2020-02-26=2020-02-26,EPI_ISL_414498|Germany|2020-02-26=2020-02-26,EPI_ISL_414496|OtherEuropean|2020-03-04=2020-03-04,EPI_ISL_417334|France|2020-03-04=2020-03-04,EPI_ISL_417340|France|2020-03-07=2020-03-07,EPI_ISL_417338|France|2020-03-07=2020-03-07,EPI_ISL_417336|France|2020-03-06=2020-03-06,EPI_ISL_417337|France|2020-03-07=2020-03-07,EPI_ISL_417339|France|2020-03-08=2020-03-08,EPI_ISL_417333|France|2020-03-04=2020-03-04,EPI_ISL_417335|France|2020-03-06=2020-03-06,EPI_ISL_417432|OtherEuropean|2020-03-08=2020-03-08,EPI_ISL_415650|France|2020-03-02=2020-03-02,EPI_ISL_415649|France|2020-03-05=2020-03-05,EPI_ISL_415652|France|2020-03-05=2020-03-05,EPI_ISL_415651|France|2020-03-05=2020-03-05,EPI_ISL_417489|OtherEuropean|2020-02-29=2020-02-29,EPI_ISL_417447|Italy|2020-02-24=2020-02-24,EPI_ISL_415646|OtherEuropean|2020-03-03=2020-03-03,EPI_ISL_406798|Hubei|2019-12-26=2019-12-26,EPI_ISL_415653|France|2020-03-08=2020-03-08,EPI_ISL_417445|Italy|2020-02-24=2020-02-24,EPI_ISL_416504|France|2020-03-02=2020-03-02,EPI_ISL_416505|France|2020-03-02=2020-03-02,EPI_ISL_416502|France|2020-02-26=2020-02-26,EPI_ISL_417880|OtherEuropean|2020-03-08=2020-03-08,EPI_ISL_416503|France|2020-03-01=2020-03-01,EPI_ISL_418011|OtherEuropean|2020-03-04=2020-03-04,EPI_ISL_416493|France|2020-03-08=2020-03-08,EPI_ISL_416494|France|2020-03-04=2020-03-04,EPI_ISL_415143|OtherEuropean|2020-03-02=2020-03-02,EPI_ISL_415149|OtherEuropean|2020-03-01=2020-03-01,EPI_ISL_412980|Hubei|2020-01-18=2020-01-18,EPI_ISL_412981|Hubei|2020-01-18=2020-01-18,EPI_ISL_416485|OtherEuropean|2020-02-27=2020-02-27,EPI_ISL_416483|OtherEuropean|2020-02-26=2020-02-26,EPI_ISL_416475|OtherEuropean|2020-03-03=2020-03-03,EPI_ISL_414626|France|2020-02-29=2020-02-29,EPI_ISL_414638|France|2020-03-04=2020-03-04,EPI_ISL_414635|France|2020-03-04=2020-03-04,EPI_ISL_414631|France|2020-03-04=2020-03-04,EPI_ISL_414624|France|2020-02-26=2020-02-26,EPI_ISL_414633|France|2020-03-04=2020-03-04,EPI_ISL_414625|France|2020-02-26=2020-02-26,EPI_ISL_414630|France|2020-03-03=2020-03-03,EPI_ISL_414632|France|2020-03-04=2020-03-04,EPI_ISL_414627|France|2020-03-02=2020-03-02,EPI_ISL_414637|France|2020-03-04=2020-03-04,EPI_ISL_414642|OtherEuropean|2020-03-08=2020-03-08,EPI_ISL_414629|France|2020-03-03=2020-03-03,EPI_ISL_414634|France|2020-03-04=2020-03-04,EPI_ISL_414636|France|2020-03-04=2020-03-04,EPI_ISL_414623|France|2020-02-25=2020-02-25,EPI_ISL_417234|OtherEuropean|2020-03-02=2020-03-02,EPI_ISL_417206|OtherEuropean|2020-03-06=2020-03-06,EPI_ISL_406596|France|2020-01-23=2020-01-23,EPI_ISL_416750|France|2020-03-06=2020-03-06,EPI_ISL_416754|France|2020-03-06=2020-03-06,EPI_ISL_416751|France|2020-03-05=2020-03-05,EPI_ISL_416753|France|2020-03-06=2020-03-06,EPI_ISL_417205|OtherEuropean|2020-03-02=2020-03-02,EPI_ISL_417981|OtherEuropean|2020-03-02=2020-03-02,EPI_ISL_413593|OtherEuropean|2020-02-29=2020-02-29,EPI_ISL_416488|OtherEuropean|2020-03-03=2020-03-03,EPI_ISL_418219|France|2020-02-26=2020-02-26,EPI_ISL_418218|France|2020-02-21=2020-02-21,EPI_ISL_415698|OtherEuropean|2020-02-27=2020-02-27,EPI_ISL_406716|Hubei|2020-01-02=2020-01-02,EPI_ISL_406717|Hubei|2020-01-02=2020-01-02,EPI_ISL_416752|France|2020-03-04=2020-03-04,EPI_ISL_416749|France|2020-03-04=2020-03-04,EPI_ISL_416756|France|2020-03-06=2020-03-06,EPI_ISL_416757|France|2020-03-07=2020-03-07,EPI_ISL_416747|France|2020-03-04=2020-03-04,EPI_ISL_416758|France|2020-03-08=2020-03-08,EPI_ISL_416748|France|2020-03-04=2020-03-04,EPI_ISL_416746|France|2020-03-03=2020-03-03,EPI_ISL_402121|Hubei|2019-12-30=2019-12-30,EPI_ISL_402125|Hubei|2019-12-26=2019-12-26,EPI_ISL_412973|Italy|2020-02-20=2020-02-20,EPI_ISL_418220|France|2020-02-28=2020-02-28,EPI_ISL_418224|France|2020-03-08=2020-03-08,EPI_ISL_418223|France|2020-03-05=2020-03-05,EPI_ISL_418225|France|2020-03-08=2020-03-08,EPI_ISL_418221|France|2020-03-02=2020-03-02,EPI_ISL_418222|France|2020-03-04=2020-03-04,EPI_ISL_418251|OtherEuropean|2020-02-25=2020-02-25,EPI_ISL_418246|OtherEuropean|2020-03-01=2020-03-01,EPI_ISL_418245|OtherEuropean|2020-03-01=2020-03-01,EPI_ISL_418247|OtherEuropean|2020-02-26=2020-02-26,EPI_ISL_418249|OtherEuropean|2020-03-03=2020-03-03,EPI_ISL_418248|OtherEuropean|2020-03-01=2020-03-01,EPI_ISL_418243|OtherEuropean|2020-02-28=2020-02-28,EPI_ISL_402130|Hubei|2019-12-30=2019-12-30,EPI_ISL_412912|Germany|2020-02-25=2020-02-25,EPI_ISL_418252|OtherEuropean|2020-03-04=2020-03-04,EPI_ISL_410546|Italy|2020-01-29=2020-01-29,EPI_ISL_414021|OtherEuropean|2020-02-27=2020-02-27,EPI_ISL_417979|OtherEuropean|2020-03-03=2020-03-03,EPI_ISL_417921|Italy|2020-03-01=2020-03-01,EPI_ISL_417922|Italy|2020-02-28=2020-02-28,EPI_ISL_417923|Italy|2020-03-04=2020-03-04,EPI_ISL_411957|Hubei|2020-01-08=2020-01-08,EPI_ISL_411951|OtherEuropean|2020-02-07=2020-02-07,EPI_ISL_410486|France|2020-02-08=2020-02-08">
+                <taxa id="TaxonSet.orig_submission" spec="TaxonSet">
+                    <alignment idref="orig_submission"/>
+                </taxa>
+            </trait>
+            <taxonset idref="TaxonSet.orig_submission"/>
+        </tree>
+        <parameter id="gammaShape.s:orig_submission" spec="parameter.RealParameter" name="stateNode">1.0</parameter>
+        <parameter id="kappa.s:orig_submission" spec="parameter.RealParameter" lower="0.0" name="stateNode">2.0</parameter>
+        <parameter id="originBDMMPrime.t:orig_submission" spec="parameter.RealParameter" name="stateNode">10.0</parameter>
+        <parameter id="R0Epi.t:orig_submission" spec="parameter.RealParameter" dimension="5" name="stateNode">1.0 1.0 1.0 1.0 1.0</parameter>
+        <parameter id="samplingProportionEpi.t:orig_submission" spec="parameter.RealParameter" dimension="15" lower="0.0" name="stateNode" upper="1.0">1.1E-5 1.2E-5 0.0 1.3E-5 1.4E-5 1.1E-5 1.2E-5 1.5E-5 1.3E-5 1.4E-5 0.0 0.0 0.0 0.0 0.0</parameter>
+        <parameter id="migrationRateEpi_t_orig_submission" spec="parameter.RealParameter" dimension="40" name="stateNode">
+        	0.14 0.0 0.18 0.22 0.1 0.0 0.19 0.23 0.11 0.15 0.2 0.24 0.12 0.16 0.0 0.25 0.13 0.17 0.0 0.21 
+        	0.14 0.0 0.18 0.22 0.1 0.0 0.19 0.23 0.11 0.15 0.2 0.24 0.12 0.16 0.0 0.25 0.13 0.17 0.0 0.21</parameter>
+        <parameter id="f" spec="parameter.RealParameter" name="stateNode">0.5</parameter>
+    </state>
+
+    <init id="RandomTree.t:orig_submission" spec="beast.evolution.tree.RandomTree" estimate="false" initial="@Tree.t:orig_submission" taxa="@orig_submission">
+        <populationModel id="ConstantPopulation0.t:orig_submission" spec="ConstantPopulation">
+            <parameter id="randomPopSize.t:orig_submission" spec="parameter.RealParameter" name="popSize">1.0</parameter>
+        </populationModel>
+    </init>
+
+    <distribution id="posterior" spec="util.CompoundDistribution">
+        <distribution id="prior" spec="util.CompoundDistribution">
+            <distribution id="BDMMPrime.t:orig_submission" spec="bdmmprime.distribution.BirthDeathMigrationDistribution" conditionOnSurvival="false" tree="@Tree.t:orig_submission">
+                <parameterization id="EpiBDMMPrimeParameterization.t:orig_submission" spec="bdmmprime.parameterization.EpiParameterization" origin="@originBDMMPrime.t:orig_submission">
+                    <R0 id="R0SVEpi.t:orig_submission" spec="bdmmprime.parameterization.SkylineVectorParameter" origin="@originBDMMPrime.t:orig_submission" skylineValues="@R0Epi.t:orig_submission" timesAreAges="true">
+                        <typeSet id="typeSetBDMMPrime.t:orig_submission" spec="bdmmprime.parameterization.TypeSet">
+                            <typeTraitSet id="typeTraitSet.t:orig_submission" spec="bdmmprime.util.InitializedTraitSet" traitname="type" value="EPI_ISL_414446|OtherEuropean|2020-03-03=OtherEuropean,EPI_ISL_406800|Hubei|2020-01-01=Hubei,EPI_ISL_417684|OtherEuropean|2020-03-06=OtherEuropean,EPI_ISL_417007|OtherEuropean|2020-03-07=OtherEuropean,EPI_ISL_416511|France|2020-03-07=France,EPI_ISL_416512|France|2020-03-07=France,EPI_ISL_416513|France|2020-03-07=France,EPI_ISL_416509|France|2020-03-06=France,EPI_ISL_416510|France|2020-03-06=France,EPI_ISL_416506|France|2020-03-03=France,EPI_ISL_416508|France|2020-03-06=France,EPI_ISL_416507|France|2020-03-05=France,EPI_ISL_413489|Italy|2020-03-03=Italy,EPI_ISL_413488|Germany|2020-02-28=Germany,EPI_ISL_417421|Italy|2020-03-01=Italy,EPI_ISL_417418|Italy|2020-03-01=Italy,EPI_ISL_417419|Italy|2020-03-01=Italy,EPI_ISL_417491|Italy|2020-03-03=Italy,EPI_ISL_417423|Italy|2020-03-01=Italy,EPI_ISL_408431|France|2020-01-29=France,EPI_ISL_414524|OtherEuropean|2020-03-01=OtherEuropean,EPI_ISL_414507|Germany|2020-03-03=Germany,EPI_ISL_414505|Germany|2020-02-27=Germany,EPI_ISL_414504|Germany|2020-02-26=Germany,EPI_ISL_414509|Germany|2020-02-28=Germany,EPI_ISL_414506|Germany|2020-02-27=Germany,EPI_ISL_414508|Germany|2020-02-27=Germany,EPI_ISL_408430|France|2020-01-29=France,EPI_ISL_414521|Germany|2020-03-02=Germany,EPI_ISL_414520|Germany|2020-03-02=Germany,EPI_ISL_414574|Germany|2020-02-28=Germany,EPI_ISL_414564|OtherEuropean|2020-03-08=OtherEuropean,EPI_ISL_414598|OtherEuropean|2020-03-05=OtherEuropean,EPI_ISL_414470|OtherEuropean|2020-03-06=OtherEuropean,EPI_ISL_414461|OtherEuropean|2020-03-04=OtherEuropean,EPI_ISL_406862|Germany|2020-01-28=Germany,EPI_ISL_414477|OtherEuropean|2020-03-01=OtherEuropean,EPI_ISL_415704|OtherEuropean|2020-03-04=OtherEuropean,EPI_ISL_414495|OtherEuropean|2020-03-08=OtherEuropean,EPI_ISL_414497|Germany|2020-02-25=Germany,EPI_ISL_414499|Germany|2020-02-26=Germany,EPI_ISL_414498|Germany|2020-02-26=Germany,EPI_ISL_414496|OtherEuropean|2020-03-04=OtherEuropean,EPI_ISL_417334|France|2020-03-04=France,EPI_ISL_417340|France|2020-03-07=France,EPI_ISL_417338|France|2020-03-07=France,EPI_ISL_417336|France|2020-03-06=France,EPI_ISL_417337|France|2020-03-07=France,EPI_ISL_417339|France|2020-03-08=France,EPI_ISL_417333|France|2020-03-04=France,EPI_ISL_417335|France|2020-03-06=France,EPI_ISL_417432|OtherEuropean|2020-03-08=OtherEuropean,EPI_ISL_415650|France|2020-03-02=France,EPI_ISL_415649|France|2020-03-05=France,EPI_ISL_415652|France|2020-03-05=France,EPI_ISL_415651|France|2020-03-05=France,EPI_ISL_417489|OtherEuropean|2020-02-29=OtherEuropean,EPI_ISL_417447|Italy|2020-02-24=Italy,EPI_ISL_415646|OtherEuropean|2020-03-03=OtherEuropean,EPI_ISL_406798|Hubei|2019-12-26=Hubei,EPI_ISL_415653|France|2020-03-08=France,EPI_ISL_417445|Italy|2020-02-24=Italy,EPI_ISL_416504|France|2020-03-02=France,EPI_ISL_416505|France|2020-03-02=France,EPI_ISL_416502|France|2020-02-26=France,EPI_ISL_417880|OtherEuropean|2020-03-08=OtherEuropean,EPI_ISL_416503|France|2020-03-01=France,EPI_ISL_418011|OtherEuropean|2020-03-04=OtherEuropean,EPI_ISL_416493|France|2020-03-08=France,EPI_ISL_416494|France|2020-03-04=France,EPI_ISL_415143|OtherEuropean|2020-03-02=OtherEuropean,EPI_ISL_415149|OtherEuropean|2020-03-01=OtherEuropean,EPI_ISL_412980|Hubei|2020-01-18=Hubei,EPI_ISL_412981|Hubei|2020-01-18=Hubei,EPI_ISL_416485|OtherEuropean|2020-02-27=OtherEuropean,EPI_ISL_416483|OtherEuropean|2020-02-26=OtherEuropean,EPI_ISL_416475|OtherEuropean|2020-03-03=OtherEuropean,EPI_ISL_414626|France|2020-02-29=France,EPI_ISL_414638|France|2020-03-04=France,EPI_ISL_414635|France|2020-03-04=France,EPI_ISL_414631|France|2020-03-04=France,EPI_ISL_414624|France|2020-02-26=France,EPI_ISL_414633|France|2020-03-04=France,EPI_ISL_414625|France|2020-02-26=France,EPI_ISL_414630|France|2020-03-03=France,EPI_ISL_414632|France|2020-03-04=France,EPI_ISL_414627|France|2020-03-02=France,EPI_ISL_414637|France|2020-03-04=France,EPI_ISL_414642|OtherEuropean|2020-03-08=OtherEuropean,EPI_ISL_414629|France|2020-03-03=France,EPI_ISL_414634|France|2020-03-04=France,EPI_ISL_414636|France|2020-03-04=France,EPI_ISL_414623|France|2020-02-25=France,EPI_ISL_417234|OtherEuropean|2020-03-02=OtherEuropean,EPI_ISL_417206|OtherEuropean|2020-03-06=OtherEuropean,EPI_ISL_406596|France|2020-01-23=France,EPI_ISL_416750|France|2020-03-06=France,EPI_ISL_416754|France|2020-03-06=France,EPI_ISL_416751|France|2020-03-05=France,EPI_ISL_416753|France|2020-03-06=France,EPI_ISL_417205|OtherEuropean|2020-03-02=OtherEuropean,EPI_ISL_417981|OtherEuropean|2020-03-02=OtherEuropean,EPI_ISL_413593|OtherEuropean|2020-02-29=OtherEuropean,EPI_ISL_416488|OtherEuropean|2020-03-03=OtherEuropean,EPI_ISL_418219|France|2020-02-26=France,EPI_ISL_418218|France|2020-02-21=France,EPI_ISL_415698|OtherEuropean|2020-02-27=OtherEuropean,EPI_ISL_406716|Hubei|2020-01-02=Hubei,EPI_ISL_406717|Hubei|2020-01-02=Hubei,EPI_ISL_416752|France|2020-03-04=France,EPI_ISL_416749|France|2020-03-04=France,EPI_ISL_416756|France|2020-03-06=France,EPI_ISL_416757|France|2020-03-07=France,EPI_ISL_416747|France|2020-03-04=France,EPI_ISL_416758|France|2020-03-08=France,EPI_ISL_416748|France|2020-03-04=France,EPI_ISL_416746|France|2020-03-03=France,EPI_ISL_402121|Hubei|2019-12-30=Hubei,EPI_ISL_402125|Hubei|2019-12-26=Hubei,EPI_ISL_412973|Italy|2020-02-20=Italy,EPI_ISL_418220|France|2020-02-28=France,EPI_ISL_418224|France|2020-03-08=France,EPI_ISL_418223|France|2020-03-05=France,EPI_ISL_418225|France|2020-03-08=France,EPI_ISL_418221|France|2020-03-02=France,EPI_ISL_418222|France|2020-03-04=France,EPI_ISL_418251|OtherEuropean|2020-02-25=OtherEuropean,EPI_ISL_418246|OtherEuropean|2020-03-01=OtherEuropean,EPI_ISL_418245|OtherEuropean|2020-03-01=OtherEuropean,EPI_ISL_418247|OtherEuropean|2020-02-26=OtherEuropean,EPI_ISL_418249|OtherEuropean|2020-03-03=OtherEuropean,EPI_ISL_418248|OtherEuropean|2020-03-01=OtherEuropean,EPI_ISL_418243|OtherEuropean|2020-02-28=OtherEuropean,EPI_ISL_402130|Hubei|2019-12-30=Hubei,EPI_ISL_412912|Germany|2020-02-25=Germany,EPI_ISL_418252|OtherEuropean|2020-03-04=OtherEuropean,EPI_ISL_410546|Italy|2020-01-29=Italy,EPI_ISL_414021|OtherEuropean|2020-02-27=OtherEuropean,EPI_ISL_417979|OtherEuropean|2020-03-03=OtherEuropean,EPI_ISL_417921|Italy|2020-03-01=Italy,EPI_ISL_417922|Italy|2020-02-28=Italy,EPI_ISL_417923|Italy|2020-03-04=Italy,EPI_ISL_411957|Hubei|2020-01-08=Hubei,EPI_ISL_411951|OtherEuropean|2020-02-07=OtherEuropean,EPI_ISL_410486|France|2020-02-08=France">
+                                <taxa id="TaxonSet.1" spec="TaxonSet" alignment="@orig_submission"/>
+                            </typeTraitSet>
+                        </typeSet>
+                    </R0>
+                    <becomeUninfectiousRate id="becomeUninfectiousRateSVEpi.t:orig_submission" spec="bdmmprime.parameterization.SkylineVectorParameter" origin="@originBDMMPrime.t:orig_submission" timesAreAges="true" typeSet="@typeSetBDMMPrime.t:orig_submission">
+                        <parameter id="becomeUninfectiousRateEpi.t:orig_submission" spec="parameter.RealParameter" estimate="false" name="skylineValues">36.5</parameter>
+                    </becomeUninfectiousRate>
+                    <samplingProportion id="samplingProportionSVEpi.t:orig_submission" spec="bdmmprime.parameterization.SkylineVectorParameter" origin="@originBDMMPrime.t:orig_submission" skylineValues="@samplingProportionEpi.t:orig_submission" timesAreAges="true" typeSet="@typeSetBDMMPrime.t:orig_submission">
+                        <parameter id="samplingProportionChangeTimesEpi.t:orig_submission" spec="parameter.RealParameter" dimension="2" estimate="false" lower="0.0" name="changeTimes">0.12 0.205</parameter>
+                    </samplingProportion>
+                    <rhoSampling id="rhoSamplingProbTPEpi.t:orig_submission" spec="bdmmprime.parameterization.TimedParameter" origin="@originBDMMPrime.t:orig_submission" timesAreAges="true" typeSet="@typeSetBDMMPrime.t:orig_submission"/>
+                    <removalProb id="removalProbSVEpi.t:orig_submission" spec="bdmmprime.parameterization.SkylineVectorParameter" origin="@originBDMMPrime.t:orig_submission" timesAreAges="true" typeSet="@typeSetBDMMPrime.t:orig_submission">
+                        <parameter id="removalProbEpi.t:orig_submission" spec="parameter.RealParameter" estimate="false" lower="0.0" name="skylineValues" upper="1.0">1.0</parameter>
+                    </removalProb>
+                    <migrationRate id="migrationRateSMEpi.t:orig_submission" spec="bdmmprime.parameterization.SkylineMatrixParameter"
+                    	origin="@originBDMMPrime.t:orig_submission"
+                    	
+                    	timesAreAges="true"
+                    	typeSet="@typeSetBDMMPrime.t:orig_submission">
+                        <parameter id="migrationRateChangeTimesEpi.t:orig_submission"
+                        	spec="parameter.RealParameter" estimate="false" lower="0.0" name="changeTimes">0.123</parameter>
+                    	
+                    	<!-- <parameter idref="migrationRateEpi_t_orig_submission"/> -->
+                    	<parameter id="migrationRateEpi_t_orig_submission_scaled_by_f" name="skylineValues" spec="feast.expressions.ExpCalculator">
+                    		<![CDATA[
+                    		migrationRateEpi_t_orig_submission *
+                    		{  1,f,1,1,
+                    		 1,  f,1,1,
+                    		 f,f,  f,f,
+                    		 1,1,f,  1,
+                    		 1,1,f,1,
+
+                    		   1,1,1,1,
+                    		 1,  1,1,1,
+                    		 1,1,  1,1,
+                    		 1,1,1,  1,
+                    		 1,1,1,1  }
+                    		]]>
+                    		<arg idref="migrationRateEpi_t_orig_submission"/>
+                    		<arg idref="f"/>
+                    	</parameter>
+                    </migrationRate>
+                    <R0AmongDemes id="R0AmongDemesSMEpi.t:orig_submission" spec="bdmmprime.parameterization.SkylineMatrixParameter" origin="@originBDMMPrime.t:orig_submission" timesAreAges="true" typeSet="@typeSetBDMMPrime.t:orig_submission">
+                        <parameter id="R0AmongDemesEpi.t:orig_submission" spec="parameter.RealParameter" estimate="false" name="skylineValues">0.0</parameter>
+                    </R0AmongDemes>
+                    <typeSet idref="typeSetBDMMPrime.t:orig_submission"/>
+                </parameterization>
+                <parameter id="typeFrequencies.t:orig_submission" spec="parameter.RealParameter" dimension="5" estimate="false" lower="0.0" name="frequencies" upper="1.0">0.0 0.0 1.0 0.0 0.0</parameter>
+                <typeTraitSet idref="typeTraitSet.t:orig_submission"/>
+            </distribution>
+            <distribution id="R0EpiPrior.t:orig_submission" spec="bdmmprime.util.priors.ZeroExcludingPrior" x="@R0Epi.t:orig_submission">
+                <LogNormal id="LogNormalDistributionModel.1" name="distr">
+                    <parameter id="RealParameter.6" spec="parameter.RealParameter" estimate="false" name="M">0.8</parameter>
+                    <parameter id="RealParameter.7" spec="parameter.RealParameter" estimate="false" lower="0.0" name="S" upper="5.0">0.5</parameter>
+                </LogNormal>
+            </distribution>
+            <prior id="GammaShapePrior.s:orig_submission" name="distribution" x="@gammaShape.s:orig_submission">
+                <Exponential id="Exponential.0" name="distr">
+                    <parameter id="RealParameter.0" spec="parameter.RealParameter" estimate="false" name="mean">0.5</parameter>
+                </Exponential>
+            </prior>
+            <prior id="KappaPrior.s:orig_submission" name="distribution" x="@kappa.s:orig_submission">
+                <LogNormal id="LogNormalDistributionModel.0" name="distr">
+                    <parameter id="RealParameter.1" spec="parameter.RealParameter" estimate="false" name="M">1.0</parameter>
+                    <parameter id="RealParameter.2" spec="parameter.RealParameter" estimate="false" name="S">1.25</parameter>
+                </LogNormal>
+            </prior>
+            <distribution id="migrationRateEpiPrior.t:orig_submission" spec="bdmmprime.util.priors.SmartZeroExcludingPrior" x="@migrationRateEpi_t_orig_submission">
+                <LogNormal id="LogNormalDistributionModel.2" name="distr">
+                    <parameter id="RealParameter.8" spec="parameter.RealParameter" estimate="false" name="M">0.0</parameter>
+                    <parameter id="RealParameter.9" spec="parameter.RealParameter" estimate="false" lower="0.0" name="S" upper="5.0">1.0</parameter>
+                </LogNormal>
+            </distribution>
+            <prior id="originBDMMPrimePrior.t:orig_submission" name="distribution" x="@originBDMMPrime.t:orig_submission">
+                <LogNormal id="LogNormalDistributionModel.3" name="distr">
+                    <parameter id="RealParameter.10" spec="parameter.RealParameter" estimate="false" name="M">-1.0</parameter>
+                    <parameter id="RealParameter.11" spec="parameter.RealParameter" estimate="false" lower="0.0" name="S" upper="5.0">0.2</parameter>
+                </LogNormal>
+            </prior>
+
+			<distribution id="fPrior" spec="bdmmprime.util.priors.ZeroExcludingPrior" x="@f">
+                <Uniform id="Uniform.4" name="distr"/>
+            </distribution>
+
+            <!-- <distribution id="samplingProportionEpiPrior.t:orig_submission" spec="bdmmprime.util.priors.ZeroExcludingPrior" x="@samplingProportionEpi.t:orig_submission">
+                <Uniform id="Uniform.4" name="distr"/>
+            </distribution> -->
+
+            <!-- Prior for sampling proportion for France Epoch 1 (post-Jan 23) -->
+			<distribution spec="bdmmprime.util.priors.SmartZeroExcludingPrior">
+				<x spec="feast.function.Slice" arg="@samplingProportionEpi.t:orig_submission" index="0" count="1"/>
+				<distr spec="beast.math.distributions.Uniform" lower="0" upper="0.093"/>
+			</distribution>
+			<!-- Prior for sampling proportion for Germany Epoch 1 (post-Jan 23) -->
+			<distribution spec="bdmmprime.util.priors.SmartZeroExcludingPrior">
+				<x spec="feast.function.Slice" arg="@samplingProportionEpi.t:orig_submission" index="1" count="1"/>
+				<distr spec="beast.math.distributions.Uniform" lower="0" upper="0.10"/>
+			</distribution>
+			<!-- Prior for sampling proportion for Italy Epoch 1 (post-Jan 23) -->
+			<distribution spec="bdmmprime.util.priors.SmartZeroExcludingPrior">
+				<x spec="feast.function.Slice" arg="@samplingProportionEpi.t:orig_submission" index="3" count="1"/>
+				<distr spec="beast.math.distributions.Uniform" lower="0" upper="0.005"/>
+			</distribution>
+			<!-- Prior for sampling proportion for OtherEuropean Epoch 1 (post-Jan 23) -->
+			<distribution spec="bdmmprime.util.priors.SmartZeroExcludingPrior">
+				<x spec="feast.function.Slice" arg="@samplingProportionEpi.t:orig_submission" index="4" count="1"/>
+				<distr spec="beast.math.distributions.Uniform" lower="0" upper="0.057"/>
+			</distribution>
+
+			<!-- Prior for sampling proportion for France Epoch 2 (post-first sample date) -->
+			<distribution spec="bdmmprime.util.priors.SmartZeroExcludingPrior">
+				<x spec="feast.function.Slice" arg="@samplingProportionEpi.t:orig_submission" index="5" count="1"/>
+				<distr spec="beast.math.distributions.Uniform" lower="0" upper="0.093"/>
+			</distribution>
+			<!-- Prior for sampling proportion for Germany Epoch 2 (post-first sample date) -->
+			<distribution spec="bdmmprime.util.priors.SmartZeroExcludingPrior">
+				<x spec="feast.function.Slice" arg="@samplingProportionEpi.t:orig_submission" index="6" count="1"/>
+				<distr spec="beast.math.distributions.Uniform" lower="0" upper="0.10"/>
+			</distribution>
+			<!-- Prior for sampling proportion for Hubei Epoch 2 (post-first sample date) -->
+			<distribution spec="bdmmprime.util.priors.SmartZeroExcludingPrior">
+				<x spec="feast.function.Slice" arg="@samplingProportionEpi.t:orig_submission" index="7" count="1"/>
+				<distr spec="beast.math.distributions.Uniform" lower="0" upper="0.15"/>
+			</distribution>
+			<!-- Prior for sampling proportion for Italy Epoch 2 (post-first sample date) -->
+			<distribution spec="bdmmprime.util.priors.SmartZeroExcludingPrior">
+				<x spec="feast.function.Slice" arg="@samplingProportionEpi.t:orig_submission" index="8" count="1"/>
+				<distr spec="beast.math.distributions.Uniform" lower="0" upper="0.005"/>
+			</distribution>
+			<!-- Prior for sampling proportion for OtherEuropean Epoch 2 (post-first sample date) -->
+			<distribution spec="bdmmprime.util.priors.SmartZeroExcludingPrior">
+				<x spec="feast.function.Slice" arg="@samplingProportionEpi.t:orig_submission" index="9" count="1"/>
+				<distr spec="beast.math.distributions.Uniform" lower="0" upper="0.057"/>
+			</distribution>
+        </distribution>
+        <distribution id="likelihood" spec="util.CompoundDistribution" useThreads="true">
+            <distribution id="treeLikelihood.orig_submission" spec="ThreadedTreeLikelihood" data="@orig_submission" tree="@Tree.t:orig_submission">
+                <siteModel id="SiteModel.s:orig_submission" spec="SiteModel" gammaCategoryCount="4" shape="@gammaShape.s:orig_submission">
+                    <parameter id="mutationRate.s:orig_submission" spec="parameter.RealParameter" estimate="false" name="mutationRate">1.0</parameter>
+                    <parameter id="proportionInvariant.s:orig_submission" spec="parameter.RealParameter" estimate="false" lower="0.0" name="proportionInvariant" upper="1.0">0.0</parameter>
+                    <substModel id="hky.s:orig_submission" spec="HKY" kappa="@kappa.s:orig_submission">
+                        <frequencies id="empiricalFreqs.s:orig_submission" spec="Frequencies" data="@orig_submission"/>
+                    </substModel>
+                </siteModel>
+                <branchRateModel id="StrictClock.c:orig_submission" spec="beast.evolution.branchratemodel.StrictClockModel">
+                    <parameter id="clockRate.c:orig_submission" spec="parameter.RealParameter" estimate="false" name="clock.rate">8.0E-4</parameter>
+                </branchRateModel>
+            </distribution>
+        </distribution>
+    </distribution>
+
+    <operator id="fEpiScaler" spec="bdmmprime.util.operators.SmartScaleOperator" parameter="@f" scaleFactor="0.75" weight="3.0"/>
+
+    <operator id="gammaShapeScaler.s:orig_submission" spec="ScaleOperator" parameter="@gammaShape.s:orig_submission" scaleFactor="0.5" weight="0.1"/>
+
+    <operator id="KappaScaler.s:orig_submission" spec="ScaleOperator" parameter="@kappa.s:orig_submission" scaleFactor="0.5" weight="0.1"/>
+
+    <operator id="BDMMPrimeLeafToSA.t:orig_submission" spec="LeafToSampledAncestorJump" tree="@Tree.t:orig_submission" weight="10.0"/>
+
+    <operator id="BDMMPrimeSAWilsonBalding.t:orig_submission" spec="SAWilsonBalding" tree="@Tree.t:orig_submission" weight="10.0"/>
+
+    <operator id="BDMMPrimeSAWide.t:orig_submission" spec="SAExchange" isNarrow="false" tree="@Tree.t:orig_submission" weight="10.0"/>
+
+    <operator id="BDMMPrimeSANarrow.t:orig_submission" spec="SAExchange" tree="@Tree.t:orig_submission" weight="10.0"/>
+
+    <operator id="BDMMPrimeSAUniformOperator.t:orig_submission" spec="SAUniform" tree="@Tree.t:orig_submission" weight="20.0"/>
+
+    <operator id="BDMMPrimeSATreeRootScaler.t:orig_submission" spec="SAScaleOperator" rootOnly="true" scaleFactor="0.95" tree="@Tree.t:orig_submission" weight="1.0"/>
+
+    <operator id="BDMMPrimeSATreeScaler.t:orig_submission" spec="SAScaleOperator" scaleFactor="0.95" tree="@Tree.t:orig_submission" weight="3.0"/>
+
+    <operator id="originBDMMPrimeScaler.t:orig_submission" spec="ScaleOperator" parameter="@originBDMMPrime.t:orig_submission" scaleFactor="0.75" weight="3.0"/>
+
+    <operator id="R0EpiScaler.t:orig_submission" spec="ScaleOperator" parameter="@R0Epi.t:orig_submission" scaleFactor="0.75" weight="3.0"/>
+
+    <operator id="samplingProportionEpiScaler.t:orig_submission" spec="bdmmprime.util.operators.SmartScaleOperator" parameter="@samplingProportionEpi.t:orig_submission" scaleFactor="0.75" weight="3.0"/>
+
+    <operator id="migrationRateEpiScaler.t:orig_submission" spec="bdmmprime.util.operators.SmartScaleOperator" parameter="@migrationRateEpi_t_orig_submission" scaleFactor="0.75" weight="3.0"/>
+
+    <logger id="tracelog" spec="Logger" fileName="orig_submission.log" logEvery="1000" model="@posterior" sanitiseHeaders="true" sort="smart">
+        <log idref="posterior"/>
+        <log idref="likelihood"/>
+        <log idref="prior"/>
+        <log idref="treeLikelihood.orig_submission"/>
+        <log id="TreeHeight.t:orig_submission" spec="beast.evolution.tree.TreeHeightLogger" tree="@Tree.t:orig_submission"/>
+        <log idref="gammaShape.s:orig_submission"/>
+        <log idref="kappa.s:orig_submission"/>
+        <log idref="originBDMMPrime.t:orig_submission"/>
+        <log id="typedTreeStats.t:orig_submission" spec="bdmmprime.mapping.TypedTreeStatsLogger" includeRootEdgeChanges="true" typeLabel="type" typeSet="@typeSetBDMMPrime.t:orig_submission">
+            <typedTree id="typeMappedTree.t:orig_submission" spec="bdmmprime.mapping.TypeMappedTree" bdmmDistrib="@BDMMPrime.t:orig_submission" frequencies="@typeFrequencies.t:orig_submission" mapOnInit="false" remapOnLog="true" typeLabel="type" typeTraitSet="@typeTraitSet.t:orig_submission" untypedTree="@Tree.t:orig_submission"/>
+        </log>
+        <log idref="R0SVEpi.t:orig_submission"/>
+        <log idref="R0AmongDemesSMEpi.t:orig_submission"/>
+        <log idref="becomeUninfectiousRateSVEpi.t:orig_submission"/>
+        <log idref="f"/>
+        <log idref="migrationRateSMEpi.t:orig_submission"/>
+        <log idref="samplingProportionSVEpi.t:orig_submission"/>
+        <log idref="removalProbSVEpi.t:orig_submission"/>
+        <log idref="rhoSamplingProbTPEpi.t:orig_submission"/>
+    </logger>
+
+    <logger id="screenlog" spec="Logger" logEvery="1000">
+        <log idref="posterior"/>
+        <log idref="likelihood"/>
+        <log idref="prior"/>
+    </logger>
+
+    <logger id="treelog.t:orig_submission" spec="Logger" fileName="$(tree).trees" logEvery="1000" mode="tree">
+        <log id="TreeWithMetaDataLogger.t:orig_submission" spec="beast.evolution.tree.TreeWithMetaDataLogger" tree="@Tree.t:orig_submission"/>
+    </logger>
+
+    <logger id="typedTreeLogger.t:orig_submission" spec="bdmmprime.util.OptionalLogger" enableLogger="true" fileName="$(filebase).$(tree).typed.trees" logEvery="1000" mode="tree">
+        <log idref="typeMappedTree.t:orig_submission"/>
+    </logger>
+
+    <logger id="nodeTypedTreeLogger.t:orig_submission" spec="bdmmprime.util.OptionalLogger" enableLogger="true" fileName="$(filebase).$(tree).typed.node.trees" logEvery="1000" mode="tree">
+        <log id="nodeTypedTree.t:orig_submission" spec="bdmmprime.mapping.TypedNodeTreeLogger" typedTree="@typeMappedTree.t:orig_submission"/>
+    </logger>
+
+    <logger id="trajLogger.t:orig_submission" spec="bdmmprime.util.OptionalLogger" fileName="$(filebase).$(tree).traj" logEvery="1000">
+        <log id="typedTraj.t:orig_submission" spec="bdmmprime.trajectories.SampledTrajectory" bdmmDistrib="@BDMMPrime.t:orig_submission" frequencies="@typeFrequencies.t:orig_submission" typeMappedTree="@typeMappedTree.t:orig_submission" useTauLeaping="true"/>
+    </logger>
+
+    <operatorschedule id="OperatorSchedule" spec="OperatorSchedule"/>
+
+</run>
+
+</beast>

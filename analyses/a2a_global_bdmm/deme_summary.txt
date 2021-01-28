@@ -1,0 +1,6 @@
+deme	n_seqs	locations	first_seq	last_seq
+Africa	8	Nigeria, South Africa, Senegal, Algeria	2020-02-27	2020-03-08
+AsiaOceania	8	Taiwan, Vietnam, Georgia, New Zealand, Australia	2020-03-02	2020-03-08
+Europe	60	Belgium, Czech Republic, Denmark, Finland, France, Germany, Iceland, Ireland, Italy, Luxembourg, Netherlands, Norway, Portugal, Slovakia, Spain, Switzerland, United Kingdom	2020-02-20	2020-03-08
+NorthAmerica	11	Mexico, USA, Canada	2020-02-27	2020-03-08
+SouthCentralAmerica	16	Brazil, Chile, Panama, Colombia	2020-02-25	2020-03-06

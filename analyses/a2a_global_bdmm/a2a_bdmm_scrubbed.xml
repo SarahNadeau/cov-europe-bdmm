@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><beast beautitemplate='Standard' beautistatus='noAutoSetClockRate' namespace="beast.core:beast.evolution.alignment:beast.evolution.tree.coalescent:beast.core.util:beast.evolution.nuc:beast.evolution.operators:beast.evolution.sitemodel:beast.evolution.substitutionmodel:beast.evolution.likelihood" required="" version="2.6">
+
+
+    <data
+id="a2a_demes"
+spec="Alignment"
+name="alignment">
+
+<!-- Sequence data scrubbed from file. It's available for download from GISAID.org subject to a user agreement. -->
+    
+<map name="Uniform" >beast.math.distributions.Uniform</map>
+<map name="Exponential" >beast.math.distributions.Exponential</map>
+<map name="LogNormal" >beast.math.distributions.LogNormalDistributionModel</map>
+<map name="Normal" >beast.math.distributions.Normal</map>
+<map name="Beta" >beast.math.distributions.Beta</map>
+<map name="Gamma" >beast.math.distributions.Gamma</map>
+<map name="LaplaceDistribution" >beast.math.distributions.LaplaceDistribution</map>
+<map name="prior" >beast.math.distributions.Prior</map>
+<map name="InverseGamma" >beast.math.distributions.InverseGamma</map>
+<map name="OneOnX" >beast.math.distributions.OneOnX</map>
+
+
+<run id="mcmc" spec="MCMC" chainLength="10000000">
+    <state id="state" spec="State" storeEvery="5000">
+        <tree id="Tree.t:a2a_demes" spec="beast.evolution.tree.Tree" name="stateNode">
+            <trait id="dateTrait.t:a2a_demes" spec="beast.evolution.tree.TraitSet" dateFormat="yyyy-M-dd" traitname="date" value="EPI_ISL_414449|Europe|2020-03-03=2020-03-03,EPI_ISL_417007|Europe|2020-03-07=2020-03-07,EPI_ISL_416512|Europe|2020-03-07=2020-03-07,EPI_ISL_416509|Europe|2020-03-06=2020-03-06,EPI_ISL_416506|Europe|2020-03-03=2020-03-03,EPI_ISL_413489|Europe|2020-03-03=2020-03-03,EPI_ISL_417421|Europe|2020-03-01=2020-03-01,EPI_ISL_417418|Europe|2020-03-01=2020-03-01,EPI_ISL_417419|Europe|2020-03-01=2020-03-01,EPI_ISL_416028|SouthCentralAmerica|2020-03-03=2020-03-03,EPI_ISL_416029|SouthCentralAmerica|2020-03-04=2020-03-04,EPI_ISL_417491|Europe|2020-03-03=2020-03-03,EPI_ISL_417423|Europe|2020-03-01=2020-03-01,EPI_ISL_416036|SouthCentralAmerica|2020-03-05=2020-03-05,EPI_ISL_414584|Europe|2020-03-02=2020-03-02,EPI_ISL_414580|SouthCentralAmerica|2020-03-05=2020-03-05,EPI_ISL_414594|NorthAmerica|2020-03-05=2020-03-05,EPI_ISL_414466|Europe|2020-03-04=2020-03-04,EPI_ISL_414477|Europe|2020-03-01=2020-03-01,EPI_ISL_414495|Europe|2020-03-08=2020-03-08,EPI_ISL_417302|Europe|2020-03-05=2020-03-05,EPI_ISL_416035|SouthCentralAmerica|2020-03-05=2020-03-05,EPI_ISL_416031|SouthCentralAmerica|2020-03-04=2020-03-04,EPI_ISL_417390|AsiaOceania|2020-03-08=2020-03-08,EPI_ISL_417334|Europe|2020-03-04=2020-03-04,EPI_ISL_416034|SouthCentralAmerica|2020-03-04=2020-03-04,EPI_ISL_417339|Europe|2020-03-08=2020-03-08,EPI_ISL_417328|NorthAmerica|2020-03-07=2020-03-07,EPI_ISL_417447|Europe|2020-02-24=2020-02-24,EPI_ISL_416140|Europe|2020-03-02=2020-03-02,EPI_ISL_415653|Europe|2020-03-08=2020-03-08,EPI_ISL_417445|Europe|2020-02-24=2020-02-24,EPI_ISL_417485|Europe|2020-03-02=2020-03-02,EPI_ISL_417879|Europe|2020-03-06=2020-03-06,EPI_ISL_416520|AsiaOceania|2020-03-04=2020-03-04,EPI_ISL_416519|AsiaOceania|2020-03-02=2020-03-02,EPI_ISL_418011|Europe|2020-03-04=2020-03-04,EPI_ISL_416494|Europe|2020-03-04=2020-03-04,EPI_ISL_415147|Europe|2020-03-01=2020-03-01,EPI_ISL_415131|Europe|2020-02-29=2020-02-29,EPI_ISL_418262|SouthCentralAmerica|2020-03-06=2020-03-06,EPI_ISL_416486|Europe|2020-03-02=2020-03-02,EPI_ISL_416479|AsiaOceania|2020-03-05=2020-03-05,EPI_ISL_416469|Europe|2020-03-03=2020-03-03,EPI_ISL_415152|SouthCentralAmerica|2020-03-06=2020-03-06,EPI_ISL_414635|Europe|2020-03-04=2020-03-04,EPI_ISL_414631|Europe|2020-03-04=2020-03-04,EPI_ISL_414624|Europe|2020-02-26=2020-02-26,EPI_ISL_414633|Europe|2020-03-04=2020-03-04,EPI_ISL_414627|Europe|2020-03-02=2020-03-02,EPI_ISL_417010|Europe|2020-03-04=2020-03-04,EPI_ISL_418349|NorthAmerica|2020-03-07=2020-03-07,EPI_ISL_418348|NorthAmerica|2020-03-08=2020-03-08,EPI_ISL_418345|NorthAmerica|2020-02-29=2020-02-29,EPI_ISL_418346|NorthAmerica|2020-03-07=2020-03-07,EPI_ISL_418355|NorthAmerica|2020-03-08=2020-03-08,EPI_ISL_418371|NorthAmerica|2020-03-07=2020-03-07,EPI_ISL_418366|NorthAmerica|2020-03-05=2020-03-05,EPI_ISL_414616|NorthAmerica|2020-03-08=2020-03-08,EPI_ISL_417230|Europe|2020-03-02=2020-03-02,EPI_ISL_416750|Europe|2020-03-06=2020-03-06,EPI_ISL_416751|Europe|2020-03-05=2020-03-05,EPI_ISL_413592|AsiaOceania|2020-03-02=2020-03-02,EPI_ISL_413591|Europe|2020-03-02=2020-03-02,EPI_ISL_413593|Europe|2020-02-29=2020-02-29,EPI_ISL_418206|Africa|2020-02-28=2020-02-28,EPI_ISL_418207|Africa|2020-03-02=2020-03-02,EPI_ISL_418209|Africa|2020-03-03=2020-03-03,EPI_ISL_418208|Africa|2020-03-04=2020-03-04,EPI_ISL_416431|AsiaOceania|2020-03-06=2020-03-06,EPI_ISL_416430|AsiaOceania|2020-03-06=2020-03-06,EPI_ISL_415105|SouthCentralAmerica|2020-03-04=2020-03-04,EPI_ISL_416428|AsiaOceania|2020-03-07=2020-03-07,EPI_ISL_417710|Europe|2020-03-02=2020-03-02,EPI_ISL_416757|Europe|2020-03-07=2020-03-07,EPI_ISL_416747|Europe|2020-03-04=2020-03-04,EPI_ISL_416758|Europe|2020-03-08=2020-03-08,EPI_ISL_416748|Europe|2020-03-04=2020-03-04,EPI_ISL_416746|Europe|2020-03-03=2020-03-03,EPI_ISL_412972|NorthAmerica|2020-02-27=2020-02-27,EPI_ISL_412973|Europe|2020-02-20=2020-02-20,EPI_ISL_418220|Europe|2020-02-28=2020-02-28,EPI_ISL_418242|Africa|2020-03-08=2020-03-08,EPI_ISL_413604|Europe|2020-03-03=2020-03-03,EPI_ISL_418251|Europe|2020-02-25=2020-02-25,EPI_ISL_418247|Europe|2020-02-26=2020-02-26,EPI_ISL_412964|SouthCentralAmerica|2020-02-25=2020-02-25,EPI_ISL_415458|Europe|2020-03-01=2020-03-01,EPI_ISL_412912|Europe|2020-02-25=2020-02-25,EPI_ISL_418241|Africa|2020-03-02=2020-03-02,EPI_ISL_417186|Africa|2020-03-07=2020-03-07,EPI_ISL_418435|Europe|2020-03-05=2020-03-05,EPI_ISL_414045|SouthCentralAmerica|2020-03-04=2020-03-04,EPI_ISL_414015|SouthCentralAmerica|2020-02-29=2020-02-29,EPI_ISL_413566|Europe|2020-03-02=2020-03-02,EPI_ISL_417921|Europe|2020-03-01=2020-03-01,EPI_ISL_417922|Europe|2020-02-28=2020-02-28,EPI_ISL_413550|Africa|2020-02-27=2020-02-27,EPI_ISL_414019|Europe|2020-02-27=2020-02-27,EPI_ISL_417923|Europe|2020-03-04=2020-03-04,EPI_ISL_414014|SouthCentralAmerica|2020-03-02=2020-03-02,EPI_ISL_414017|SouthCentralAmerica|2020-03-04=2020-03-04,EPI_ISL_414016|SouthCentralAmerica|2020-02-29=2020-02-29">
+                <taxa id="TaxonSet.a2a_demes" spec="TaxonSet">
+                    <alignment idref="a2a_demes"/>
+                </taxa>
+            </trait>
+            <taxonset idref="TaxonSet.a2a_demes"/>
+        </tree>
+        <parameter id="gammaShape.s:a2a_demes" spec="parameter.RealParameter" name="stateNode">1.0</parameter>
+        <parameter id="kappa.s:a2a_demes" spec="parameter.RealParameter" lower="0.0" name="stateNode">2.0</parameter>
+        <parameter id="originBDMMPrime.t:a2a_demes" spec="parameter.RealParameter" name="stateNode">10.0</parameter>
+        <parameter id="typeFrequencies.t:a2a_demes" spec="parameter.RealParameter" dimension="5" lower="0.0" name="stateNode" upper="1.0">0.2 0.2 0.2 0.2 0.2</parameter>
+        <parameter id="R0Epi.t:a2a_demes" spec="parameter.RealParameter" dimension="5" name="stateNode">1.0 1.0 1.0 1.0 1.0</parameter>
+        <parameter id="samplingProportionEpi.t:a2a_demes" spec="parameter.RealParameter" dimension="10" lower="0.0" name="stateNode" upper="1.0">1.0E-5 1.0E-5 1.0E-5 1.0E-5 1.0E-5 0.0 0.0 0.0 0.0 0.0</parameter>
+        <parameter id="migrationRateEpi.t:a2a_demes" spec="parameter.RealParameter" dimension="20" name="stateNode">0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1</parameter>
+    </state>
+
+    <init id="RandomTree.t:a2a_demes" spec="beast.evolution.tree.RandomTree" estimate="false" initial="@Tree.t:a2a_demes" taxa="@a2a_demes">
+        <populationModel id="ConstantPopulation0.t:a2a_demes" spec="ConstantPopulation">
+            <parameter id="randomPopSize.t:a2a_demes" spec="parameter.RealParameter" name="popSize">1.0</parameter>
+        </populationModel>
+    </init>
+
+    <distribution id="posterior" spec="util.CompoundDistribution">
+        <distribution id="prior" spec="util.CompoundDistribution">
+            <distribution id="BDMMPrime.t:a2a_demes" spec="bdmmprime.distributions.BirthDeathMigrationDistribution" conditionOnSurvival="false" frequencies="@typeFrequencies.t:a2a_demes" tree="@Tree.t:a2a_demes">
+                <parameterization id="EpiBDMMPrimeParameterization.t:a2a_demes" spec="bdmmprime.parameterization.EpiParameterization" origin="@originBDMMPrime.t:a2a_demes">
+                    <R0 id="R0SVEpi.t:a2a_demes" spec="bdmmprime.parameterization.SkylineVectorParameter" origin="@originBDMMPrime.t:a2a_demes" skylineValues="@R0Epi.t:a2a_demes" timesAreAges="true">
+                        <typeSet id="typeSetBDMMPrime.t:a2a_demes" spec="bdmmprime.parameterization.TypeSet">
+                            <typeTraitSet id="typeTraitSet.t:a2a_demes" spec="bdmmprime.util.InitializedTraitSet" traitname="type" value="EPI_ISL_414449|Europe|2020-03-03=Europe,EPI_ISL_417007|Europe|2020-03-07=Europe,EPI_ISL_416512|Europe|2020-03-07=Europe,EPI_ISL_416509|Europe|2020-03-06=Europe,EPI_ISL_416506|Europe|2020-03-03=Europe,EPI_ISL_413489|Europe|2020-03-03=Europe,EPI_ISL_417421|Europe|2020-03-01=Europe,EPI_ISL_417418|Europe|2020-03-01=Europe,EPI_ISL_417419|Europe|2020-03-01=Europe,EPI_ISL_416028|SouthCentralAmerica|2020-03-03=SouthCentralAmerica,EPI_ISL_416029|SouthCentralAmerica|2020-03-04=SouthCentralAmerica,EPI_ISL_417491|Europe|2020-03-03=Europe,EPI_ISL_417423|Europe|2020-03-01=Europe,EPI_ISL_416036|SouthCentralAmerica|2020-03-05=SouthCentralAmerica,EPI_ISL_414584|Europe|2020-03-02=Europe,EPI_ISL_414580|SouthCentralAmerica|2020-03-05=SouthCentralAmerica,EPI_ISL_414594|NorthAmerica|2020-03-05=NorthAmerica,EPI_ISL_414466|Europe|2020-03-04=Europe,EPI_ISL_414477|Europe|2020-03-01=Europe,EPI_ISL_414495|Europe|2020-03-08=Europe,EPI_ISL_417302|Europe|2020-03-05=Europe,EPI_ISL_416035|SouthCentralAmerica|2020-03-05=SouthCentralAmerica,EPI_ISL_416031|SouthCentralAmerica|2020-03-04=SouthCentralAmerica,EPI_ISL_417390|AsiaOceania|2020-03-08=AsiaOceania,EPI_ISL_417334|Europe|2020-03-04=Europe,EPI_ISL_416034|SouthCentralAmerica|2020-03-04=SouthCentralAmerica,EPI_ISL_417339|Europe|2020-03-08=Europe,EPI_ISL_417328|NorthAmerica|2020-03-07=NorthAmerica,EPI_ISL_417447|Europe|2020-02-24=Europe,EPI_ISL_416140|Europe|2020-03-02=Europe,EPI_ISL_415653|Europe|2020-03-08=Europe,EPI_ISL_417445|Europe|2020-02-24=Europe,EPI_ISL_417485|Europe|2020-03-02=Europe,EPI_ISL_417879|Europe|2020-03-06=Europe,EPI_ISL_416520|AsiaOceania|2020-03-04=AsiaOceania,EPI_ISL_416519|AsiaOceania|2020-03-02=AsiaOceania,EPI_ISL_418011|Europe|2020-03-04=Europe,EPI_ISL_416494|Europe|2020-03-04=Europe,EPI_ISL_415147|Europe|2020-03-01=Europe,EPI_ISL_415131|Europe|2020-02-29=Europe,EPI_ISL_418262|SouthCentralAmerica|2020-03-06=SouthCentralAmerica,EPI_ISL_416486|Europe|2020-03-02=Europe,EPI_ISL_416479|AsiaOceania|2020-03-05=AsiaOceania,EPI_ISL_416469|Europe|2020-03-03=Europe,EPI_ISL_415152|SouthCentralAmerica|2020-03-06=SouthCentralAmerica,EPI_ISL_414635|Europe|2020-03-04=Europe,EPI_ISL_414631|Europe|2020-03-04=Europe,EPI_ISL_414624|Europe|2020-02-26=Europe,EPI_ISL_414633|Europe|2020-03-04=Europe,EPI_ISL_414627|Europe|2020-03-02=Europe,EPI_ISL_417010|Europe|2020-03-04=Europe,EPI_ISL_418349|NorthAmerica|2020-03-07=NorthAmerica,EPI_ISL_418348|NorthAmerica|2020-03-08=NorthAmerica,EPI_ISL_418345|NorthAmerica|2020-02-29=NorthAmerica,EPI_ISL_418346|NorthAmerica|2020-03-07=NorthAmerica,EPI_ISL_418355|NorthAmerica|2020-03-08=NorthAmerica,EPI_ISL_418371|NorthAmerica|2020-03-07=NorthAmerica,EPI_ISL_418366|NorthAmerica|2020-03-05=NorthAmerica,EPI_ISL_414616|NorthAmerica|2020-03-08=NorthAmerica,EPI_ISL_417230|Europe|2020-03-02=Europe,EPI_ISL_416750|Europe|2020-03-06=Europe,EPI_ISL_416751|Europe|2020-03-05=Europe,EPI_ISL_413592|AsiaOceania|2020-03-02=AsiaOceania,EPI_ISL_413591|Europe|2020-03-02=Europe,EPI_ISL_413593|Europe|2020-02-29=Europe,EPI_ISL_418206|Africa|2020-02-28=Africa,EPI_ISL_418207|Africa|2020-03-02=Africa,EPI_ISL_418209|Africa|2020-03-03=Africa,EPI_ISL_418208|Africa|2020-03-04=Africa,EPI_ISL_416431|AsiaOceania|2020-03-06=AsiaOceania,EPI_ISL_416430|AsiaOceania|2020-03-06=AsiaOceania,EPI_ISL_415105|SouthCentralAmerica|2020-03-04=SouthCentralAmerica,EPI_ISL_416428|AsiaOceania|2020-03-07=AsiaOceania,EPI_ISL_417710|Europe|2020-03-02=Europe,EPI_ISL_416757|Europe|2020-03-07=Europe,EPI_ISL_416747|Europe|2020-03-04=Europe,EPI_ISL_416758|Europe|2020-03-08=Europe,EPI_ISL_416748|Europe|2020-03-04=Europe,EPI_ISL_416746|Europe|2020-03-03=Europe,EPI_ISL_412972|NorthAmerica|2020-02-27=NorthAmerica,EPI_ISL_412973|Europe|2020-02-20=Europe,EPI_ISL_418220|Europe|2020-02-28=Europe,EPI_ISL_418242|Africa|2020-03-08=Africa,EPI_ISL_413604|Europe|2020-03-03=Europe,EPI_ISL_418251|Europe|2020-02-25=Europe,EPI_ISL_418247|Europe|2020-02-26=Europe,EPI_ISL_412964|SouthCentralAmerica|2020-02-25=SouthCentralAmerica,EPI_ISL_415458|Europe|2020-03-01=Europe,EPI_ISL_412912|Europe|2020-02-25=Europe,EPI_ISL_418241|Africa|2020-03-02=Africa,EPI_ISL_417186|Africa|2020-03-07=Africa,EPI_ISL_418435|Europe|2020-03-05=Europe,EPI_ISL_414045|SouthCentralAmerica|2020-03-04=SouthCentralAmerica,EPI_ISL_414015|SouthCentralAmerica|2020-02-29=SouthCentralAmerica,EPI_ISL_413566|Europe|2020-03-02=Europe,EPI_ISL_417921|Europe|2020-03-01=Europe,EPI_ISL_417922|Europe|2020-02-28=Europe,EPI_ISL_413550|Africa|2020-02-27=Africa,EPI_ISL_414019|Europe|2020-02-27=Europe,EPI_ISL_417923|Europe|2020-03-04=Europe,EPI_ISL_414014|SouthCentralAmerica|2020-03-02=SouthCentralAmerica,EPI_ISL_414017|SouthCentralAmerica|2020-03-04=SouthCentralAmerica,EPI_ISL_414016|SouthCentralAmerica|2020-02-29=SouthCentralAmerica">
+                                <taxa id="TaxonSet.1" spec="TaxonSet" alignment="@a2a_demes"/>
+                            </typeTraitSet>
+                        </typeSet>
+                    </R0>
+                    <becomeUninfectiousRate id="becomeUninfectiousRateSVEpi.t:a2a_demes" spec="bdmmprime.parameterization.SkylineVectorParameter" origin="@originBDMMPrime.t:a2a_demes" timesAreAges="true" typeSet="@typeSetBDMMPrime.t:a2a_demes">
+                        <parameter id="becomeUninfectiousRateEpi.t:a2a_demes" spec="parameter.RealParameter" estimate="false" name="skylineValues">36.5</parameter>
+                    </becomeUninfectiousRate>
+                    <samplingProportion id="samplingProportionSVEpi.t:a2a_demes" spec="bdmmprime.parameterization.SkylineVectorParameter" origin="@originBDMMPrime.t:a2a_demes" skylineValues="@samplingProportionEpi.t:a2a_demes" timesAreAges="true" typeSet="@typeSetBDMMPrime.t:a2a_demes">
+                        <parameter id="samplingProportionChangeTimesEpi.t:a2a_demes" spec="parameter.RealParameter" estimate="false" lower="0.0" name="changeTimes">0.05</parameter>
+                    </samplingProportion>
+                    <rhoSampling id="rhoSamplingProbTPEpi.t:a2a_demes" spec="bdmmprime.parameterization.TimedParameter" origin="@originBDMMPrime.t:a2a_demes" timesAreAges="true" typeSet="@typeSetBDMMPrime.t:a2a_demes"/>
+                    <removalProb id="removalProbSVEpi.t:a2a_demes" spec="bdmmprime.parameterization.SkylineVectorParameter" origin="@originBDMMPrime.t:a2a_demes" timesAreAges="true" typeSet="@typeSetBDMMPrime.t:a2a_demes">
+                        <parameter id="removalProbEpi.t:a2a_demes" spec="parameter.RealParameter" estimate="false" lower="0.0" name="skylineValues" upper="1.0">1.0</parameter>
+                    </removalProb>
+                    <migrationRate id="migrationRateSMEpi.t:a2a_demes" spec="bdmmprime.parameterization.SkylineMatrixParameter" origin="@originBDMMPrime.t:a2a_demes" skylineValues="@migrationRateEpi.t:a2a_demes" timesAreAges="true" typeSet="@typeSetBDMMPrime.t:a2a_demes"/>
+                    <R0AmongDemes id="R0AmongDemesSMEpi.t:a2a_demes" spec="bdmmprime.parameterization.SkylineMatrixParameter" origin="@originBDMMPrime.t:a2a_demes" timesAreAges="true" typeSet="@typeSetBDMMPrime.t:a2a_demes">
+                        <parameter id="R0AmongDemesEpi.t:a2a_demes" spec="parameter.RealParameter" estimate="false" name="skylineValues">0.0</parameter>
+                    </R0AmongDemes>
+                    <typeSet idref="typeSetBDMMPrime.t:a2a_demes"/>
+                </parameterization>
+                <typeTraitSet idref="typeTraitSet.t:a2a_demes"/>
+            </distribution>
+            <distribution id="R0EpiPrior.t:a2a_demes" spec="bdmmprime.util.ZeroExcludingPrior" x="@R0Epi.t:a2a_demes">
+                <LogNormal id="LogNormalDistributionModel.1" name="distr">
+                    <parameter id="RealParameter.3" spec="parameter.RealParameter" estimate="false" name="M">0.8</parameter>
+                    <parameter id="RealParameter.4" spec="parameter.RealParameter" estimate="false" lower="0.0" name="S" upper="5.0">0.5</parameter>
+                </LogNormal>
+            </distribution>
+            <prior id="GammaShapePrior.s:a2a_demes" name="distribution" x="@gammaShape.s:a2a_demes">
+                <Exponential id="Exponential.0" name="distr">
+                    <parameter id="RealParameter.0" spec="parameter.RealParameter" estimate="false" name="mean">0.5</parameter>
+                </Exponential>
+            </prior>
+            <prior id="KappaPrior.s:a2a_demes" name="distribution" x="@kappa.s:a2a_demes">
+                <LogNormal id="LogNormalDistributionModel.0" name="distr">
+                    <parameter id="RealParameter.1" spec="parameter.RealParameter" estimate="false" name="M">1.0</parameter>
+                    <parameter id="RealParameter.2" spec="parameter.RealParameter" estimate="false" name="S">1.25</parameter>
+                </LogNormal>
+            </prior>
+            <distribution id="migrationRateEpiPrior.t:a2a_demes" spec="bdmmprime.util.ZeroExcludingPrior" x="@migrationRateEpi.t:a2a_demes">
+                <LogNormal id="LogNormalDistributionModel.2" name="distr">
+                    <parameter id="RealParameter.5" spec="parameter.RealParameter" estimate="false" name="M">0.0</parameter>
+                    <parameter id="RealParameter.6" spec="parameter.RealParameter" estimate="false" lower="0.0" name="S" upper="5.0">1.0</parameter>
+                </LogNormal>
+            </distribution>
+            <prior id="originBDMMPrimePrior.t:a2a_demes" name="distribution" x="@originBDMMPrime.t:a2a_demes">
+                <LogNormal id="LogNormalDistributionModel.3" name="distr">
+                    <parameter id="RealParameter.7" spec="parameter.RealParameter" estimate="false" name="M">-2.0</parameter>
+                    <parameter id="RealParameter.8" spec="parameter.RealParameter" estimate="false" lower="0.0" name="S" upper="5.0">0.6</parameter>
+                </LogNormal>
+            </prior>
+            <!-- <distribution id="samplingProportionEpiPrior.t:a2a_demes" spec="bdmmprime.util.ZeroExcludingPrior" x="@samplingProportionEpi.t:a2a_demes">
+                <Uniform id="Uniform.4" name="distr"/>
+            </distribution> -->
+
+			<!-- Prior for sampling proportion for Africa -->
+			<distribution spec="bdmmprime.util.ZeroExcludingPrior">
+				<x spec="feast.function.Slice" arg="@samplingProportionEpi.t:a2a_demes" index="0" count="1"/>
+				<distr spec="beast.math.distributions.Uniform" lower="0" upper="0.33"/>
+			</distribution>
+			<!-- Prior for sampling proportion for AsiaOceania -->
+			<distribution spec="bdmmprime.util.ZeroExcludingPrior">
+				<x spec="feast.function.Slice" arg="@samplingProportionEpi.t:a2a_demes" index="1" count="1"/>
+				<distr spec="beast.math.distributions.Uniform" lower="0" upper="0.003"/>
+			</distribution>
+			<!-- Prior for sampling proportion for Europe -->
+			<distribution spec="bdmmprime.util.ZeroExcludingPrior">
+				<x spec="feast.function.Slice" arg="@samplingProportionEpi.t:a2a_demes" index="2" count="1"/>
+				<distr spec="beast.math.distributions.Uniform" lower="0" upper="0.005"/>
+			</distribution>
+			<!-- Prior for sampling proportion for NorthAmerica -->
+			<distribution spec="bdmmprime.util.ZeroExcludingPrior">
+				<x spec="feast.function.Slice" arg="@samplingProportionEpi.t:a2a_demes" index="3" count="1"/>
+				<distr spec="beast.math.distributions.Uniform" lower="0" upper="0.04"/>
+			</distribution>
+			<!-- Prior for sampling proportion for SouthCentralAmerica -->
+			<distribution spec="bdmmprime.util.ZeroExcludingPrior">
+				<x spec="feast.function.Slice" arg="@samplingProportionEpi.t:a2a_demes" index="4" count="1"/>
+				<distr spec="beast.math.distributions.Uniform" lower="0" upper="0.64"/>
+			</distribution>
+
+        </distribution>
+        <distribution id="likelihood" spec="util.CompoundDistribution" useThreads="true">
+            <distribution id="treeLikelihood.a2a_demes" spec="ThreadedTreeLikelihood" data="@a2a_demes" tree="@Tree.t:a2a_demes">
+                <siteModel id="SiteModel.s:a2a_demes" spec="SiteModel" gammaCategoryCount="4" shape="@gammaShape.s:a2a_demes">
+                    <parameter id="mutationRate.s:a2a_demes" spec="parameter.RealParameter" estimate="false" name="mutationRate">1.0</parameter>
+                    <parameter id="proportionInvariant.s:a2a_demes" spec="parameter.RealParameter" estimate="false" lower="0.0" name="proportionInvariant" upper="1.0">0.0</parameter>
+                    <substModel id="hky.s:a2a_demes" spec="HKY" kappa="@kappa.s:a2a_demes">
+                        <frequencies id="empiricalFreqs.s:a2a_demes" spec="Frequencies" data="@a2a_demes"/>
+                    </substModel>
+                </siteModel>
+                <branchRateModel id="StrictClock.c:a2a_demes" spec="beast.evolution.branchratemodel.StrictClockModel">
+                    <parameter id="clockRate.c:a2a_demes" spec="parameter.RealParameter" estimate="false" name="clock.rate">8.0E-4</parameter>
+                </branchRateModel>
+            </distribution>
+        </distribution>
+    </distribution>
+
+    <operator id="gammaShapeScaler.s:a2a_demes" spec="ScaleOperator" parameter="@gammaShape.s:a2a_demes" scaleFactor="0.5" weight="0.1"/>
+
+    <operator id="KappaScaler.s:a2a_demes" spec="ScaleOperator" parameter="@kappa.s:a2a_demes" scaleFactor="0.5" weight="0.1"/>
+
+    <operator id="BDMMPrimeLeafToSA.t:a2a_demes" spec="LeafToSampledAncestorJump" tree="@Tree.t:a2a_demes" weight="10.0"/>
+
+    <operator id="BDMMPrimeSAWilsonBalding.t:a2a_demes" spec="SAWilsonBalding" tree="@Tree.t:a2a_demes" weight="10.0"/>
+
+    <operator id="BDMMPrimeSAWide.t:a2a_demes" spec="SAExchange" isNarrow="false" tree="@Tree.t:a2a_demes" weight="10.0"/>
+
+    <operator id="BDMMPrimeSANarrow.t:a2a_demes" spec="SAExchange" tree="@Tree.t:a2a_demes" weight="10.0"/>
+
+    <operator id="BDMMPrimeSAUniformOperator.t:a2a_demes" spec="SAUniform" tree="@Tree.t:a2a_demes" weight="20.0"/>
+
+    <operator id="BDMMPrimeSATreeRootScaler.t:a2a_demes" spec="SAScaleOperator" rootOnly="true" scaleFactor="0.95" tree="@Tree.t:a2a_demes" weight="1.0"/>
+
+    <operator id="BDMMPrimeSATreeScaler.t:a2a_demes" spec="SAScaleOperator" scaleFactor="0.95" tree="@Tree.t:a2a_demes" weight="3.0"/>
+
+    <operator id="originBDMMPrimeScaler.t:a2a_demes" spec="ScaleOperator" parameter="@originBDMMPrime.t:a2a_demes" scaleFactor="0.75" weight="3.0"/>
+
+    <operator id="typeFrequenciesExchanger.t:a2a_demes" spec="DeltaExchangeOperator" delta="0.1" weight="1.0">
+        <parameter idref="typeFrequencies.t:a2a_demes"/>
+    </operator>
+
+    <operator id="R0EpiScaler.t:a2a_demes" spec="ScaleOperator" parameter="@R0Epi.t:a2a_demes" scaleFactor="0.75" weight="3.0"/>
+
+    <operator id="samplingProportionEpiScaler.t:a2a_demes" spec="ScaleOperator" parameter="@samplingProportionEpi.t:a2a_demes" scaleFactor="0.75" weight="3.0"/>
+
+    <operator id="migrationRateEpiScaler.t:a2a_demes" spec="ScaleOperator" parameter="@migrationRateEpi.t:a2a_demes" scaleFactor="0.75" weight="3.0"/>
+
+    <logger id="tracelog" spec="Logger" fileName="a2a_demes.log" logEvery="1000" model="@posterior" sanitiseHeaders="true" sort="smart">
+        <log idref="posterior"/>
+        <log idref="likelihood"/>
+        <log idref="prior"/>
+        <log idref="treeLikelihood.a2a_demes"/>
+        <log id="TreeHeight.t:a2a_demes" spec="beast.evolution.tree.TreeHeightLogger" tree="@Tree.t:a2a_demes"/>
+        <log idref="gammaShape.s:a2a_demes"/>
+        <log idref="kappa.s:a2a_demes"/>
+        <log idref="originBDMMPrime.t:a2a_demes"/>
+        <log idref="typeFrequencies.t:a2a_demes"/>
+        <log id="typedTreeStats.t:a2a_demes" spec="bdmmprime.mapping.TypedTreeStatsLogger" includeRootEdgeChanges="true" typeLabel="type" typeSet="@typeSetBDMMPrime.t:a2a_demes">
+            <typedTree id="typeMappedTree.t:a2a_demes" spec="bdmmprime.mapping.TypeMappedTree" bdmmDistrib="@BDMMPrime.t:a2a_demes" frequencies="@typeFrequencies.t:a2a_demes" mapOnInit="false" remapOnLog="true" typeLabel="type" typeTraitSet="@typeTraitSet.t:a2a_demes" untypedTree="@Tree.t:a2a_demes"/>
+        </log>
+        <log idref="R0SVEpi.t:a2a_demes"/>
+        <log idref="R0AmongDemesSMEpi.t:a2a_demes"/>
+        <log idref="becomeUninfectiousRateSVEpi.t:a2a_demes"/>
+        <log idref="migrationRateSMEpi.t:a2a_demes"/>
+        <log idref="samplingProportionSVEpi.t:a2a_demes"/>
+        <log idref="removalProbSVEpi.t:a2a_demes"/>
+        <log idref="rhoSamplingProbTPEpi.t:a2a_demes"/>
+    </logger>
+
+    <logger id="screenlog" spec="Logger" logEvery="1000">
+        <log idref="posterior"/>
+        <log idref="likelihood"/>
+        <log idref="prior"/>
+    </logger>
+
+    <logger id="treelog.t:a2a_demes" spec="Logger" fileName="$(tree).trees" logEvery="1000" mode="tree">
+        <log id="TreeWithMetaDataLogger.t:a2a_demes" spec="beast.evolution.tree.TreeWithMetaDataLogger" tree="@Tree.t:a2a_demes"/>
+    </logger>
+
+    <logger id="typedTreeLogger.t:a2a_demes" spec="Logger" fileName="$(filebase).$(tree).typed.trees" logEvery="1000" mode="tree">
+        <log idref="typeMappedTree.t:a2a_demes"/>
+    </logger>
+
+    <logger id="nodeTypedTreeLogger.t:a2a_demes" spec="Logger" fileName="$(filebase).$(tree).typed.node.trees" logEvery="1000" mode="tree">
+        <log id="nodeTypedTree.t:a2a_demes" spec="bdmmprime.mapping.TypedNodeTreeLogger" typedTree="@typeMappedTree.t:a2a_demes"/>
+    </logger>
+
+    <operatorschedule id="OperatorSchedule" spec="OperatorSchedule"/>
+
+</run>
+
+</beast>

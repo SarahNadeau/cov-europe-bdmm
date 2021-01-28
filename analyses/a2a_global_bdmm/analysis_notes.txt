@@ -1,0 +1,189 @@
+# Things to remember about analysis:
+	# Seqs are limited to A2a lineage only
+	# Demes are global regions (assumed to have well-mixed populations & constant epi, sampling parameters w/in demes)
+	# I take only samples collected on or before Mar 8 (Lombardy lockdown)
+	# I downsampled Europe by taking min(# deaths + 1, # seqs)
+	# All seqs from other demes included
+	# I assume constant sampling proportion after date of first sample for all demes
+	# Bi-directional migraiton allowed b/w all demes
+
+# GENERATE ALIGNMENT -----------------------------------------------------
+
+# Alignment based on data available on GISAID as of 2020-04-01
+# See /Users/nadeaus/Documents/2019-ncov-data/data/sequences/2020-04-01/ncov/Snakefile for alignment generation steps
+
+DATADIR="/Users/nadeaus/Documents/2019-ncov-data/data/sequences/2020-04-01/ncov"
+WORKDIR="/Users/nadeaus/Documents/2019-ncov-data/analyses/2020-04-19_europe_bdmm_prime/a2a_global_bdmm"
+FIGSCRIPTDIR="/Users/nadeaus/Documents/2019-ncov-data/analyses/visualization_scripts"
+FIGOUTPUTDIR="/Users/nadeaus/Documents/2019-ncov-data/analyses/2020-04-19_europe_bdmm_prime/a2a_global_bdmm/figures"
+DATE="a2a_gobal_bdmm"
+
+Rscript $WORKDIR/generate_alignment.R \
+--alignment $DATADIR/results/masked_full_name.fasta \
+--metadata $DATADIR/data/metadata.tsv \
+--clades $DATADIR/results/clades.json \
+--output $WORKDIR/a2a_demes.fasta \
+--selectedseqtable $WORKDIR/selected_sample_metadata.txt \
+--demesummarytable $WORKDIR/deme_summary.txt \
+--othereuropesummarytable $WORKDIR/europe_deme_summary.txt
+
+# [1] "Oldest sample that could have been included: 2020-02-20"
+# [1] "Oldest sample included: 2020-02-20"
+# [1] "Youngest sample: 2020-03-08"
+
+# MAKE XML -----------------------------------------------------
+# Gamma categories: 4
+# Substitution model: HKY
+# Base frequencies: empirical
+# Clock rate: 0.0008 (fixed)
+# Tree prior: BDMMPrime
+# Set locations
+# Epi Parameterization
+# R0:
+# 	Number of change times: 0
+# 	Scalar: False
+# Become uninfectious rate:
+# 	Number of change times: 0
+# 	Scalar: True
+# 	Estimate: False
+# 	Epoch 1: 36.5
+# Sampling proportion:
+# 	Scalar: False
+# 	Number of change times: 1
+# 	Change times: 0.05 (~Feb 18, just before 1st sample that could have been selected)
+# 	Epoch 2: 0 for all demes
+#	Epoch 1: 0.00001 for all demes
+# Rho Sampling: 0 (default)
+# Removal Prob: Fixed to 1 (default, assumes removal upon sampling)
+# Migration Rate:
+# 	Scalar: False
+# 	Estimate: True
+# 	Number of change times: 0
+# 	All migration rates initialized to 0.1
+# R0AmongDemes: Fix to 0
+# Frequencies: 0.2 0.2 0.2 0.2 0.2 and estimate (unknown origin of A2a clade)
+
+# R0Epi: lognormal(0.8, 0.5), lower bound 0
+# gammaShape: Exponential(0.5)
+# kappa: lognormal(1.0, 1.25), 
+# migrationRateEpi: lognormal(0, 1), lower bound 0 (Copied from H1N1 analysis in BDMM paper)
+# OriginBDMMPrime: lognormal(-2, 0.6) (2.5% quartile 0.04 ~22 Feb, 97.5% quartile 0.36 ~= 28 Oct)
+# Sampling proportion: uniform(0, 1)
+
+# MODIFY XML -----------------------------------------------------
+# Sampling proportion prior upper bounds based on # seqs/confirmed cases according to WHO situation reports unless otherwise noted:
+# deme	last_seq	n_seqs
+# Africa	08.03.2020	8/24 = 0.33 (Nigeria: 1 + South Africa: 2 + Senegal: 4 + Algeria: 17)
+# AsiaOceania	08.03.2020	8/2471 = 0.003 (Taiwan: 2359 + Vietnam: 21 + Georgia:12 + New Zealand: 5 + Australia: 74)
+# Europe	08.03.2020	60/12197 = 0.005 (Source: https://en.wikipedia.org/wiki/2020_coronavirus_pandemic_in_Europe)
+# NorthAmerica	08.03.2020	11/277 = 0.04 (Mexico: 7 + USA: 213 + Canada: 57)
+# SouthCentralAmerica	06.03.2020	16/25 = 0.64 (Brazil: 19 + Chile: 5 + Panama: NA, Colombia: 1)
+
+<!--  <distribution id="samplingProportionEpiPrior.t:a2a_demes" spec="bdmmprime.util.ZeroExcludingPrior" x="@samplingProportionEpi.t:a2a_demes">
+    <Uniform id="Uniform.4" name="distr" upper="Infinity"/>
+</distribution> -->
+
+<!-- Prior for sampling proportion for Africa -->
+<distribution spec="bdmmprime.util.ZeroExcludingPrior">
+	<x spec="feast.function.Slice" arg="@samplingProportionEpi.t:a2a_demes" index="0" count="1"/>
+	<distr spec="beast.math.distributions.Uniform" lower="0" upper="0.33"/>
+</distribution>
+<!-- Prior for sampling proportion for AsiaOceania -->
+<distribution spec="bdmmprime.util.ZeroExcludingPrior">
+	<x spec="feast.function.Slice" arg="@samplingProportionEpi.t:a2a_demes" index="1" count="1"/>
+	<distr spec="beast.math.distributions.Uniform" lower="0" upper="0.003"/>
+</distribution>
+<!-- Prior for sampling proportion for Europe -->
+<distribution spec="bdmmprime.util.ZeroExcludingPrior">
+	<x spec="feast.function.Slice" arg="@samplingProportionEpi.t:a2a_demes" index="3" count="1"/>
+	<distr spec="beast.math.distributions.Uniform" lower="0" upper="0.005"/>
+</distribution>
+<!-- Prior for sampling proportion for NorthAmerica -->
+<distribution spec="bdmmprime.util.ZeroExcludingPrior">
+	<x spec="feast.function.Slice" arg="@samplingProportionEpi.t:a2a_demes" index="4" count="1"/>
+	<distr spec="beast.math.distributions.Uniform" lower="0" upper="0.04"/>
+</distribution>
+<!-- Prior for sampling proportion for SouthCentralAmerica -->
+<distribution spec="bdmmprime.util.ZeroExcludingPrior">
+	<x spec="feast.function.Slice" arg="@samplingProportionEpi.t:a2a_demes" index="5" count="1"/>
+	<distr spec="beast.math.distributions.Uniform" lower="0" upper="0.64"/>
+</distribution>
+
+# RUNNING THE ANALYSIS -----------------------------------------------------
+# Test the XML locally:
+cd ~/Downloads
+BEAST="/Users/nadeaus/programs/BEAST2.6.2/bin/beast"
+$BEAST $WORKDIR/a2a_bdmm.xml
+# Test looks good
+
+# Submit real job on Euler:
+scp $WORKDIR/a2a_bdmm.xml nadeaus@euler.ethz.ch:/cluster/scratch/nadeaus/
+ssh nadeaus@euler.ethz.ch
+cd $SCRATCH/2020-04-19
+mkdir a2a_bdmm
+WORKDIR=`pwd`/a2a_bdmm
+mv ../a2a_bdmm.xml $WORKDIR
+
+module load java/1.8
+BEAST="/cluster/home/nadeaus/programs/beast/bin/beast"
+
+# Run 2 chains in parallel for min(12h, 10000000 samples):
+mkdir $WORKDIR/chain_1
+mkdir $WORKDIR/chain_2
+
+cp $WORKDIR/a2a_bdmm.xml $WORKDIR/chain_1/
+cp $WORKDIR/a2a_bdmm.xml $WORKDIR/chain_2/
+
+cd $WORKDIR/chain_1
+bsub \
+-B -N \
+-n 4 -R "rusage[mem=4096]" -W 12:00 \
+-o $WORKDIR/chain_1/a2a_bdmm_2020-04-19_chain_1.out \
+$BEAST $WORKDIR/chain_1/a2a_bdmm.xml
+
+cd $WORKDIR/chain_2
+bsub \
+-N \
+-n 4 -R "rusage[mem=4096]" -W 12:00 \
+-o $WORKDIR/chain_1/a2a_bdmm_2020-04-19_chain_2.out \
+$BEAST $WORKDIR/chain_2/a2a_bdmm.xml
+
+
+mkdir $WORKDIR/raw_results
+scp nadeaus@euler.ethz.ch:/cluster/scratch/nadeaus/2020-04-19/a2a_bdmm/chain_1/a2a_demes.log $WORKDIR/raw_results/chain_1.log
+scp nadeaus@euler.ethz.ch:/cluster/scratch/nadeaus/2020-04-19/a2a_bdmm/chain_2/a2a_demes.log $WORKDIR/raw_results/chain_2.log
+
+mkdir $WORKDIR/processed_results
+LOGCOMBINER="/Users/nadeaus/programs/BEAST2.6.2/bin/logcombiner"
+$LOGCOMBINER \
+-log $WORKDIR/raw_results/chain_1.log \
+-log $WORKDIR/raw_results/chain_2.log \
+-o $WORKDIR/processed_results/combined_chains.log \
+-b 10 
+
+scp nadeaus@euler.ethz.ch:/cluster/scratch/nadeaus/2020-04-19/a2a_bdmm/chain_1/a2a_bdmm.a2a_demes.typed.node.trees $WORKDIR/raw_results/chain_1.typed.node.trees
+scp nadeaus@euler.ethz.ch:/cluster/scratch/nadeaus/2020-04-19/a2a_bdmm/chain_2/a2a_bdmm.a2a_demes.typed.node.trees $WORKDIR/raw_results/chain_2.typed.node.trees
+
+$LOGCOMBINER \
+-log $WORKDIR/raw_results/chain_1.typed.node.trees \
+-log $WORKDIR/raw_results/chain_2.typed.node.trees \
+-o $WORKDIR/processed_results/combined_chains.typed.node.trees \
+-b 10 
+
+TREEANNOTATOR="/Users/nadeaus/programs/BEAST2.6.2/bin/treeannotator"
+$TREEANNOTATOR $WORKDIR/processed_results/combined_chains.typed.node.trees $WORKDIR/processed_results/combined_chains_mcc.typed.node.tree
+
+# Make visualizations
+mkdir -p $FIGOUTPUTDIR
+
+Rscript $FIGSCRIPTDIR/plot_bdmm_migration_rates_a2a_global_demes.R \
+--output1 $FIGOUTPUTDIR/${DATE}_log_migration_rates.png \
+--output2 $FIGOUTPUTDIR/${DATE}_migration_rates.png \
+--logfile $WORKDIR/processed_results/combined_chains.log \
+--tracertable $WORKDIR/processed_results/tracer_table.txt
+
+Rscript $FIGSCRIPTDIR/plot_bdmm_n_introductions_a2a_global_demes.R \
+--output $FIGOUTPUTDIR/${DATE}_n_introductions.png \
+--logfile $WORKDIR/processed_results/combined_chains.log \
+--tracertable $WORKDIR/processed_results/tracer_table.txt
+

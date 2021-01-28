@@ -1,0 +1,6 @@
+node	Europe	Asia &
+Oceania	Africa	South &
+Central
+America	North
+America	node_desc
+104	0.952770409666961	0.00257883878573534	0.00803124078986148	0.0163572060123784	0.0202623047450634	root
