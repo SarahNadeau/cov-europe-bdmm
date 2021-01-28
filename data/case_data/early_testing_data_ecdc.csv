@@ -1,0 +1,14 @@
+﻿# From https://www.ecdc.europa.eu/en/publications-data/covid-19-testing,,,,,,,,
+country,country_code,year_week,new_cases,tests_done,population,testing_rate,positivity_rate,testing_data_source
+France,FR,2020-W09,88,3318,67012883,4.951286755,2.652200121,TESSy
+France,FR,2020-W10,616,11101,67012883,16.56547145,5.549049635,TESSy
+Italy,IT,2020-W01,0,0,60359546,0,,Survey
+Italy,IT,2020-W02,0,0,60359546,0,,Survey
+Italy,IT,2020-W03,0,0,60359546,0,,Survey
+Italy,IT,2020-W04,0,0,60359546,0,,Survey
+Italy,IT,2020-W05,3,0,60359546,0,,Survey
+Italy,IT,2020-W06,0,0,60359546,0,,Survey
+Italy,IT,2020-W07,0,0,60359546,0,,Survey
+Italy,IT,2020-W08,76,0,60359546,0,,Survey
+Italy,IT,2020-W09,1049,20457,60359546,33.89190502,5.127829105,TESSy
+Germany,DE,2020-W10,736,124716,83019213,150.2254665,0.5901408,TESSy

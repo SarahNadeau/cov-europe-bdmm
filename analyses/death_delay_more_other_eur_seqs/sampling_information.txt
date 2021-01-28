@@ -1,0 +1,6 @@
+deme	sampling_prop_upper_bound	n_samples	confirmed_cases_on_last_sample_day	last_sample_day
+France	0.093	66	706	08.03.2020
+Germany	0.1	15	157	03.03.2020
+Hubei	0.15	10	66	18.01.2020
+Italy	0.005	13	2502	04.03.2020
+OtherEuropean	0.092	66	714	08.03.2020

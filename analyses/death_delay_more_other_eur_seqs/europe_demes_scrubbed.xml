@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><beast beautitemplate='Standard' beautistatus='noAutoSetClockRate' namespace="beast.core:beast.evolution.alignment:beast.evolution.tree.coalescent:beast.core.util:beast.evolution.nuc:beast.evolution.operators:beast.evolution.sitemodel:beast.evolution.substitutionmodel:beast.evolution.likelihood" required="" version="2.6">
+
+
+    <data
+id="europe_demes"
+spec="Alignment"
+name="alignment">
+                        
+<!-- Sequence data scrubbed from file. It's available for download from GISAID.org subject to a user agreement. -->
+    
+<map name="Uniform" >beast.math.distributions.Uniform</map>
+<map name="Exponential" >beast.math.distributions.Exponential</map>
+<map name="LogNormal" >beast.math.distributions.LogNormalDistributionModel</map>
+<map name="Normal" >beast.math.distributions.Normal</map>
+<map name="Beta" >beast.math.distributions.Beta</map>
+<map name="Gamma" >beast.math.distributions.Gamma</map>
+<map name="LaplaceDistribution" >beast.math.distributions.LaplaceDistribution</map>
+<map name="prior" >beast.math.distributions.Prior</map>
+<map name="InverseGamma" >beast.math.distributions.InverseGamma</map>
+<map name="OneOnX" >beast.math.distributions.OneOnX</map>
+
+
+<run id="mcmc" spec="MCMC" chainLength="10000000">
+    <state id="state" spec="State" storeEvery="5000">
+        <tree id="Tree.t:europe_demes" spec="beast.evolution.tree.Tree" name="stateNode">
+            <trait id="dateTrait.t:europe_demes" spec="beast.evolution.tree.TraitSet" dateFormat="yyyy-M-dd" traitname="date" value="EPI_ISL_414455|OtherEuropean|2020-03-06=2020-03-06,EPI_ISL_414429|OtherEuropean|2020-03-02=2020-03-02,EPI_ISL_414450|OtherEuropean|2020-03-06=2020-03-06,EPI_ISL_414426|OtherEuropean|2020-03-03=2020-03-03,EPI_ISL_406800|Hubei|2020-01-01=2020-01-01,EPI_ISL_417007|OtherEuropean|2020-03-07=2020-03-07,EPI_ISL_416511|France|2020-03-07=2020-03-07,EPI_ISL_416512|France|2020-03-07=2020-03-07,EPI_ISL_416513|France|2020-03-07=2020-03-07,EPI_ISL_416509|France|2020-03-06=2020-03-06,EPI_ISL_416510|France|2020-03-06=2020-03-06,EPI_ISL_416506|France|2020-03-03=2020-03-03,EPI_ISL_416508|France|2020-03-06=2020-03-06,EPI_ISL_416507|France|2020-03-05=2020-03-05,EPI_ISL_417009|OtherEuropean|2020-03-07=2020-03-07,EPI_ISL_413489|Italy|2020-03-03=2020-03-03,EPI_ISL_413488|Germany|2020-02-28=2020-02-28,EPI_ISL_417421|Italy|2020-03-01=2020-03-01,EPI_ISL_417418|Italy|2020-03-01=2020-03-01,EPI_ISL_417419|Italy|2020-03-01=2020-03-01,EPI_ISL_417491|Italy|2020-03-03=2020-03-03,EPI_ISL_417423|Italy|2020-03-01=2020-03-01,EPI_ISL_417424|OtherEuropean|2020-03-04=2020-03-04,EPI_ISL_408431|France|2020-01-29=2020-01-29,EPI_ISL_414524|OtherEuropean|2020-03-01=2020-03-01,EPI_ISL_414507|Germany|2020-03-03=2020-03-03,EPI_ISL_414505|Germany|2020-02-27=2020-02-27,EPI_ISL_414504|Germany|2020-02-26=2020-02-26,EPI_ISL_414509|Germany|2020-02-28=2020-02-28,EPI_ISL_414506|Germany|2020-02-27=2020-02-27,EPI_ISL_414508|Germany|2020-02-27=2020-02-27,EPI_ISL_408430|France|2020-01-29=2020-01-29,EPI_ISL_414521|Germany|2020-03-02=2020-03-02,EPI_ISL_414520|Germany|2020-03-02=2020-03-02,EPI_ISL_414574|Germany|2020-02-28=2020-02-28,EPI_ISL_414585|OtherEuropean|2020-03-03=2020-03-03,EPI_ISL_414598|OtherEuropean|2020-03-05=2020-03-05,EPI_ISL_406862|Germany|2020-01-28=2020-01-28,EPI_ISL_414477|OtherEuropean|2020-03-01=2020-03-01,EPI_ISL_414495|OtherEuropean|2020-03-08=2020-03-08,EPI_ISL_414497|Germany|2020-02-25=2020-02-25,EPI_ISL_414499|Germany|2020-02-26=2020-02-26,EPI_ISL_414498|Germany|2020-02-26=2020-02-26,EPI_ISL_414496|OtherEuropean|2020-03-04=2020-03-04,EPI_ISL_417334|France|2020-03-04=2020-03-04,EPI_ISL_417340|France|2020-03-07=2020-03-07,EPI_ISL_417338|France|2020-03-07=2020-03-07,EPI_ISL_417336|France|2020-03-06=2020-03-06,EPI_ISL_417337|France|2020-03-07=2020-03-07,EPI_ISL_417339|France|2020-03-08=2020-03-08,EPI_ISL_417333|France|2020-03-04=2020-03-04,EPI_ISL_417335|France|2020-03-06=2020-03-06,EPI_ISL_415650|France|2020-03-02=2020-03-02,EPI_ISL_415649|France|2020-03-05=2020-03-05,EPI_ISL_415652|France|2020-03-05=2020-03-05,EPI_ISL_415651|France|2020-03-05=2020-03-05,EPI_ISL_417488|OtherEuropean|2020-02-29=2020-02-29,EPI_ISL_417447|Italy|2020-02-24=2020-02-24,EPI_ISL_418795|OtherEuropean|2020-03-06=2020-03-06,EPI_ISL_415648|OtherEuropean|2020-03-03=2020-03-03,EPI_ISL_416153|OtherEuropean|2020-03-02=2020-03-02,EPI_ISL_406798|Hubei|2019-12-26=2019-12-26,EPI_ISL_416994|OtherEuropean|2020-03-04=2020-03-04,EPI_ISL_415653|France|2020-03-08=2020-03-08,EPI_ISL_417445|Italy|2020-02-24=2020-02-24,EPI_ISL_417879|OtherEuropean|2020-03-06=2020-03-06,EPI_ISL_416504|France|2020-03-02=2020-03-02,EPI_ISL_416505|France|2020-03-02=2020-03-02,EPI_ISL_416502|France|2020-02-26=2020-02-26,EPI_ISL_416503|France|2020-03-01=2020-03-01,EPI_ISL_415141|OtherEuropean|2020-02-29=2020-02-29,EPI_ISL_416493|France|2020-03-08=2020-03-08,EPI_ISL_416494|France|2020-03-04=2020-03-04,EPI_ISL_415143|OtherEuropean|2020-03-02=2020-03-02,EPI_ISL_415149|OtherEuropean|2020-03-01=2020-03-01,EPI_ISL_412980|Hubei|2020-01-18=2020-01-18,EPI_ISL_416486|OtherEuropean|2020-03-02=2020-03-02,EPI_ISL_412981|Hubei|2020-01-18=2020-01-18,EPI_ISL_416485|OtherEuropean|2020-02-27=2020-02-27,EPI_ISL_416484|OtherEuropean|2020-02-27=2020-02-27,EPI_ISL_416483|OtherEuropean|2020-02-26=2020-02-26,EPI_ISL_416468|OtherEuropean|2020-03-02=2020-03-02,EPI_ISL_415144|OtherEuropean|2020-02-27=2020-02-27,EPI_ISL_417012|OtherEuropean|2020-03-08=2020-03-08,EPI_ISL_414626|France|2020-02-29=2020-02-29,EPI_ISL_414638|France|2020-03-04=2020-03-04,EPI_ISL_414635|France|2020-03-04=2020-03-04,EPI_ISL_414631|France|2020-03-04=2020-03-04,EPI_ISL_414624|France|2020-02-26=2020-02-26,EPI_ISL_414633|France|2020-03-04=2020-03-04,EPI_ISL_414625|France|2020-02-26=2020-02-26,EPI_ISL_414630|France|2020-03-03=2020-03-03,EPI_ISL_414632|France|2020-03-04=2020-03-04,EPI_ISL_414627|France|2020-03-02=2020-03-02,EPI_ISL_414637|France|2020-03-04=2020-03-04,EPI_ISL_414629|France|2020-03-03=2020-03-03,EPI_ISL_417010|OtherEuropean|2020-03-04=2020-03-04,EPI_ISL_414634|France|2020-03-04=2020-03-04,EPI_ISL_414636|France|2020-03-04=2020-03-04,EPI_ISL_414623|France|2020-02-25=2020-02-25,EPI_ISL_417295|OtherEuropean|2020-03-08=2020-03-08,EPI_ISL_417234|OtherEuropean|2020-03-02=2020-03-02,EPI_ISL_417231|OtherEuropean|2020-03-03=2020-03-03,EPI_ISL_417216|OtherEuropean|2020-02-25=2020-02-25,EPI_ISL_417206|OtherEuropean|2020-03-06=2020-03-06,EPI_ISL_406596|France|2020-01-23=2020-01-23,EPI_ISL_416750|France|2020-03-06=2020-03-06,EPI_ISL_416754|France|2020-03-06=2020-03-06,EPI_ISL_416751|France|2020-03-05=2020-03-05,EPI_ISL_416753|France|2020-03-06=2020-03-06,EPI_ISL_417205|OtherEuropean|2020-03-02=2020-03-02,EPI_ISL_417981|OtherEuropean|2020-03-02=2020-03-02,EPI_ISL_417980|OtherEuropean|2020-03-03=2020-03-03,EPI_ISL_417986|OtherEuropean|2020-03-03=2020-03-03,EPI_ISL_413591|OtherEuropean|2020-03-02=2020-03-02,EPI_ISL_413593|OtherEuropean|2020-02-29=2020-02-29,EPI_ISL_416487|OtherEuropean|2020-03-04=2020-03-04,EPI_ISL_416488|OtherEuropean|2020-03-03=2020-03-03,EPI_ISL_417751|OtherEuropean|2020-03-04=2020-03-04,EPI_ISL_418219|France|2020-02-26=2020-02-26,EPI_ISL_418218|France|2020-02-21=2020-02-21,EPI_ISL_415698|OtherEuropean|2020-02-27=2020-02-27,EPI_ISL_406716|Hubei|2020-01-02=2020-01-02,EPI_ISL_406717|Hubei|2020-01-02=2020-01-02,EPI_ISL_416752|France|2020-03-04=2020-03-04,EPI_ISL_416749|France|2020-03-04=2020-03-04,EPI_ISL_416756|France|2020-03-06=2020-03-06,EPI_ISL_416757|France|2020-03-07=2020-03-07,EPI_ISL_416747|France|2020-03-04=2020-03-04,EPI_ISL_416758|France|2020-03-08=2020-03-08,EPI_ISL_416748|France|2020-03-04=2020-03-04,EPI_ISL_416746|France|2020-03-03=2020-03-03,EPI_ISL_402121|Hubei|2019-12-30=2019-12-30,EPI_ISL_402125|Hubei|2019-12-26=2019-12-26,EPI_ISL_418273|OtherEuropean|2020-02-28=2020-02-28,EPI_ISL_412973|Italy|2020-02-20=2020-02-20,EPI_ISL_418220|France|2020-02-28=2020-02-28,EPI_ISL_418224|France|2020-03-08=2020-03-08,EPI_ISL_418223|France|2020-03-05=2020-03-05,EPI_ISL_418225|France|2020-03-08=2020-03-08,EPI_ISL_418221|France|2020-03-02=2020-03-02,EPI_ISL_418222|France|2020-03-04=2020-03-04,EPI_ISL_413604|OtherEuropean|2020-03-03=2020-03-03,EPI_ISL_418251|OtherEuropean|2020-02-25=2020-02-25,EPI_ISL_418246|OtherEuropean|2020-03-01=2020-03-01,EPI_ISL_418245|OtherEuropean|2020-03-01=2020-03-01,EPI_ISL_418247|OtherEuropean|2020-02-26=2020-02-26,EPI_ISL_418253|OtherEuropean|2020-03-02=2020-03-02,EPI_ISL_418249|OtherEuropean|2020-03-03=2020-03-03,EPI_ISL_418248|OtherEuropean|2020-03-01=2020-03-01,EPI_ISL_418244|OtherEuropean|2020-03-02=2020-03-02,EPI_ISL_418243|OtherEuropean|2020-02-28=2020-02-28,EPI_ISL_402130|Hubei|2019-12-30=2019-12-30,EPI_ISL_412912|Germany|2020-02-25=2020-02-25,EPI_ISL_418252|OtherEuropean|2020-03-04=2020-03-04,EPI_ISL_414027|OtherEuropean|2020-03-04=2020-03-04,EPI_ISL_418437|OtherEuropean|2020-03-06=2020-03-06,EPI_ISL_410546|Italy|2020-01-29=2020-01-29,EPI_ISL_414022|OtherEuropean|2020-02-27=2020-02-27,EPI_ISL_417987|OtherEuropean|2020-03-03=2020-03-03,EPI_ISL_417979|OtherEuropean|2020-03-03=2020-03-03,EPI_ISL_413565|OtherEuropean|2020-02-24=2020-02-24,EPI_ISL_417921|Italy|2020-03-01=2020-03-01,EPI_ISL_417922|Italy|2020-02-28=2020-02-28,EPI_ISL_417923|Italy|2020-03-04=2020-03-04,EPI_ISL_411957|Hubei|2020-01-08=2020-01-08,EPI_ISL_411951|OtherEuropean|2020-02-07=2020-02-07,EPI_ISL_413564|OtherEuropean|2020-03-01=2020-03-01,EPI_ISL_417285|OtherEuropean|2020-03-06=2020-03-06,EPI_ISL_410486|France|2020-02-08=2020-02-08">
+                <taxa id="TaxonSet.europe_demes" spec="TaxonSet">
+                    <alignment idref="europe_demes"/>
+                </taxa>
+            </trait>
+            <taxonset idref="TaxonSet.europe_demes"/>
+        </tree>
+        <parameter id="gammaShape.s:europe_demes" spec="parameter.RealParameter" name="stateNode">1.0</parameter>
+        <parameter id="kappa.s:europe_demes" spec="parameter.RealParameter" lower="0.0" name="stateNode">2.0</parameter>
+        <parameter id="originBDMMPrime.t:europe_demes" spec="parameter.RealParameter" name="stateNode">10.0</parameter>
+        <parameter id="R0Epi.t:europe_demes" spec="parameter.RealParameter" dimension="5" name="stateNode">1.0 1.0 1.0 1.0 1.0</parameter>
+        <parameter id="samplingProportionEpi.t:europe_demes" spec="parameter.RealParameter" dimension="15" lower="0.0" name="stateNode" upper="1.0">1.0E-5 1.0E-5 0.0 1.0E-5 1.0E-5 1.0E-5 1.0E-5 1.0E-5 1.0E-5 1.0E-5 0.0 0.0 0.0 0.0 0.0</parameter>
+        <parameter id="migrationRateEpi.t:europe_demes" spec="parameter.RealParameter" dimension="20" name="stateNode">0.1 0.0 0.1 0.1 0.1 0.0 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.0 0.1 0.1 0.1 0.0 0.1</parameter>
+    </state>
+
+    <init id="RandomTree.t:europe_demes" spec="beast.evolution.tree.RandomTree" estimate="false" initial="@Tree.t:europe_demes" taxa="@europe_demes">
+        <populationModel id="ConstantPopulation0.t:europe_demes" spec="ConstantPopulation">
+            <parameter id="randomPopSize.t:europe_demes" spec="parameter.RealParameter" name="popSize">1.0</parameter>
+        </populationModel>
+    </init>
+
+    <distribution id="posterior" spec="util.CompoundDistribution">
+        <distribution id="prior" spec="util.CompoundDistribution">
+            <distribution id="BDMMPrime.t:europe_demes" spec="bdmmprime.distributions.BirthDeathMigrationDistribution" conditionOnSurvival="false" tree="@Tree.t:europe_demes">
+                <parameterization id="EpiBDMMPrimeParameterization.t:europe_demes" spec="bdmmprime.parameterization.EpiParameterization" origin="@originBDMMPrime.t:europe_demes">
+                    <R0 id="R0SVEpi.t:europe_demes" spec="bdmmprime.parameterization.SkylineVectorParameter" origin="@originBDMMPrime.t:europe_demes" skylineValues="@R0Epi.t:europe_demes" timesAreAges="true">
+                        <typeSet id="typeSetBDMMPrime.t:europe_demes" spec="bdmmprime.parameterization.TypeSet">
+                            <typeTraitSet id="typeTraitSet.t:europe_demes" spec="bdmmprime.util.InitializedTraitSet" traitname="type" value="EPI_ISL_414455|OtherEuropean|2020-03-06=OtherEuropean,EPI_ISL_414429|OtherEuropean|2020-03-02=OtherEuropean,EPI_ISL_414450|OtherEuropean|2020-03-06=OtherEuropean,EPI_ISL_414426|OtherEuropean|2020-03-03=OtherEuropean,EPI_ISL_406800|Hubei|2020-01-01=Hubei,EPI_ISL_417007|OtherEuropean|2020-03-07=OtherEuropean,EPI_ISL_416511|France|2020-03-07=France,EPI_ISL_416512|France|2020-03-07=France,EPI_ISL_416513|France|2020-03-07=France,EPI_ISL_416509|France|2020-03-06=France,EPI_ISL_416510|France|2020-03-06=France,EPI_ISL_416506|France|2020-03-03=France,EPI_ISL_416508|France|2020-03-06=France,EPI_ISL_416507|France|2020-03-05=France,EPI_ISL_417009|OtherEuropean|2020-03-07=OtherEuropean,EPI_ISL_413489|Italy|2020-03-03=Italy,EPI_ISL_413488|Germany|2020-02-28=Germany,EPI_ISL_417421|Italy|2020-03-01=Italy,EPI_ISL_417418|Italy|2020-03-01=Italy,EPI_ISL_417419|Italy|2020-03-01=Italy,EPI_ISL_417491|Italy|2020-03-03=Italy,EPI_ISL_417423|Italy|2020-03-01=Italy,EPI_ISL_417424|OtherEuropean|2020-03-04=OtherEuropean,EPI_ISL_408431|France|2020-01-29=France,EPI_ISL_414524|OtherEuropean|2020-03-01=OtherEuropean,EPI_ISL_414507|Germany|2020-03-03=Germany,EPI_ISL_414505|Germany|2020-02-27=Germany,EPI_ISL_414504|Germany|2020-02-26=Germany,EPI_ISL_414509|Germany|2020-02-28=Germany,EPI_ISL_414506|Germany|2020-02-27=Germany,EPI_ISL_414508|Germany|2020-02-27=Germany,EPI_ISL_408430|France|2020-01-29=France,EPI_ISL_414521|Germany|2020-03-02=Germany,EPI_ISL_414520|Germany|2020-03-02=Germany,EPI_ISL_414574|Germany|2020-02-28=Germany,EPI_ISL_414585|OtherEuropean|2020-03-03=OtherEuropean,EPI_ISL_414598|OtherEuropean|2020-03-05=OtherEuropean,EPI_ISL_406862|Germany|2020-01-28=Germany,EPI_ISL_414477|OtherEuropean|2020-03-01=OtherEuropean,EPI_ISL_414495|OtherEuropean|2020-03-08=OtherEuropean,EPI_ISL_414497|Germany|2020-02-25=Germany,EPI_ISL_414499|Germany|2020-02-26=Germany,EPI_ISL_414498|Germany|2020-02-26=Germany,EPI_ISL_414496|OtherEuropean|2020-03-04=OtherEuropean,EPI_ISL_417334|France|2020-03-04=France,EPI_ISL_417340|France|2020-03-07=France,EPI_ISL_417338|France|2020-03-07=France,EPI_ISL_417336|France|2020-03-06=France,EPI_ISL_417337|France|2020-03-07=France,EPI_ISL_417339|France|2020-03-08=France,EPI_ISL_417333|France|2020-03-04=France,EPI_ISL_417335|France|2020-03-06=France,EPI_ISL_415650|France|2020-03-02=France,EPI_ISL_415649|France|2020-03-05=France,EPI_ISL_415652|France|2020-03-05=France,EPI_ISL_415651|France|2020-03-05=France,EPI_ISL_417488|OtherEuropean|2020-02-29=OtherEuropean,EPI_ISL_417447|Italy|2020-02-24=Italy,EPI_ISL_418795|OtherEuropean|2020-03-06=OtherEuropean,EPI_ISL_415648|OtherEuropean|2020-03-03=OtherEuropean,EPI_ISL_416153|OtherEuropean|2020-03-02=OtherEuropean,EPI_ISL_406798|Hubei|2019-12-26=Hubei,EPI_ISL_416994|OtherEuropean|2020-03-04=OtherEuropean,EPI_ISL_415653|France|2020-03-08=France,EPI_ISL_417445|Italy|2020-02-24=Italy,EPI_ISL_417879|OtherEuropean|2020-03-06=OtherEuropean,EPI_ISL_416504|France|2020-03-02=France,EPI_ISL_416505|France|2020-03-02=France,EPI_ISL_416502|France|2020-02-26=France,EPI_ISL_416503|France|2020-03-01=France,EPI_ISL_415141|OtherEuropean|2020-02-29=OtherEuropean,EPI_ISL_416493|France|2020-03-08=France,EPI_ISL_416494|France|2020-03-04=France,EPI_ISL_415143|OtherEuropean|2020-03-02=OtherEuropean,EPI_ISL_415149|OtherEuropean|2020-03-01=OtherEuropean,EPI_ISL_412980|Hubei|2020-01-18=Hubei,EPI_ISL_416486|OtherEuropean|2020-03-02=OtherEuropean,EPI_ISL_412981|Hubei|2020-01-18=Hubei,EPI_ISL_416485|OtherEuropean|2020-02-27=OtherEuropean,EPI_ISL_416484|OtherEuropean|2020-02-27=OtherEuropean,EPI_ISL_416483|OtherEuropean|2020-02-26=OtherEuropean,EPI_ISL_416468|OtherEuropean|2020-03-02=OtherEuropean,EPI_ISL_415144|OtherEuropean|2020-02-27=OtherEuropean,EPI_ISL_417012|OtherEuropean|2020-03-08=OtherEuropean,EPI_ISL_414626|France|2020-02-29=France,EPI_ISL_414638|France|2020-03-04=France,EPI_ISL_414635|France|2020-03-04=France,EPI_ISL_414631|France|2020-03-04=France,EPI_ISL_414624|France|2020-02-26=France,EPI_ISL_414633|France|2020-03-04=France,EPI_ISL_414625|France|2020-02-26=France,EPI_ISL_414630|France|2020-03-03=France,EPI_ISL_414632|France|2020-03-04=France,EPI_ISL_414627|France|2020-03-02=France,EPI_ISL_414637|France|2020-03-04=France,EPI_ISL_414629|France|2020-03-03=France,EPI_ISL_417010|OtherEuropean|2020-03-04=OtherEuropean,EPI_ISL_414634|France|2020-03-04=France,EPI_ISL_414636|France|2020-03-04=France,EPI_ISL_414623|France|2020-02-25=France,EPI_ISL_417295|OtherEuropean|2020-03-08=OtherEuropean,EPI_ISL_417234|OtherEuropean|2020-03-02=OtherEuropean,EPI_ISL_417231|OtherEuropean|2020-03-03=OtherEuropean,EPI_ISL_417216|OtherEuropean|2020-02-25=OtherEuropean,EPI_ISL_417206|OtherEuropean|2020-03-06=OtherEuropean,EPI_ISL_406596|France|2020-01-23=France,EPI_ISL_416750|France|2020-03-06=France,EPI_ISL_416754|France|2020-03-06=France,EPI_ISL_416751|France|2020-03-05=France,EPI_ISL_416753|France|2020-03-06=France,EPI_ISL_417205|OtherEuropean|2020-03-02=OtherEuropean,EPI_ISL_417981|OtherEuropean|2020-03-02=OtherEuropean,EPI_ISL_417980|OtherEuropean|2020-03-03=OtherEuropean,EPI_ISL_417986|OtherEuropean|2020-03-03=OtherEuropean,EPI_ISL_413591|OtherEuropean|2020-03-02=OtherEuropean,EPI_ISL_413593|OtherEuropean|2020-02-29=OtherEuropean,EPI_ISL_416487|OtherEuropean|2020-03-04=OtherEuropean,EPI_ISL_416488|OtherEuropean|2020-03-03=OtherEuropean,EPI_ISL_417751|OtherEuropean|2020-03-04=OtherEuropean,EPI_ISL_418219|France|2020-02-26=France,EPI_ISL_418218|France|2020-02-21=France,EPI_ISL_415698|OtherEuropean|2020-02-27=OtherEuropean,EPI_ISL_406716|Hubei|2020-01-02=Hubei,EPI_ISL_406717|Hubei|2020-01-02=Hubei,EPI_ISL_416752|France|2020-03-04=France,EPI_ISL_416749|France|2020-03-04=France,EPI_ISL_416756|France|2020-03-06=France,EPI_ISL_416757|France|2020-03-07=France,EPI_ISL_416747|France|2020-03-04=France,EPI_ISL_416758|France|2020-03-08=France,EPI_ISL_416748|France|2020-03-04=France,EPI_ISL_416746|France|2020-03-03=France,EPI_ISL_402121|Hubei|2019-12-30=Hubei,EPI_ISL_402125|Hubei|2019-12-26=Hubei,EPI_ISL_418273|OtherEuropean|2020-02-28=OtherEuropean,EPI_ISL_412973|Italy|2020-02-20=Italy,EPI_ISL_418220|France|2020-02-28=France,EPI_ISL_418224|France|2020-03-08=France,EPI_ISL_418223|France|2020-03-05=France,EPI_ISL_418225|France|2020-03-08=France,EPI_ISL_418221|France|2020-03-02=France,EPI_ISL_418222|France|2020-03-04=France,EPI_ISL_413604|OtherEuropean|2020-03-03=OtherEuropean,EPI_ISL_418251|OtherEuropean|2020-02-25=OtherEuropean,EPI_ISL_418246|OtherEuropean|2020-03-01=OtherEuropean,EPI_ISL_418245|OtherEuropean|2020-03-01=OtherEuropean,EPI_ISL_418247|OtherEuropean|2020-02-26=OtherEuropean,EPI_ISL_418253|OtherEuropean|2020-03-02=OtherEuropean,EPI_ISL_418249|OtherEuropean|2020-03-03=OtherEuropean,EPI_ISL_418248|OtherEuropean|2020-03-01=OtherEuropean,EPI_ISL_418244|OtherEuropean|2020-03-02=OtherEuropean,EPI_ISL_418243|OtherEuropean|2020-02-28=OtherEuropean,EPI_ISL_402130|Hubei|2019-12-30=Hubei,EPI_ISL_412912|Germany|2020-02-25=Germany,EPI_ISL_418252|OtherEuropean|2020-03-04=OtherEuropean,EPI_ISL_414027|OtherEuropean|2020-03-04=OtherEuropean,EPI_ISL_418437|OtherEuropean|2020-03-06=OtherEuropean,EPI_ISL_410546|Italy|2020-01-29=Italy,EPI_ISL_414022|OtherEuropean|2020-02-27=OtherEuropean,EPI_ISL_417987|OtherEuropean|2020-03-03=OtherEuropean,EPI_ISL_417979|OtherEuropean|2020-03-03=OtherEuropean,EPI_ISL_413565|OtherEuropean|2020-02-24=OtherEuropean,EPI_ISL_417921|Italy|2020-03-01=Italy,EPI_ISL_417922|Italy|2020-02-28=Italy,EPI_ISL_417923|Italy|2020-03-04=Italy,EPI_ISL_411957|Hubei|2020-01-08=Hubei,EPI_ISL_411951|OtherEuropean|2020-02-07=OtherEuropean,EPI_ISL_413564|OtherEuropean|2020-03-01=OtherEuropean,EPI_ISL_417285|OtherEuropean|2020-03-06=OtherEuropean,EPI_ISL_410486|France|2020-02-08=France">
+                                <taxa id="TaxonSet.1" spec="TaxonSet" alignment="@europe_demes"/>
+                            </typeTraitSet>
+                        </typeSet>
+                    </R0>
+                    <becomeUninfectiousRate id="becomeUninfectiousRateSVEpi.t:europe_demes" spec="bdmmprime.parameterization.SkylineVectorParameter" origin="@originBDMMPrime.t:europe_demes" timesAreAges="true" typeSet="@typeSetBDMMPrime.t:europe_demes">
+                        <parameter id="becomeUninfectiousRateEpi.t:europe_demes" spec="parameter.RealParameter" estimate="false" name="skylineValues">36.5</parameter>
+                    </becomeUninfectiousRate>
+                    <samplingProportion id="samplingProportionSVEpi.t:europe_demes" spec="bdmmprime.parameterization.SkylineVectorParameter" origin="@originBDMMPrime.t:europe_demes" skylineValues="@samplingProportionEpi.t:europe_demes" timesAreAges="true" typeSet="@typeSetBDMMPrime.t:europe_demes">
+                        <parameter id="samplingProportionChangeTimesEpi.t:europe_demes" spec="parameter.RealParameter" dimension="2" estimate="false" lower="0.0" name="changeTimes">0.12 0.205</parameter>
+                    </samplingProportion>
+                    <rhoSampling id="rhoSamplingProbTPEpi.t:europe_demes" spec="bdmmprime.parameterization.TimedParameter" origin="@originBDMMPrime.t:europe_demes" timesAreAges="true" typeSet="@typeSetBDMMPrime.t:europe_demes"/>
+                    <removalProb id="removalProbSVEpi.t:europe_demes" spec="bdmmprime.parameterization.SkylineVectorParameter" origin="@originBDMMPrime.t:europe_demes" timesAreAges="true" typeSet="@typeSetBDMMPrime.t:europe_demes">
+                        <parameter id="removalProbEpi.t:europe_demes" spec="parameter.RealParameter" estimate="false" lower="0.0" name="skylineValues" upper="1.0">1.0</parameter>
+                    </removalProb>
+                    <migrationRate id="migrationRateSMEpi.t:europe_demes" spec="bdmmprime.parameterization.SkylineMatrixParameter" origin="@originBDMMPrime.t:europe_demes" skylineValues="@migrationRateEpi.t:europe_demes" timesAreAges="true" typeSet="@typeSetBDMMPrime.t:europe_demes"/>
+                    <R0AmongDemes id="R0AmongDemesSMEpi.t:europe_demes" spec="bdmmprime.parameterization.SkylineMatrixParameter" origin="@originBDMMPrime.t:europe_demes" timesAreAges="true" typeSet="@typeSetBDMMPrime.t:europe_demes">
+                        <parameter id="R0AmongDemesEpi.t:europe_demes" spec="parameter.RealParameter" estimate="false" name="skylineValues">0.0</parameter>
+                    </R0AmongDemes>
+                    <typeSet idref="typeSetBDMMPrime.t:europe_demes"/>
+                </parameterization>
+                <parameter id="typeFrequencies.t:europe_demes" spec="parameter.RealParameter" dimension="5" estimate="false" lower="0.0" name="frequencies" upper="1.0">0.0 0.0 1.0 0.0 0.0</parameter>
+                <typeTraitSet idref="typeTraitSet.t:europe_demes"/>
+            </distribution>
+            <distribution id="R0EpiPrior.t:europe_demes" spec="bdmmprime.util.ZeroExcludingPrior" x="@R0Epi.t:europe_demes">
+                <LogNormal id="LogNormalDistributionModel.1" name="distr">
+                    <parameter id="RealParameter.3" spec="parameter.RealParameter" estimate="false" name="M">0.8</parameter>
+                    <parameter id="RealParameter.4" spec="parameter.RealParameter" estimate="false" lower="0.0" name="S" upper="5.0">0.5</parameter>
+                </LogNormal>
+            </distribution>
+            <prior id="GammaShapePrior.s:europe_demes" name="distribution" x="@gammaShape.s:europe_demes">
+                <Exponential id="Exponential.0" name="distr">
+                    <parameter id="RealParameter.0" spec="parameter.RealParameter" estimate="false" name="mean">0.5</parameter>
+                </Exponential>
+            </prior>
+            <prior id="KappaPrior.s:europe_demes" name="distribution" x="@kappa.s:europe_demes">
+                <LogNormal id="LogNormalDistributionModel.0" name="distr">
+                    <parameter id="RealParameter.1" spec="parameter.RealParameter" estimate="false" name="M">1.0</parameter>
+                    <parameter id="RealParameter.2" spec="parameter.RealParameter" estimate="false" name="S">1.25</parameter>
+                </LogNormal>
+            </prior>
+            <distribution id="migrationRateEpiPrior.t:europe_demes" spec="bdmmprime.util.ZeroExcludingPrior" x="@migrationRateEpi.t:europe_demes">
+                <LogNormal id="LogNormalDistributionModel.2" name="distr">
+                    <parameter id="RealParameter.5" spec="parameter.RealParameter" estimate="false" name="M">0.0</parameter>
+                    <parameter id="RealParameter.6" spec="parameter.RealParameter" estimate="false" lower="0.0" name="S" upper="5.0">1.0</parameter>
+                </LogNormal>
+            </distribution>
+            <prior id="originBDMMPrimePrior.t:europe_demes" name="distribution" x="@originBDMMPrime.t:europe_demes">
+                <LogNormal id="LogNormalDistributionModel.3" name="distr">
+                    <parameter id="RealParameter.7" spec="parameter.RealParameter" estimate="false" name="M">-1.0</parameter>
+                    <parameter id="RealParameter.8" spec="parameter.RealParameter" estimate="false" lower="0.0" name="S" upper="5.0">0.2</parameter>
+                </LogNormal>
+            </prior>
+            <!-- <distribution id="samplingProportionEpiPrior.t:europe_demes" spec="bdmmprime.util.ZeroExcludingPrior" x="@samplingProportionEpi.t:europe_demes">
+                <Uniform id="Uniform.4" name="distr"/>
+            </distribution> -->
+
+			<!-- Prior for sampling proportion for France Epoch 1 (post-Jan 23) -->
+			<distribution spec="bdmmprime.util.ZeroExcludingPrior">
+				<x spec="feast.function.Slice" arg="@samplingProportionEpi.t:europe_demes" index="0" count="1"/>
+				<distr spec="beast.math.distributions.Uniform" lower="0" upper="0.093"/>
+			</distribution>
+			<!-- Prior for sampling proportion for Germany Epoch 1 (post-Jan 23) -->
+			<distribution spec="bdmmprime.util.ZeroExcludingPrior">
+				<x spec="feast.function.Slice" arg="@samplingProportionEpi.t:europe_demes" index="1" count="1"/>
+				<distr spec="beast.math.distributions.Uniform" lower="0" upper="0.10"/>
+			</distribution>
+			<!-- Prior for sampling proportion for Italy Epoch 1 (post-Jan 23) -->
+			<distribution spec="bdmmprime.util.ZeroExcludingPrior">
+				<x spec="feast.function.Slice" arg="@samplingProportionEpi.t:europe_demes" index="3" count="1"/>
+				<distr spec="beast.math.distributions.Uniform" lower="0" upper="0.005"/>
+			</distribution>
+			<!-- Prior for sampling proportion for OtherEuropean Epoch 1 (post-Jan 23) -->
+			<distribution spec="bdmmprime.util.ZeroExcludingPrior">
+				<x spec="feast.function.Slice" arg="@samplingProportionEpi.t:europe_demes" index="4" count="1"/>
+				<distr spec="beast.math.distributions.Uniform" lower="0" upper="0.092"/>
+			</distribution>
+
+			<!-- Prior for sampling proportion for France Epoch 2 (post-first sample date) -->
+			<distribution spec="bdmmprime.util.ZeroExcludingPrior">
+				<x spec="feast.function.Slice" arg="@samplingProportionEpi.t:europe_demes" index="5" count="1"/>
+				<distr spec="beast.math.distributions.Uniform" lower="0" upper="0.093"/>
+			</distribution>
+			<!-- Prior for sampling proportion for Germany Epoch 2 (post-first sample date) -->
+			<distribution spec="bdmmprime.util.ZeroExcludingPrior">
+				<x spec="feast.function.Slice" arg="@samplingProportionEpi.t:europe_demes" index="6" count="1"/>
+				<distr spec="beast.math.distributions.Uniform" lower="0" upper="0.10"/>
+			</distribution>
+			<!-- Prior for sampling proportion for Hubei Epoch 2 (post-first sample date) -->
+			<distribution spec="bdmmprime.util.ZeroExcludingPrior">
+				<x spec="feast.function.Slice" arg="@samplingProportionEpi.t:europe_demes" index="7" count="1"/>
+				<distr spec="beast.math.distributions.Uniform" lower="0" upper="0.15"/>
+			</distribution>
+			<!-- Prior for sampling proportion for Italy Epoch 2 (post-first sample date) -->
+			<distribution spec="bdmmprime.util.ZeroExcludingPrior">
+				<x spec="feast.function.Slice" arg="@samplingProportionEpi.t:europe_demes" index="8" count="1"/>
+				<distr spec="beast.math.distributions.Uniform" lower="0" upper="0.005"/>
+			</distribution>
+			<!-- Prior for sampling proportion for OtherEuropean Epoch 2 (post-first sample date) -->
+			<distribution spec="bdmmprime.util.ZeroExcludingPrior">
+				<x spec="feast.function.Slice" arg="@samplingProportionEpi.t:europe_demes" index="9" count="1"/>
+				<distr spec="beast.math.distributions.Uniform" lower="0" upper="0.092"/>
+			</distribution>
+
+        </distribution>
+        <distribution id="likelihood" spec="util.CompoundDistribution" useThreads="true">
+            <distribution id="treeLikelihood.europe_demes" spec="ThreadedTreeLikelihood" data="@europe_demes" tree="@Tree.t:europe_demes">
+                <siteModel id="SiteModel.s:europe_demes" spec="SiteModel" gammaCategoryCount="4" shape="@gammaShape.s:europe_demes">
+                    <parameter id="mutationRate.s:europe_demes" spec="parameter.RealParameter" estimate="false" name="mutationRate">1.0</parameter>
+                    <parameter id="proportionInvariant.s:europe_demes" spec="parameter.RealParameter" estimate="false" lower="0.0" name="proportionInvariant" upper="1.0">0.0</parameter>
+                    <substModel id="hky.s:europe_demes" spec="HKY" kappa="@kappa.s:europe_demes">
+                        <frequencies id="empiricalFreqs.s:europe_demes" spec="Frequencies" data="@europe_demes"/>
+                    </substModel>
+                </siteModel>
+                <branchRateModel id="StrictClock.c:europe_demes" spec="beast.evolution.branchratemodel.StrictClockModel">
+                    <parameter id="clockRate.c:europe_demes" spec="parameter.RealParameter" estimate="false" name="clock.rate">8.0E-4</parameter>
+                </branchRateModel>
+            </distribution>
+        </distribution>
+    </distribution>
+
+    <operator id="gammaShapeScaler.s:europe_demes" spec="ScaleOperator" parameter="@gammaShape.s:europe_demes" scaleFactor="0.5" weight="0.1"/>
+
+    <operator id="KappaScaler.s:europe_demes" spec="ScaleOperator" parameter="@kappa.s:europe_demes" scaleFactor="0.5" weight="0.1"/>
+
+    <operator id="BDMMPrimeLeafToSA.t:europe_demes" spec="LeafToSampledAncestorJump" tree="@Tree.t:europe_demes" weight="10.0"/>
+
+    <operator id="BDMMPrimeSAWilsonBalding.t:europe_demes" spec="SAWilsonBalding" tree="@Tree.t:europe_demes" weight="10.0"/>
+
+    <operator id="BDMMPrimeSAWide.t:europe_demes" spec="SAExchange" isNarrow="false" tree="@Tree.t:europe_demes" weight="10.0"/>
+
+    <operator id="BDMMPrimeSANarrow.t:europe_demes" spec="SAExchange" tree="@Tree.t:europe_demes" weight="10.0"/>
+
+    <operator id="BDMMPrimeSAUniformOperator.t:europe_demes" spec="SAUniform" tree="@Tree.t:europe_demes" weight="20.0"/>
+
+    <operator id="BDMMPrimeSATreeRootScaler.t:europe_demes" spec="SAScaleOperator" rootOnly="true" scaleFactor="0.95" tree="@Tree.t:europe_demes" weight="1.0"/>
+
+    <operator id="BDMMPrimeSATreeScaler.t:europe_demes" spec="SAScaleOperator" scaleFactor="0.95" tree="@Tree.t:europe_demes" weight="3.0"/>
+
+    <operator id="originBDMMPrimeScaler.t:europe_demes" spec="ScaleOperator" parameter="@originBDMMPrime.t:europe_demes" scaleFactor="0.75" weight="3.0"/>
+
+    <operator id="R0EpiScaler.t:europe_demes" spec="ScaleOperator" parameter="@R0Epi.t:europe_demes" scaleFactor="0.75" weight="3.0"/>
+
+    <!-- <operator id="samplingProportionEpiScaler.t:europe_demes" spec="ScaleOperator" parameter="@samplingProportionEpi.t:europe_demes" scaleFactor="0.75" weight="3.0"/> -->
+
+	<!-- Constrain France sampling prop. to be equal between Epochs 2 and 3 (after first sample date) -->
+	<operator id="samplingProportionEpiScaler.t.France:europe_demes" spec="feast.operators.BlockScaleOperator" parameter="@samplingProportionEpi.t:europe_demes" scaleFactor="0.75" weight="3.0">
+	    <indicator spec="beast.core.parameter.BooleanParameter" value="true false false false false true false false false false false false false false false" estimate="false"/>
+	</operator>
+	<!-- Constrain Germany sampling prop. to be equal between Epochs 2 and 3 (after first sample date) -->
+	<operator id="samplingProportionEpiScaler.t.Germany:europe_demes" spec="feast.operators.BlockScaleOperator" parameter="@samplingProportionEpi.t:europe_demes" scaleFactor="0.75" weight="3.0">
+	    <indicator spec="beast.core.parameter.BooleanParameter" value="false true false false false false true false false false false false false false false" estimate="false"/>
+	</operator>
+	<!-- Set operator for Hubei in Epoch 2 -->
+	<operator id="samplingProportionEpiScaler.t.Hubei:europe_demes" spec="feast.operators.BlockScaleOperator" parameter="@samplingProportionEpi.t:europe_demes" scaleFactor="0.75" weight="3.0">
+	    <indicator spec="beast.core.parameter.BooleanParameter" value="false false false false false false false true false false false false false false false" estimate="false"/>
+	</operator>
+	<!-- Constrain Italy sampling prop. to be equal between Epochs 2 and 3 (after first sample date) -->
+	<operator id="samplingProportionEpiScaler.t.Italy:europe_demes" spec="feast.operators.BlockScaleOperator" parameter="@samplingProportionEpi.t:europe_demes" scaleFactor="0.75" weight="3.0">
+	    <indicator spec="beast.core.parameter.BooleanParameter" value="false false false true false false false false true false false false false false false" estimate="false"/>
+	</operator>
+	<!-- Constrain OtherEuropean sampling prop. to be equal between Epochs 2 and 3 (after first sample date) -->
+	<operator id="samplingProportionEpiScaler.t.OtherEuropean:europe_demes" spec="feast.operators.BlockScaleOperator" parameter="@samplingProportionEpi.t:europe_demes" scaleFactor="0.75" weight="3.0">
+	    <indicator spec="beast.core.parameter.BooleanParameter" value="false false false false true false false false false true false false false false false" estimate="false"/>
+	</operator>
+
+    <operator id="migrationRateEpiScaler.t:europe_demes" spec="ScaleOperator" parameter="@migrationRateEpi.t:europe_demes" scaleFactor="0.75" weight="3.0"/>
+
+    <logger id="tracelog" spec="Logger" fileName="europe_demes.log" logEvery="1000" model="@posterior" sanitiseHeaders="true" sort="smart">
+        <log idref="posterior"/>
+        <log idref="likelihood"/>
+        <log idref="prior"/>
+        <log idref="treeLikelihood.europe_demes"/>
+        <log id="TreeHeight.t:europe_demes" spec="beast.evolution.tree.TreeHeightLogger" tree="@Tree.t:europe_demes"/>
+        <log idref="gammaShape.s:europe_demes"/>
+        <log idref="kappa.s:europe_demes"/>
+        <log idref="originBDMMPrime.t:europe_demes"/>
+        <log id="typedTreeStats.t:europe_demes" spec="bdmmprime.mapping.TypedTreeStatsLogger" includeRootEdgeChanges="true" typeLabel="type" typeSet="@typeSetBDMMPrime.t:europe_demes">
+            <typedTree id="typeMappedTree.t:europe_demes" spec="bdmmprime.mapping.TypeMappedTree" bdmmDistrib="@BDMMPrime.t:europe_demes" frequencies="@typeFrequencies.t:europe_demes" mapOnInit="false" remapOnLog="true" typeLabel="type" typeTraitSet="@typeTraitSet.t:europe_demes" untypedTree="@Tree.t:europe_demes"/>
+        </log>
+        <log idref="R0SVEpi.t:europe_demes"/>
+        <log idref="R0AmongDemesSMEpi.t:europe_demes"/>
+        <log idref="becomeUninfectiousRateSVEpi.t:europe_demes"/>
+        <log idref="migrationRateSMEpi.t:europe_demes"/>
+        <log idref="samplingProportionSVEpi.t:europe_demes"/>
+        <log idref="removalProbSVEpi.t:europe_demes"/>
+        <log idref="rhoSamplingProbTPEpi.t:europe_demes"/>
+    </logger>
+
+    <logger id="screenlog" spec="Logger" logEvery="1000">
+        <log idref="posterior"/>
+        <log idref="likelihood"/>
+        <log idref="prior"/>
+    </logger>
+
+    <logger id="treelog.t:europe_demes" spec="Logger" fileName="$(tree).trees" logEvery="1000" mode="tree">
+        <log id="TreeWithMetaDataLogger.t:europe_demes" spec="beast.evolution.tree.TreeWithMetaDataLogger" tree="@Tree.t:europe_demes"/>
+    </logger>
+
+    <logger id="typedTreeLogger.t:europe_demes" spec="Logger" fileName="$(filebase).$(tree).typed.trees" logEvery="1000" mode="tree">
+        <log idref="typeMappedTree.t:europe_demes"/>
+    </logger>
+
+    <logger id="nodeTypedTreeLogger.t:europe_demes" spec="Logger" fileName="$(filebase).$(tree).typed.node.trees" logEvery="1000" mode="tree">
+        <log id="nodeTypedTree.t:europe_demes" spec="bdmmprime.mapping.TypedNodeTreeLogger" typedTree="@typeMappedTree.t:europe_demes"/>
+    </logger>
+
+    <operatorschedule id="OperatorSchedule" spec="OperatorSchedule"/>
+
+</run>
+
+</beast>

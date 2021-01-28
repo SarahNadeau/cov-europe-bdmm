@@ -1,0 +1,146 @@
+accession_id	full_seq_name	location	collection_date	region	age	country	division	country_exposure	division_exposure	clade	deme
+EPI_ISL_402121	Wuhan/IVDC-HB-05/2019|EPI_ISL_402121|2019-12-30	China	2019-12-30	Asia	32	China	Hubei	China	Hubei	unassigned	Hubei
+EPI_ISL_402125	Wuhan-Hu-1/2019|EPI_ISL_402125|2019-12-26	China	2019-12-26	Asia	?	China	Hubei	China	Hubei	unassigned	Hubei
+EPI_ISL_402130	Wuhan/WIV07/2019|EPI_ISL_402130|2019-12-30	China	2019-12-30	Asia	56	China	Hubei	China	Hubei	unassigned	Hubei
+EPI_ISL_406716	China/WHU01/2020|EPI_ISL_406716|2020-01-02	China	2020-01-02	Asia	?	China	Hubei	China	Hubei	unassigned	Hubei
+EPI_ISL_406717	China/WHU02/2020|EPI_ISL_406717|2020-01-02	China	2020-01-02	Asia	?	China	Hubei	China	Hubei	unassigned	Hubei
+EPI_ISL_406798	Wuhan/WH01/2019|EPI_ISL_406798|2019-12-26	China	2019-12-26	Asia	44	China	Hubei	China	Hubei	unassigned	Hubei
+EPI_ISL_406800	Wuhan/WH03/2020|EPI_ISL_406800|2020-01-01	China	2020-01-01	Asia	21	China	Hubei	China	Hubei	unassigned	Hubei
+EPI_ISL_411957	China/WH-09/2020|EPI_ISL_411957|2020-01-08	China	2020-01-08	Asia	?	China	Hubei	China	Hubei	unassigned	Hubei
+EPI_ISL_412980	Wuhan/HBCDC-HB-04/2020|EPI_ISL_412980|2020-01-18	China	2020-01-18	Asia	?	China	Hubei	China	Hubei	B	Hubei
+EPI_ISL_412981	Wuhan/HBCDC-HB-05/2020|EPI_ISL_412981|2020-01-18	China	2020-01-18	Asia	?	China	Hubei	China	Hubei	A3	Hubei
+EPI_ISL_406596	France/IDF0372/2020|EPI_ISL_406596|2020-01-23	France	2020-01-23	Europe	31	France	Ile de France	France	Ile de France	unassigned	France
+EPI_ISL_408430	France/IDF0515/2020|EPI_ISL_408430|2020-01-29	France	2020-01-29	Europe	47	France	Ile de France	China	Hubei	unassigned	France
+EPI_ISL_408431	France/IDF0626/2020|EPI_ISL_408431|2020-01-29	France	2020-01-29	Europe	53	France	Ile de France	France	Ile de France	unassigned	France
+EPI_ISL_410486	France/RA739/2020|EPI_ISL_410486|2020-02-08	France	2020-02-08	Europe	56	France	Auvergne Rhone Alpes	France	Auvergne Rhone Alpes	unassigned	France
+EPI_ISL_414623	France/GE1583/2020|EPI_ISL_414623|2020-02-25	France	2020-02-25	Europe	36	France	Grand Est	France	Grand Est	B	France
+EPI_ISL_414624	France/N1620/2020|EPI_ISL_414624|2020-02-26	France	2020-02-26	Europe	?	France	Normandie	France	Normandie	A2a	France
+EPI_ISL_414625	France/PL1643/2020|EPI_ISL_414625|2020-02-26	France	2020-02-26	Europe	59	France	Pays de la Loire	France	Pays de la Loire	A2a	France
+EPI_ISL_414626	France/HF1684/2020|EPI_ISL_414626|2020-02-29	France	2020-02-29	Europe	88	France	Hauts de France	France	Hauts de France	A2a	France
+EPI_ISL_414627	France/HF1795/2020|EPI_ISL_414627|2020-03-02	France	2020-03-02	Europe	78	France	Hauts de France	France	Hauts de France	A2a	France
+EPI_ISL_414629	France/HF1870/2020|EPI_ISL_414629|2020-03-03	France	2020-03-03	Europe	88	France	Hauts de France	France	Hauts de France	A2a	France
+EPI_ISL_414630	France/HF1871/2020|EPI_ISL_414630|2020-03-03	France	2020-03-03	Europe	65	France	Hauts de France	France	Hauts de France	A2a	France
+EPI_ISL_414631	France/GE1973/2020|EPI_ISL_414631|2020-03-04	France	2020-03-04	Europe	88	France	Grand Est	France	Grand Est	A2a	France
+EPI_ISL_414632	France/GE1977/2020|EPI_ISL_414632|2020-03-04	France	2020-03-04	Europe	70	France	Grand Est	France	Grand Est	A2a	France
+EPI_ISL_414633	France/IDF1980/2020|EPI_ISL_414633|2020-03-04	France	2020-03-04	Europe	86	France	Ile de France	France	Ile de France	A2a	France
+EPI_ISL_414634	France/HF1986/2020|EPI_ISL_414634|2020-03-04	France	2020-03-04	Europe	60	France	Hauts de France	France	Hauts de France	A2a	France
+EPI_ISL_414635	France/HF1988/2020|EPI_ISL_414635|2020-03-04	France	2020-03-04	Europe	70	France	Hauts de France	France	Hauts de France	A2a	France
+EPI_ISL_414636	France/HF1989/2020|EPI_ISL_414636|2020-03-04	France	2020-03-04	Europe	95	France	Hauts de France	France	Hauts de France	A2a	France
+EPI_ISL_414637	France/HF1993/2020|EPI_ISL_414637|2020-03-04	France	2020-03-04	Europe	68	France	Hauts de France	France	Hauts de France	A2a	France
+EPI_ISL_414638	France/HF1995/2020|EPI_ISL_414638|2020-03-04	France	2020-03-04	Europe	86	France	Hauts de France	France	Hauts de France	A2a	France
+EPI_ISL_415649	France/HF2039/2020|EPI_ISL_415649|2020-03-05	France	2020-03-05	Europe	43	France	Hauts de France	France	Hauts de France	A2a	France
+EPI_ISL_415650	France/IDF2075/2020|EPI_ISL_415650|2020-03-02	France	2020-03-02	Europe	40	France	Ile de France	France	Ile de France	A2a	France
+EPI_ISL_415651	France/BFC2094/2020|EPI_ISL_415651|2020-03-05	France	2020-03-05	Europe	79	France	Bourgogne-France-Comté	France	Bourgogne-France-Comté	A2a	France
+EPI_ISL_415652	France/BFC2147/2020|EPI_ISL_415652|2020-03-05	France	2020-03-05	Europe	86	France	Bourgogne-France-Comté	France	Bourgogne-France-Comté	A2a	France
+EPI_ISL_415653	France/HF2151/2020|EPI_ISL_415653|2020-03-08	France	2020-03-08	Europe	53	France	Hauts de France	France	Hauts de France	A2a	France
+EPI_ISL_416493	France/HF2196/2020|EPI_ISL_416493|2020-03-08	France	2020-03-08	Europe	87	France	Hauts de France	France	Hauts de France	A2a	France
+EPI_ISL_416494	France/N2223/2020|EPI_ISL_416494|2020-03-04	France	2020-03-04	Europe	62	France	Normandie	France	Normandie	A2a	France
+EPI_ISL_416502	France/B2330/2020|EPI_ISL_416502|2020-02-26	France	2020-02-26	Europe	70	France	Bretagne	France	Bretagne	A2a	France
+EPI_ISL_416503	France/B2334/2020|EPI_ISL_416503|2020-03-01	France	2020-03-01	Europe	23	France	Bretagne	France	Bretagne	A1a	France
+EPI_ISL_416504	France/B2335/2020|EPI_ISL_416504|2020-03-02	France	2020-03-02	Europe	79	France	Bretagne	France	Bretagne	A2a	France
+EPI_ISL_416505	France/B2336/2020|EPI_ISL_416505|2020-03-02	France	2020-03-02	Europe	49	France	Bretagne	France	Bretagne	A2a	France
+EPI_ISL_416506	France/B2337/2020|EPI_ISL_416506|2020-03-03	France	2020-03-03	Europe	59	France	Bretagne	France	Bretagne	A2a	France
+EPI_ISL_416507	France/B2340/2020|EPI_ISL_416507|2020-03-05	France	2020-03-05	Europe	25	France	Bretagne	France	Bretagne	A1a	France
+EPI_ISL_416508	France/B2343/2020|EPI_ISL_416508|2020-03-06	France	2020-03-06	Europe	72	France	Bretagne	France	Bretagne	A2a	France
+EPI_ISL_416509	France/B2344/2020|EPI_ISL_416509|2020-03-06	France	2020-03-06	Europe	32	France	Bretagne	France	Bretagne	A2a	France
+EPI_ISL_416510	France/B2346/2020|EPI_ISL_416510|2020-03-06	France	2020-03-06	Europe	63	France	Bretagne	France	Bretagne	A2a	France
+EPI_ISL_416511	France/B2348/2020|EPI_ISL_416511|2020-03-07	France	2020-03-07	Europe	56	France	Bretagne	France	Bretagne	A2a	France
+EPI_ISL_416512	France/B2349/2020|EPI_ISL_416512|2020-03-07	France	2020-03-07	Europe	67	France	Bretagne	France	Bretagne	A2a	France
+EPI_ISL_416513	France/B2351/2020|EPI_ISL_416513|2020-03-07	France	2020-03-07	Europe	40	France	Bretagne	France	Bretagne	A2a	France
+EPI_ISL_416746	France/Valence_425/2020|EPI_ISL_416746|2020-03-03	France	2020-03-03	Europe	61	France	Auvergne-Rhône-Alpes	France	Auvergne-Rhône-Alpes	A2a	France
+EPI_ISL_416747	France/Lyon_487/2020|EPI_ISL_416747|2020-03-04	France	2020-03-04	Europe	43	France	Auvergne-Rhône-Alpes	France	Auvergne-Rhône-Alpes	A2a	France
+EPI_ISL_416748	France/Lyon_508/2020|EPI_ISL_416748|2020-03-04	France	2020-03-04	Europe	50	France	Auvergne-Rhône-Alpes	France	Auvergne-Rhône-Alpes	A2a	France
+EPI_ISL_416749	France/Valence_532/2020|EPI_ISL_416749|2020-03-04	France	2020-03-04	Europe	44	France	Auvergne-Rhône-Alpes	France	Auvergne-Rhône-Alpes	A2a	France
+EPI_ISL_416750	France/Lyon_683/2020|EPI_ISL_416750|2020-03-06	France	2020-03-06	Europe	47	France	Auvergne-Rhône-Alpes	France	Auvergne-Rhône-Alpes	A2a	France
+EPI_ISL_416751	France/Clermont-Ferrand_651/2020|EPI_ISL_416751|2020-03-05	France	2020-03-05	Europe	16	France	Auvergne-Rhône-Alpes	France	Auvergne-Rhône-Alpes	A2a	France
+EPI_ISL_416752	France/Clermont-Ferrand_650/2020|EPI_ISL_416752|2020-03-04	France	2020-03-04	Europe	49	France	Auvergne-Rhône-Alpes	France	Auvergne-Rhône-Alpes	A2a	France
+EPI_ISL_416753	France/Lyon_06464/2020|EPI_ISL_416753|2020-03-06	France	2020-03-06	Europe	50	France	Auvergne-Rhône-Alpes	France	Auvergne-Rhône-Alpes	A2a	France
+EPI_ISL_416754	France/Lyon_06487/2020|EPI_ISL_416754|2020-03-06	France	2020-03-06	Europe	82	France	Auvergne-Rhône-Alpes	France	Auvergne-Rhône-Alpes	A2a	France
+EPI_ISL_416756	France/Lyon_06531/2020|EPI_ISL_416756|2020-03-06	France	2020-03-06	Europe	88	France	Auvergne-Rhône-Alpes	France	Auvergne-Rhône-Alpes	A2a	France
+EPI_ISL_416757	France/Bourg-en-Bresse_06678/2020|EPI_ISL_416757|2020-03-07	France	2020-03-07	Europe	41	France	Auvergne-Rhône-Alpes	France	Auvergne-Rhône-Alpes	A2a	France
+EPI_ISL_416758	France/Lyon_0693/2020|EPI_ISL_416758|2020-03-08	France	2020-03-08	Europe	79	France	Auvergne-Rhône-Alpes	France	Auvergne-Rhône-Alpes	A2a	France
+EPI_ISL_417333	France/Lyon_06042/2020|EPI_ISL_417333|2020-03-04	France	2020-03-04	Europe	48	France	Auvergne-Rhône-Alpes	France	Auvergne-Rhône-Alpes	A2a	France
+EPI_ISL_417334	France/Lyon_06056/2020|EPI_ISL_417334|2020-03-04	France	2020-03-04	Europe	50	France	Auvergne-Rhône-Alpes	France	Auvergne-Rhône-Alpes	A2a	France
+EPI_ISL_417335	France/Lyon_06573/2020|EPI_ISL_417335|2020-03-06	France	2020-03-06	Europe	74	France	Auvergne-Rhône-Alpes	France	Auvergne-Rhône-Alpes	unassigned	France
+EPI_ISL_417336	France/Lyon_0668/2020|EPI_ISL_417336|2020-03-06	France	2020-03-06	Europe	79	France	Auvergne-Rhône-Alpes	France	Auvergne-Rhône-Alpes	A2a	France
+EPI_ISL_417337	France/Lyon_06625/2020|EPI_ISL_417337|2020-03-07	France	2020-03-07	Europe	78	France	Auvergne-Rhône-Alpes	France	Auvergne-Rhône-Alpes	A2a	France
+EPI_ISL_417338	France/Macon_06756/2020|EPI_ISL_417338|2020-03-07	France	2020-03-07	Europe	63	France	Auvergne-Rhône-Alpes	France	Auvergne-Rhône-Alpes	A2a	France
+EPI_ISL_417339	France/Lyon_06820/2020|EPI_ISL_417339|2020-03-08	France	2020-03-08	Europe	86	France	Auvergne-Rhône-Alpes	France	Auvergne-Rhône-Alpes	A2a	France
+EPI_ISL_417340	France/Bourg-en-Bresse_06813/2020|EPI_ISL_417340|2020-03-07	France	2020-03-07	Europe	53	France	Auvergne-Rhône-Alpes	France	Auvergne-Rhône-Alpes	A2a	France
+EPI_ISL_418218	France/HF1465/2020|EPI_ISL_418218|2020-02-21	France	2020-02-21	Europe	56	France	Hauts de France	France	Hauts de France	A2a	France
+EPI_ISL_418219	France/B1623/2020|EPI_ISL_418219|2020-02-26	France	2020-02-26	Europe	73	France	Bretagne	France	Bretagne	A2a	France
+EPI_ISL_418220	France/HF1645/2020|EPI_ISL_418220|2020-02-28	France	2020-02-28	Europe	54	France	Hauts de France	France	Hauts de France	A2a	France
+EPI_ISL_418221	France/HF1813/2020|EPI_ISL_418221|2020-03-02	France	2020-03-02	Europe	86	France	Hauts de France	France	Hauts de France	A2a	France
+EPI_ISL_418222	France/CVL2000/2020|EPI_ISL_418222|2020-03-04	France	2020-03-04	Europe	73	France	Centre-Val de Loire	France	Centre-Val de Loire	A2a	France
+EPI_ISL_418223	France/HF2060/2020|EPI_ISL_418223|2020-03-05	France	2020-03-05	Europe	87	France	Hauts de France	France	Hauts de France	A2a	France
+EPI_ISL_418224	France/HF2150/2020|EPI_ISL_418224|2020-03-08	France	2020-03-08	Europe	54	France	Hauts de France	France	Hauts de France	A2a	France
+EPI_ISL_418225	France/HF2155/2020|EPI_ISL_418225|2020-03-08	France	2020-03-08	Europe	89	France	Hauts de France	France	Hauts de France	A2a	France
+EPI_ISL_406862	Germany/BavPat1/2020|EPI_ISL_406862|2020-01-28	Germany	2020-01-28	Europe	?	Germany	Bavaria	Germany	Bavaria	A2	Germany
+EPI_ISL_412912	Germany/Baden-Wuerttemberg-1/2020|EPI_ISL_412912|2020-02-25	Germany	2020-02-25	Europe	?	Germany	Baden-Wuerttemberg	Italy	Lombardy	A2a	Germany
+EPI_ISL_413488	Germany/NRW-01/2020|EPI_ISL_413488|2020-02-28	Germany	2020-02-28	Europe	?	Germany	North Rhine Westphalia	Germany	North Rhine Westphalia	unassigned	Germany
+EPI_ISL_414497	Germany/NRW-02-1/2020|EPI_ISL_414497|2020-02-25	Germany	2020-02-25	Europe	?	Germany	North Rhine Westphalia	Germany	North Rhine Westphalia	unassigned	Germany
+EPI_ISL_414498	Germany/NRW-03/2020|EPI_ISL_414498|2020-02-26	Germany	2020-02-26	Europe	?	Germany	North Rhine Westphalia	Germany	North Rhine Westphalia	unassigned	Germany
+EPI_ISL_414499	Germany/NRW-04/2020|EPI_ISL_414499|2020-02-26	Germany	2020-02-26	Europe	?	Germany	North Rhine Westphalia	Germany	North Rhine Westphalia	unassigned	Germany
+EPI_ISL_414504	Germany/NRW-05/2020|EPI_ISL_414504|2020-02-26	Germany	2020-02-26	Europe	?	Germany	North Rhine Westphalia	Germany	North Rhine Westphalia	unassigned	Germany
+EPI_ISL_414505	Germany/NRW-06/2020|EPI_ISL_414505|2020-02-27	Germany	2020-02-27	Europe	?	Germany	North Rhine Westphalia	Germany	North Rhine Westphalia	unassigned	Germany
+EPI_ISL_414506	Germany/NRW-07/2020|EPI_ISL_414506|2020-02-27	Germany	2020-02-27	Europe	?	Germany	North Rhine Westphalia	Germany	North Rhine Westphalia	unassigned	Germany
+EPI_ISL_414507	Germany/NRW-011/2020|EPI_ISL_414507|2020-03-03	Germany	2020-03-03	Europe	?	Germany	North Rhine Westphalia	Germany	North Rhine Westphalia	A2a	Germany
+EPI_ISL_414508	Germany/NRW-08/2020|EPI_ISL_414508|2020-02-27	Germany	2020-02-27	Europe	?	Germany	North Rhine Westphalia	Germany	North Rhine Westphalia	unassigned	Germany
+EPI_ISL_414509	Germany/NRW-09/2020|EPI_ISL_414509|2020-02-28	Germany	2020-02-28	Europe	?	Germany	North Rhine Westphalia	Germany	North Rhine Westphalia	unassigned	Germany
+EPI_ISL_414520	Germany/BavPat2/2020|EPI_ISL_414520|2020-03-02	Germany	2020-03-02	Europe	40	Germany	Bavaria	China	Iran	A3	Germany
+EPI_ISL_414521	Germany/BavPat3/2020|EPI_ISL_414521|2020-03-02	Germany	2020-03-02	Europe	38	Germany	Bavaria	Germany	Bavaria	B2	Germany
+EPI_ISL_414574	Germany/NRW-10/2020|EPI_ISL_414574|2020-02-28	Germany	2020-02-28	Europe	?	Germany	North Rhine Westphalia	Germany	North Rhine Westphalia	unassigned	Germany
+EPI_ISL_414524	England/200991076/2020|EPI_ISL_414524|2020-03-01	United Kingdom	2020-03-01	Europe	48	United Kingdom	England	United Kingdom	England	A2a	OtherEuropean
+EPI_ISL_415143	England/20100122107/2020|EPI_ISL_415143|2020-03-02	United Kingdom	2020-03-02	Europe	55	United Kingdom	England	United Kingdom	England	A1a	OtherEuropean
+EPI_ISL_415149	England/20102068506/2020|EPI_ISL_415149|2020-03-01	United Kingdom	2020-03-01	Europe	44	United Kingdom	England	United Kingdom	England	A1a	OtherEuropean
+EPI_ISL_417234	England/20104009102/2020|EPI_ISL_417234|2020-03-02	United Kingdom	2020-03-02	Europe	51	United Kingdom	England	United Kingdom	England	A2a	OtherEuropean
+EPI_ISL_414642	Finland/FIN-455/2020|EPI_ISL_414642|2020-03-08	Finland	2020-03-08	Europe	57	Finland	Finland	Finland	Finland	A2a	OtherEuropean
+EPI_ISL_416475	Belgium/DBA-03032/2020|EPI_ISL_416475|2020-03-03	Belgium	2020-03-03	Europe	50	Belgium	Leuven	Belgium	Leuven	A2a	OtherEuropean
+EPI_ISL_411951	Sweden/01/2020|EPI_ISL_411951|2020-02-07	Sweden	2020-02-07	Europe	?	Sweden	Småland	Sweden	Småland	unassigned	OtherEuropean
+EPI_ISL_414021	Switzerland/BL0902/2020|EPI_ISL_414021|2020-02-27	Switzerland	2020-02-27	Europe	23	Switzerland	Basel	Switzerland	Basel	A2a	OtherEuropean
+EPI_ISL_415698	Switzerland/GR2988/2020|EPI_ISL_415698|2020-02-27	Switzerland	2020-02-27	Europe	55	Switzerland	Graubünden	Switzerland	Graubünden	A2a	OtherEuropean
+EPI_ISL_415704	Switzerland/BE2536/2020|EPI_ISL_415704|2020-03-04	Switzerland	2020-03-04	Europe	82	Switzerland	Bern	Switzerland	Bern	A2a	OtherEuropean
+EPI_ISL_414446	Netherlands/ZuidHolland_10/2020|EPI_ISL_414446|2020-03-03	Netherlands	2020-03-03	Europe	?	Netherlands	South Holland	Netherlands	South Holland	A2a	OtherEuropean
+EPI_ISL_414461	Netherlands/Utrecht_6/2020|EPI_ISL_414461|2020-03-04	Netherlands	2020-03-04	Europe	?	Netherlands	Utrecht	Netherlands	Utrecht	A2a	OtherEuropean
+EPI_ISL_414470	Netherlands/ZuidHolland_13/2020|EPI_ISL_414470|2020-03-06	Netherlands	2020-03-06	Europe	?	Netherlands	South Holland	Netherlands	South Holland	A2a	OtherEuropean
+EPI_ISL_414564	Netherlands/ZuidHolland_22/2020|EPI_ISL_414564|2020-03-08	Netherlands	2020-03-08	Europe	?	Netherlands	South Holland	Netherlands	South Holland	A2a	OtherEuropean
+EPI_ISL_413593	Luxembourg/Lux1/2020|EPI_ISL_413593|2020-02-29	Luxembourg	2020-02-29	Europe	?	Luxembourg	Luxembourg	Luxembourg	Luxembourg	A2a	OtherEuropean
+EPI_ISL_418011	Portugal/PT0026/2020|EPI_ISL_418011|2020-03-04	Portugal	2020-03-04	Europe	49	Portugal	Portugal	Portugal	Portugal	A2a	OtherEuropean
+EPI_ISL_414477	CzechRepublic/951/2020|EPI_ISL_414477|2020-03-01	Czech Republic	2020-03-01	Europe	44	Czech Republic	Usti nad Labem	Italy	Italy	A2a	OtherEuropean
+EPI_ISL_414495	Spain/Valencia1/2020|EPI_ISL_414495|2020-03-08	Spain	2020-03-08	Europe	56	Spain	Comunitat Valenciana	Spain	Comunitat Valenciana	A2a	OtherEuropean
+EPI_ISL_414496	Spain/Valencia2/2020|EPI_ISL_414496|2020-03-04	Spain	2020-03-04	Europe	27	Spain	Comunitat Valenciana	Spain	Comunitat Valenciana	B	OtherEuropean
+EPI_ISL_414598	Spain/Valencia3/2020|EPI_ISL_414598|2020-03-05	Spain	2020-03-05	Europe	89	Spain	Comunitat Valenciana	Spain	Comunitat Valenciana	B	OtherEuropean
+EPI_ISL_416483	Spain/Valencia4/2020|EPI_ISL_416483|2020-02-26	Spain	2020-02-26	Europe	44	Spain	Comunitat Valenciana	Spain	Comunitat Valenciana	B	OtherEuropean
+EPI_ISL_416485	Spain/Valencia6/2020|EPI_ISL_416485|2020-02-27	Spain	2020-02-27	Europe	58	Spain	Comunitat Valenciana	Spain	Comunitat Valenciana	B	OtherEuropean
+EPI_ISL_417007	Spain/Galicia201663/2020|EPI_ISL_417007|2020-03-07	Spain	2020-03-07	Europe	36	Spain	Galicia	Spain	Galicia	A2a	OtherEuropean
+EPI_ISL_417205	Spain/Valencia9/2020|EPI_ISL_417205|2020-03-02	Spain	2020-03-02	Europe	45	Spain	Comunitat Valenciana	Spain	Comunitat Valenciana	B	OtherEuropean
+EPI_ISL_417206	Spain/Valencia10/2020|EPI_ISL_417206|2020-03-06	Spain	2020-03-06	Europe	74	Spain	Comunitat Valenciana	Spain	Comunitat Valenciana	B	OtherEuropean
+EPI_ISL_417979	Spain/Madrid_R2_15/2020|EPI_ISL_417979|2020-03-03	Spain	2020-03-03	Europe	47	Spain	Madrid	Spain	Madrid	B	OtherEuropean
+EPI_ISL_417981	Spain/Madrid_R10_33/2020|EPI_ISL_417981|2020-03-02	Spain	2020-03-02	Europe	41	Spain	Madrid	Spain	Madrid	B	OtherEuropean
+EPI_ISL_418243	Spain/Andalucia201272/2020|EPI_ISL_418243|2020-02-28	Spain	2020-02-28	Europe	64	Spain	Andalusia	Spain	Andalusia	A1a	OtherEuropean
+EPI_ISL_418245	Spain/CastillaLaMancha201328/2020|EPI_ISL_418245|2020-03-01	Spain	2020-03-01	Europe	76	Spain	Castilla La Mancha	Spain	Castilla La Mancha	B	OtherEuropean
+EPI_ISL_418246	Spain/CastillaLaMancha201329/2020|EPI_ISL_418246|2020-03-01	Spain	2020-03-01	Europe	56	Spain	Castilla La Mancha	Spain	Castilla La Mancha	B	OtherEuropean
+EPI_ISL_418247	Spain/CastillayLeon201061/2020|EPI_ISL_418247|2020-02-26	Spain	2020-02-26	Europe	18	Spain	Castilla y Leon	Spain	Castilla y Leon	A2a	OtherEuropean
+EPI_ISL_418248	Spain/CastillayLeon201323/2020|EPI_ISL_418248|2020-03-01	Spain	2020-03-01	Europe	52	Spain	Castilla y Leon	Spain	Castilla y Leon	B	OtherEuropean
+EPI_ISL_418249	Spain/CastillayLeon201372/2020|EPI_ISL_418249|2020-03-03	Spain	2020-03-03	Europe	25	Spain	Castilla y Leon	Spain	Castilla y Leon	B	OtherEuropean
+EPI_ISL_418251	Spain/Madrid201105/2020|EPI_ISL_418251|2020-02-25	Spain	2020-02-25	Europe	24	Spain	Madrid	Spain	Madrid	A2a	OtherEuropean
+EPI_ISL_418252	Spain/Madrid201449/2020|EPI_ISL_418252|2020-03-04	Spain	2020-03-04	Europe	79	Spain	Madrid	Spain	Madrid	B	OtherEuropean
+EPI_ISL_417432	Ireland/Cork2/2020|EPI_ISL_417432|2020-03-08	Ireland	2020-03-08	Europe	44	Ireland	Cork	Ireland	Cork	unassigned	OtherEuropean
+EPI_ISL_415646	Denmark/SSI-101/2020|EPI_ISL_415646|2020-03-03	Denmark	2020-03-03	Europe	31	Denmark		Denmark		A2a	OtherEuropean
+EPI_ISL_416488	Poland/PL_P1/2020|EPI_ISL_416488|2020-03-03	Poland	2020-03-03	Europe	66	Poland	Zielonogorskie	Poland	Zielonogorskie	unassigned	OtherEuropean
+EPI_ISL_417489	Norway/1494/2020|EPI_ISL_417489|2020-02-29	Norway	2020-02-29	Europe	?	Norway	Oslo	Norway	Oslo	A1a	OtherEuropean
+EPI_ISL_417684	Iceland/54/2020|EPI_ISL_417684|2020-03-06	Iceland	2020-03-06	Europe	52	Iceland	Reykjavik	Iceland	Reykjavik	A2a	OtherEuropean
+EPI_ISL_417880	Slovakia/SK-BMC6/2020|EPI_ISL_417880|2020-03-08	Slovakia	2020-03-08	Europe	34	Slovakia	Martin	Slovakia	Martin	A6	OtherEuropean
+EPI_ISL_410546	Italy/INMI1-cs/2020|EPI_ISL_410546|2020-01-29	Italy	2020-01-29	Europe	66	Italy	Lazio	China	Hubei	A1a	Italy
+EPI_ISL_412973	Italy/CDG1/2020|EPI_ISL_412973|2020-02-20	Italy	2020-02-20	Europe	38	Italy	Lombardy	Italy	Lombardy	A2a	Italy
+EPI_ISL_413489	Italy/UniSR1/2020|EPI_ISL_413489|2020-03-03	Italy	2020-03-03	Europe	38	Italy	Lombardy	Italy	Lombardy	A2a	Italy
+EPI_ISL_417418	Italy/FVG-ICGEB_S1/2020|EPI_ISL_417418|2020-03-01	Italy	2020-03-01	Europe	59	Italy	Friuli Venezia Giulia	Italy	Friuli Venezia Giulia	A2a	Italy
+EPI_ISL_417419	Italy/FVG-ICGEB_S5/2020|EPI_ISL_417419|2020-03-01	Italy	2020-03-01	Europe	73	Italy	Friuli Venezia Giulia	Italy	Friuli Venezia Giulia	A2a	Italy
+EPI_ISL_417421	Italy/FVG-ICGEB_S8/2020|EPI_ISL_417421|2020-03-01	Italy	2020-03-01	Europe	45	Italy	Friuli Venezia Giulia	Italy	Friuli Venezia Giulia	A2a	Italy
+EPI_ISL_417423	Italy/FVG-ICGEB_S9/2020|EPI_ISL_417423|2020-03-01	Italy	2020-03-01	Europe	59	Italy	Friuli Venezia Giulia	Italy	Friuli Venezia Giulia	A2a	Italy
+EPI_ISL_417445	Italy/UniMI01/2020|EPI_ISL_417445|2020-02-24	Italy	2020-02-24	Europe	71	Italy	Lombardy	Italy	Lombardy	A2a	Italy
+EPI_ISL_417447	Italy/UniMI03/2020|EPI_ISL_417447|2020-02-24	Italy	2020-02-24	Europe	80	Italy	Lombardy	Italy	Lombardy	A2a	Italy
+EPI_ISL_417491	Italy/UnivPM1/2020|EPI_ISL_417491|2020-03-03	Italy	2020-03-03	Europe	?	Italy	Marche	Italy	Marche	A2a	Italy
+EPI_ISL_417921	Italy/INMI3/2020|EPI_ISL_417921|2020-03-01	Italy	2020-03-01	Europe	32	Italy	Rome	Italy	Rome	A2a	Italy
+EPI_ISL_417922	Italy/INMI4/2020|EPI_ISL_417922|2020-02-28	Italy	2020-02-28	Europe	41	Italy	Rome	Italy	Rome	A2a	Italy
+EPI_ISL_417923	Italy/INMI5/2020|EPI_ISL_417923|2020-03-04	Italy	2020-03-04	Europe	53	Italy	Rome	Italy	Rome	A2a	Italy

@@ -5,4 +5,6 @@ europe_demes.xml
 with_hubei_migration_decrease.xml
 with_hubei_migration_decrease_low_migration_prior.xml
 raw_results
-
+raw_results_prev
+.DS_STORE
+.Rhistory

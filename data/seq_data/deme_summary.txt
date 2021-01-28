@@ -1,0 +1,6 @@
+deme	n_seqs	locations	first_seq	last_seq
+France	66	France	2020-01-23	2020-03-08
+Germany	15	Germany	2020-01-28	2020-03-03
+Hubei	10	China	2019-12-26	2020-01-18
+Italy	13	Italy	2020-01-29	2020-03-04
+OtherEuropean	41	United Kingdom (4), Finland, Belgium, Sweden, Switzerland (3), Netherlands (4), Luxembourg, Portugal, Czech Republic, Spain (18), Ireland, Denmark, Poland, Norway, Iceland, Slovakia	2020-02-07	2020-03-08

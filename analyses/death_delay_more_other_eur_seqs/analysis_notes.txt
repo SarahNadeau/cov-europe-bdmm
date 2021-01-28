@@ -1,0 +1,286 @@
+# Things to remember about analysis:
+	# I take only samples collected on or before Mar 8 (Lombardy lockdown)
+	# I downsampled OtherEuropean by taking # seqs proportaional to # deaths on Mar 8 + 20 days = Mar 28 (min 1 seq/country with available seqs)
+	# I assume constant sampling proportion for all demes after date of first sample in Hubei
+	# Hubei assumed to be a source only, migration possible between all other demes
+	# Demes = Hubei (source of epidemic), Germany & France (1st ID'd transmission in Europe), Italy (1st major european outbreak), Other European
+	# I don't account for any change in R0 in Hubei or migration rate out of Hubei after Jan 23
+	
+	# I copied the XML from /Users/nadeaus/Documents/2019-ncov-data/analyses/2020-05-04_bdmm_european_origins/more_other_european_seqs/europe_demes.xml
+	# I have adjusted the upper bound on the other european sampling proportion from 0.007 (a mistake) to 0.092
+
+# GENERATE ALIGNMENT -----------------------------------------------------
+
+# Alignment based on data available on GISAID as of 2020-04-01
+# See /Users/nadeaus/Documents/2019-ncov-data/data/sequences/2020-04-01/ncov/Snakefile for alignment generation steps
+
+# Using same fasta file as for 2020-04-17_europe_bdmm_prime
+DATADIR="/Users/nadeaus/Documents/2019-ncov-data/data/sequences/2020-04-01/ncov"
+WORKDIR="/Users/nadeaus/Documents/2019-ncov-data/analyses/2020-05-18_european_origins/death_delay_more_other_eur_seqs"
+DATE="2020-05-19_death_delay_more_other_eur_seqs"
+FIGSCRIPTDIR="/Users/nadeaus/Documents/2019-ncov-data/analyses/visualization_scripts"
+FIGOUTPUTDIR=$WORKDIR/figures
+
+# Assign demes, filter to date of Lombardy lockdown, downsample within demes
+# Wrote R script to define sampling scheme
+Rscript $WORKDIR/assign_demes_and_downsample_alignment.R \
+--alignment $DATADIR/results/masked_full_name.fasta \
+--metadata $DATADIR/data/metadata.tsv \
+--clades $DATADIR/results/clades.json \
+--output $WORKDIR/europe_demes.fasta \
+--selectedseqtable $WORKDIR/selected_sample_metadata.txt \
+--demesummarytable $WORKDIR/deme_summary.txt \
+--othereuropesummarytable $WORKDIR/other_europe_deme_summary.txt \
+--downsamplefactor 100
+
+# This includes a few more OtherEuropean sequences that are flanked by Italy sequences
+
+# [1] "Oldest sample that could have been included: 2019-12-24"
+# [1] "Oldest sample included: 2019-12-26"
+# [1] "Youngest sample: 2020-03-08"
+
+grep ">" $WORKDIR/europe_demes.fasta | wc -l 
+# 170 sequences
+
+# MAKE XML -----------------------------------------------------
+# Gamma categories: 4
+# Substitution model: HKY
+# Base frequencies: empirical
+# Clock rate: 0.0008 (fixed)
+# Tree prior: BDMMPrime
+# Set locations
+# Epi Parameterization
+# R0:
+# 	Number of change times: 0
+# 	Scalar: False
+# Become uninfectious rate:
+# 	Number of change times: 0
+# 	Scalar: True
+# 	Estimate: False
+# 	Epoch 1: 36.5
+# Sampling proportion:
+# 	Scalar: False
+# 	Number of change times: 2
+# 	Change times: 0.12 (just after Jan 23, when I stop sampling in Hubei) and 0.205 (~Dec 23, just before 1st sample that could have been selected)
+#	Epoch 1: 0.00001 for all demes except Hubei, which is 0
+#	Epoch 2: 0.00001 for all demes
+# 	Epoch 3: 0 for all demes
+# Rho Sampling: 0 (default)
+# Removal Prob: Fixed to 1 (default, assumes removal upon sampling)
+# Migration Rate:
+# 	Scalar: False
+# 	Estimate: True
+# 	Number of change times: 0
+# 	All non-zero migration rates initialized to 0.1:
+# 		China assumed to be a source to all other demes and a sink to none
+# R0AmongDemes: Fix to 0
+# Frequencies: 0 0 1 0 0 and don't estimate (epidemic started in China)
+
+# R0Epi: lognormal(0.8, 0.5)
+# gammaShape: Exponential(0.5)
+# kappa: lognormal(1.0, 1.25), 
+# migrationRateEpi: 
+#	lognormal(0, 1) -> median = 1/yr, 1 year (2.5% quartile = 0.14/yr, 7.1 years; 97.5% quartile = 5.18/yr, 51 days), same as H1N1 analysis in BDMM paper
+	
+# OriginBDMMPrime: lognormal(-1, 0.2) (2.5% quartile ~26 Dec, 97.5% quartile ~11 July)
+# Sampling proportion: uniform(0, 1) (Edited manually in XML file later)
+
+# MODIFY XML -----------------------------------------------------
+# Sampling proportion prior upper bounds based on # seqs/confirmed cases according to WHO situation reports unless otherwise noted:
+deme	last_seq	n_seqs
+France  08.03.2020	66/706 = 0.093
+Germany	03.03.2020	15/157 = 0.10
+Hubei   18.01.2020  10/66 = 0.15 (https://www.statista.com/statistics/1103040/cumulative-coronavirus-covid19-cases-number-worldwide-by-day/)
+Italy	04.03.2020	13/2502 = 0.005
+
+Cases in OtherEuropean on March 8:
+Belgium	200
+Czech Republic 	32
+Denmark        	37
+Finland        	38
+Iceland        	58
+Ireland        	21
+Luxembourg    	5
+Netherlands    	264
+Norway         	167
+Poland         	11
+Portugal       	30
+Slovakia       	5
+Spain          	674
+Sweden        	225
+Switzerland    	350
+United Kingdom	280
+Total	2397
+# OtherEuropean	08.03.2020	66/(12197 - 2397) = 0.007 (Source: https://en.wikipedia.org/wiki/2020_coronavirus_pandemic_in_Europe and linked country pages)
+OtherEuropean Corrected to 66 / 714 = 0.092
+
+<!--  <distribution id="samplingProportionEpiPrior.t:europe_demes" spec="bdmmprime.util.ZeroExcludingPrior" x="@samplingProportionEpi.t:europe_demes">
+    <Uniform id="Uniform.4" name="distr" upper="Infinity"/>
+</distribution> -->
+
+<!-- Prior for sampling proportion for France Epoch 1 (post-Jan 23) -->
+<distribution spec="bdmmprime.util.ZeroExcludingPrior">
+	<x spec="feast.function.Slice" arg="@samplingProportionEpi.t:europe_demes" index="0" count="1"/>
+	<distr spec="beast.math.distributions.Uniform" lower="0" upper="0.093"/>
+</distribution>
+<!-- Prior for sampling proportion for Germany Epoch 1 (post-Jan 23) -->
+<distribution spec="bdmmprime.util.ZeroExcludingPrior">
+	<x spec="feast.function.Slice" arg="@samplingProportionEpi.t:europe_demes" index="1" count="1"/>
+	<distr spec="beast.math.distributions.Uniform" lower="0" upper="0.10"/>
+</distribution>
+<!-- Prior for sampling proportion for Italy Epoch 1 (post-Jan 23) -->
+<distribution spec="bdmmprime.util.ZeroExcludingPrior">
+	<x spec="feast.function.Slice" arg="@samplingProportionEpi.t:europe_demes" index="3" count="1"/>
+	<distr spec="beast.math.distributions.Uniform" lower="0" upper="0.005"/>
+</distribution>
+<!-- Prior for sampling proportion for OtherEuropean Epoch 1 (post-Jan 23) -->
+<distribution spec="bdmmprime.util.ZeroExcludingPrior">
+	<x spec="feast.function.Slice" arg="@samplingProportionEpi.t:europe_demes" index="4" count="1"/>
+	<distr spec="beast.math.distributions.Uniform" lower="0" upper="0.092"/>
+</distribution>
+
+<!-- Prior for sampling proportion for France Epoch 2 (post-first sample date) -->
+<distribution spec="bdmmprime.util.ZeroExcludingPrior">
+	<x spec="feast.function.Slice" arg="@samplingProportionEpi.t:europe_demes" index="5" count="1"/>
+	<distr spec="beast.math.distributions.Uniform" lower="0" upper="0.093"/>
+</distribution>
+<!-- Prior for sampling proportion for Germany Epoch 2 (post-first sample date) -->
+<distribution spec="bdmmprime.util.ZeroExcludingPrior">
+	<x spec="feast.function.Slice" arg="@samplingProportionEpi.t:europe_demes" index="6" count="1"/>
+	<distr spec="beast.math.distributions.Uniform" lower="0" upper="0.10"/>
+</distribution>
+<!-- Prior for sampling proportion for Hubei Epoch 2 (post-first sample date) -->
+<distribution spec="bdmmprime.util.ZeroExcludingPrior">
+	<x spec="feast.function.Slice" arg="@samplingProportionEpi.t:europe_demes" index="7" count="1"/>
+	<distr spec="beast.math.distributions.Uniform" lower="0" upper="0.15"/>
+</distribution>
+<!-- Prior for sampling proportion for Italy Epoch 2 (post-first sample date) -->
+<distribution spec="bdmmprime.util.ZeroExcludingPrior">
+	<x spec="feast.function.Slice" arg="@samplingProportionEpi.t:europe_demes" index="8" count="1"/>
+	<distr spec="beast.math.distributions.Uniform" lower="0" upper="0.005"/>
+</distribution>
+<!-- Prior for sampling proportion for OtherEuropean Epoch 2 (post-first sample date) -->
+<distribution spec="bdmmprime.util.ZeroExcludingPrior">
+	<x spec="feast.function.Slice" arg="@samplingProportionEpi.t:europe_demes" index="9" count="1"/>
+	<distr spec="beast.math.distributions.Uniform" lower="0" upper="0.092"/>
+</distribution>
+
+
+# Enforce that sampling proportion should be the same before and after the Jan 23 breakpoint for all demes except Hubei
+<!-- <operator id="samplingProportionEpiScaler.t:europe_demes" spec="ScaleOperator" parameter="@samplingProportionEpi.t:europe_demes" scaleFactor="0.75" weight="3.0"/> -->
+
+<!-- Constrain France sampling prop. to be equal between Epochs 2 and 3 (after first sample date) -->
+<operator id="samplingProportionEpiScaler.t.France:europe_demes" spec="feast.operators.BlockScaleOperator" parameter="@samplingProportionEpi.t:europe_demes" scaleFactor="0.75" weight="3.0">
+    <indicator spec="beast.core.parameter.BooleanParameter" value="true false false false false true false false false false false false false false false" estimate="false"/>
+</operator>
+<!-- Constrain Germany sampling prop. to be equal between Epochs 2 and 3 (after first sample date) -->
+<operator id="samplingProportionEpiScaler.t.Germany:europe_demes" spec="feast.operators.BlockScaleOperator" parameter="@samplingProportionEpi.t:europe_demes" scaleFactor="0.75" weight="3.0">
+    <indicator spec="beast.core.parameter.BooleanParameter" value="false true false false false false true false false false false false false false false" estimate="false"/>
+</operator>
+<!-- Set operator for Hubei in Epoch 2 -->
+<operator id="samplingProportionEpiScaler.t.Hubei:europe_demes" spec="feast.operators.BlockScaleOperator" parameter="@samplingProportionEpi.t:europe_demes" scaleFactor="0.75" weight="3.0">
+    <indicator spec="beast.core.parameter.BooleanParameter" value="false false false false false false false true false false false false false false false" estimate="false"/>
+</operator>
+<!-- Constrain Italy sampling prop. to be equal between Epochs 2 and 3 (after first sample date) -->
+<operator id="samplingProportionEpiScaler.t.Italy:europe_demes" spec="feast.operators.BlockScaleOperator" parameter="@samplingProportionEpi.t:europe_demes" scaleFactor="0.75" weight="3.0">
+    <indicator spec="beast.core.parameter.BooleanParameter" value="false false false true false false false false true false false false false false false" estimate="false"/>
+</operator>
+<!-- Constrain OtherEuropean sampling prop. to be equal between Epochs 2 and 3 (after first sample date) -->
+<operator id="samplingProportionEpiScaler.t.OtherEuropean:europe_demes" spec="feast.operators.BlockScaleOperator" parameter="@samplingProportionEpi.t:europe_demes" scaleFactor="0.75" weight="3.0">
+    <indicator spec="beast.core.parameter.BooleanParameter" value="false false false false true false false false false true false false false false false" estimate="false"/>
+</operator>
+
+# RUNNING THE ANALYSIS -----------------------------------------------------
+# Running locally b/c Euler down:
+
+mkdir $WORKDIR/chain_1
+cd $WORKDIR/chain_1
+BEAST="/Users/nadeaus/programs/BEAST2.6.2/bin/beast"
+$BEAST $WORKDIR/europe_demes.xml
+
+# Trying on our server:
+scp /Users/nadeaus/programs/BEAST2.6.2/lib/beast.jar nadeaus@d@bs-stadler01:
+# Error, I think maybe b/c BEAST compiled on mac
+
+# Also running on the D-BSSE grid:
+
+scp $WORKDIR/europe_demes.xml nadeaus@d@bs-stadler01:/links/grid/shared/nadeaus
+scp ~/Downloads/BEAST_with_JRE.v2.6.2.Linux.tgz nadeaus@d@bs-stadler01:/links/grid/shared/nadeaus
+
+ssh nadeaus@d@bs-stadler01
+cd /links/grid/shared/nadeaus
+tar fxz BEAST_with_JRE.v2.6.2.Linux.tgz
+/links/grid/shared/nadeaus/beast/bin/packagemanager -add SA
+# Package SA is installed in /home/nadeaus/.beast/2.6/SA.
+vim /home/nadeaus/.beast/2.6/beauti.properties
+# added packages.url=http://tgvaughan.github.io/feast/package.xml
+# added packages.url=https\://tgvaughan.github.io/BDMM-Prime/package.xml and 
+/links/grid/shared/nadeaus/beast/bin/packagemanager -add feast
+/links/grid/shared/nadeaus/beast/bin/packagemanager -add BDMM-Prime
+
+ssh nadeaus@bs-submit01
+beast="/links/grid/shared/nadeaus/beast/bin/beast"
+WORKDIR="/links/grid/shared/nadeaus/chain_1"
+mkdir -p $WORKDIR
+cd $WORKDIR
+
+echo "#!/bin/bash" > $WORKDIR/job.sh
+echo "$beast /links/grid/shared/nadeaus/europe_demes.xml" >> $WORKDIR/job.sh
+
+qsub -l num_proc=4 \
+-o $WORKDIR/ \
+-M sarah.nadeau@bsse.ethz.ch \
+$WORKDIR/job.sh
+# This works! The output is located in my home directory: /home/nadeaus (this has 250GB space, is backed up)
+
+mkdir /links/grid/shared/nadeaus/death_delay_more_european_seqs/
+cp ~/* /links/grid/shared/nadeaus/death_delay_more_european_seqs/
+exit
+
+scp nadeaus@d@bs-stadler01:/links/grid/shared/nadeaus/death_delay_more_european_seqs/europe_demes.log $WORKDIR/raw_results/chain_2
+
+# COMBINE CHAINS -----------------------------------------------------
+
+LOGCOMBINER="/Users/nadeaus/programs/BEAST2.6.2/bin/logcombiner"
+$LOGCOMBINER \
+-log $WORKDIR/raw_results/chain_1/europe_demes.log \
+-log $WORKDIR/raw_results/chain_2/europe_demes.log \
+-o $WORKDIR/processed_results/combined_chains.log \
+-b 10 
+
+# LEFT OFF HERE
+
+# # MAKING FIRST FIGURES -----------------------------------------------------
+
+# LOGFILE=$WORKDIR/chain_1/europe_demes.log
+
+# # Make figures
+# mkdir -p $FIGOUTPUTDIR
+# Rscript $FIGSCRIPTDIR/plot_bdmm_migration_rates_europe_demes.R \
+# --output1 $FIGOUTPUTDIR/${DATE}_log_migration_rates.png \
+# --output2 $FIGOUTPUTDIR/${DATE}_migration_rates.png \
+# --logfile $LOGFILE \
+# --tracertable $WORKDIR/processed_results/tracer_table.txt
+
+# Rscript $FIGSCRIPTDIR/plot_bdmm_n_introductions_europe_demes.R \
+# --output $FIGOUTPUTDIR/${DATE}_n_introductions.png \
+# --logfile $LOGFILE \
+# --tracertable $WORKDIR/processed_results/tracer_table.txt
+
+# Rscript $FIGSCRIPTDIR/plot_bdmm_r0_europe_demes.R \
+# --output $FIGOUTPUTDIR/${DATE}_r0.png \
+# --logfile $LOGFILE \
+# --tracertable $WORKDIR/processed_results/tracer_table.txt
+
+# Rscript $FIGSCRIPTDIR/plot_bdmm_sampling_proportion_europe_demes.R \
+# --output1 $FIGOUTPUTDIR/${DATE}_sampling_proportion.png \
+# --output2 $FIGOUTPUTDIR/${DATE}_prevalence.png \
+# --logfile $LOGFILE \
+# --tracertable $WORKDIR/processed_results/tracer_table.txt \
+# --samplingdata $WORKDIR/sampling_prop_upper_bounds.txt
+
+# Rscript $FIGSCRIPTDIR/plot_bdmm_type_nodes_mcc_tree.R \
+# --workdir $WORKDIR \
+# --treefile $WORKDIR/processed_results/combined_chains_mcc.typed.node.tree \
+# --output $WORKDIR/figures/${DATE}_types_on_tree.png
+
